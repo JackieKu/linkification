@@ -1,0 +1,41 @@
+<!ENTITY linkification.settings.title "Настройки Linkification">
+<!ENTITY linkification.settings.tabgeneral "Общие">
+<!ENTITY linkification.settings.tablinks "Вид ссылок">
+<!ENTITY linkification.settings.tabfunctionality "Действия">
+<!ENTITY linkification.settings.tabadvanced "Продвинутые">
+<!ENTITY linkification.settings.linkifydesc "При загрузке страницы:">
+<!ENTITY linkification.settings.linkifytoggle "Автоматически превращать текстовые ссылки в гипер-ссылки (Ctrl+Shift+Y для включения/выключения) *">
+<!ENTITY linkification.settings.linkifythorough "Турбо-режим (Загрузка страниц может замедлиться)">
+<!ENTITY linkification.settings.linkifydoubleclick "Открывать текстовые ссылки двойным щелчком">
+<!ENTITY linkification.settings.openselectedtoggle "Добавить &apos;Открыть выделеные ссылки&apos; в контекстное меню">
+<!ENTITY linkification.settings.popuptoggle "Добавить &apos;Linkification&apos; в контекстное меню">
+<!ENTITY linkification.settings.statusbartoggle "Добавить иконку Linkification в строку состояния">
+<!ENTITY linkification.settings.cssdescription "* У текстовых ссылок будет атрибут class, равный &apos;linkification-ext&apos;">
+<!ENTITY linkification.settings.linkifylimit "Автоматически превращать текст в ссылки только на страницах:">
+<!ENTITY linkification.settings.linkifycharlimit "с числом символов меньше, чем:">
+<!ENTITY linkification.settings.linktypes "При превращении ссылок, включать:">
+<!ENTITY linkification.settings.linkifyprotocol "Ссылки с известными протоколами">
+<!ENTITY linkification.settings.linkifyknown "Ссылки с известными доменами">
+<!ENTITY linkification.settings.linkifyunknown "Ссылки с неизвестными доменами">
+<!ENTITY linkification.settings.linkifyemail "Адреса e-mail">
+<!ENTITY linkification.settings.linkifyimage "Ссылки на изображения">
+<!ENTITY linkification.settings.highlightlinks "Подсветка текстовых ссылок:">
+<!ENTITY linkification.settings.textcolor "Заменить цвет текста">
+<!ENTITY linkification.settings.backgroundcolor "Заменить цвет фона">
+<!ENTITY linkification.settings.colordesc "* При отключении этих настроек, текст, превращенный в ссылки,\n\nбудет отображен в соответствии со стилями страницы">
+<!ENTITY linkification.settings.linkscaption "При шелчке левой кнопкой на текстовые ссылки:">
+<!ENTITY linkification.settings.openinwindow "Открывать их в новом окне">
+<!ENTITY linkification.settings.openintab "Открывать их во вкладках и переходить туда">
+<!ENTITY linkification.settings.opentabinbg "Открывать их во вкладках и не переходить туда">
+<!ENTITY linkification.settings.linksdescription1 "* Эти настройки будут применены только к ссылкам, созданным Linkification">
+<!ENTITY linkification.settings.linkifysitelistdesc1 "Черный/Белый списки автоматического превращения:">
+<!ENTITY linkification.settings.linkifysitelistdesc2 "Никогда автоматически не превращать текст в ссылки на страницах:">
+<!ENTITY linkification.settings.linkifysitelistdesc3 "Автоматически превращать текст в ссылки только на страницах:">
+<!ENTITY linkification.settings.linkifyprotocoldesc "Список протоколов для превращения ссылок">
+<!ENTITY linkification.settings.linkifysubdomaindesc "Список доменов для превращения ссылок">
+<!ENTITY linkification.settings.linkifyinlinedesc "Теги, в которых превращение ссылок работает">
+<!ENTITY linkification.settings.linkifyexcludedesc "Теги, в которых превращение ссылок не работает">
+<!ENTITY linkification.settings.resetdefault "Сбросить настройки">
+<!ENTITY linkification.popup.extension "Linkification">
+<!ENTITY linkification.popup.linkifyopen "Открыть выделенные ссылки">
+<!ENTITY linkification-status-options "Настройки...">

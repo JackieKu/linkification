@@ -1,0 +1,41 @@
+<!ENTITY linkification.settings.title "Налаштування Linkification">
+<!ENTITY linkification.settings.tabgeneral "Загальне">
+<!ENTITY linkification.settings.tablinks "Типи посилань">
+<!ENTITY linkification.settings.tabfunctionality "Поведінка">
+<!ENTITY linkification.settings.tabadvanced "Додатково">
+<!ENTITY linkification.settings.linkifydesc "По завантаженню сторінки:">
+<!ENTITY linkification.settings.linkifytoggle "Автоматично перетворювати текстові посилання у гіперпосилання (Ctrl+Shift+Y щоб увімкнути/вимкнути) *">
+<!ENTITY linkification.settings.linkifythorough "Детальний режим (Завантаження сторінок може стати повільнішим)">
+<!ENTITY linkification.settings.linkifydoubleclick "Подвійне клацання відкриває текстове посилання">
+<!ENTITY linkification.settings.openselectedtoggle "Додати &apos;Відкрити виділені посилання&apos; до контекстного меню">
+<!ENTITY linkification.settings.popuptoggle "Додати Linkification до контекстного меню">
+<!ENTITY linkification.settings.statusbartoggle "Показувати Linkification в рядку стану">
+<!ENTITY linkification.settings.cssdescription "* У всіх перетворених посилань буде атрибут class=&apos;linkification-ext&apos;">
+<!ENTITY linkification.settings.linkifylimit "Перетворювати текстові у гіперпосилання тільки на сторінках:">
+<!ENTITY linkification.settings.linkifycharlimit "З кількістю символів меншою, ніж: ">
+<!ENTITY linkification.settings.linktypes "Під час обробки посилань на сторінці, перетворювати:">
+<!ENTITY linkification.settings.linkifyprotocol "Посилання з відомими протоколами">
+<!ENTITY linkification.settings.linkifyknown "Посилання з відомими доменами">
+<!ENTITY linkification.settings.linkifyunknown "Посилання з невідомими доменами">
+<!ENTITY linkification.settings.linkifyemail "Адреси електронної пошти">
+<!ENTITY linkification.settings.linkifyimage "Посилання на зображення">
+<!ENTITY linkification.settings.highlightlinks "Підсвітка перетвореного тексту:">
+<!ENTITY linkification.settings.textcolor "Замінювати колір тексту">
+<!ENTITY linkification.settings.backgroundcolor "Замінювати колір фону">
+<!ENTITY linkification.settings.colordesc "* Вимкнення цього призведе до відображення перетвореного у посилання тексту відповідно до стилів сторінки">
+<!ENTITY linkification.settings.linkscaption "Під час подвійного клацання на текстових посиланнях:">
+<!ENTITY linkification.settings.openinwindow "Відкривати посилання у новому вікні">
+<!ENTITY linkification.settings.openintab "Відкривати посилання у новій вкладці">
+<!ENTITY linkification.settings.opentabinbg "Відривати нову вкладку у фоновому режимі">
+<!ENTITY linkification.settings.linksdescription1 "* Ці налаштування будуть діяти тільки для текстових посилань, перетворених за допомогою Linkification">
+<!ENTITY linkification.settings.linkifysitelistdesc1 "Білий/Чорний списки автоматичного перетворення:">
+<!ENTITY linkification.settings.linkifysitelistdesc2 "Ніколи не перетворювати текстові посилання на такі домени:">
+<!ENTITY linkification.settings.linkifysitelistdesc3 "Перетворювати текстові посилання тільки на такі домени:">
+<!ENTITY linkification.settings.linkifyprotocoldesc "Перелік протоколів для перетворення посилань">
+<!ENTITY linkification.settings.linkifysubdomaindesc "Перелік доменів для перетворення посилань">
+<!ENTITY linkification.settings.linkifyinlinedesc "Теги, в яких перетворення посилань працює">
+<!ENTITY linkification.settings.linkifyexcludedesc "Теги, в яких перетворення посилань не працює">
+<!ENTITY linkification.settings.resetdefault "Відновити налаштування по замовчуванню">
+<!ENTITY linkification.popup.extension "Linkification">
+<!ENTITY linkification.popup.linkifyopen "Відкрити виділене посилання">
+<!ENTITY linkification-status-options "Налаштування...">

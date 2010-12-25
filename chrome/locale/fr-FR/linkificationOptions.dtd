@@ -1,0 +1,41 @@
+<!ENTITY linkification.settings.title "Options de Linkification">
+<!ENTITY linkification.settings.tabgeneral "Général">
+<!ENTITY linkification.settings.tablinks "Liens">
+<!ENTITY linkification.settings.tabfunctionality "Fonctionnalités">
+<!ENTITY linkification.settings.tabadvanced "Avancées">
+<!ENTITY linkification.settings.linkifydesc "Au chargement de la page">
+<!ENTITY linkification.settings.linkifytoggle "Activer l&apos;auto-transformation des liens (Ctrl+Shift+Y) *">
+<!ENTITY linkification.settings.linkifythorough "Mode complet (le chargement de la page peut être ralenti)">
+<!ENTITY linkification.settings.linkifydoubleclick "Un double-clic ouvre les liens textuels">
+<!ENTITY linkification.settings.openselectedtoggle "Ajouter &quot;Ouvrir la sélection&quot; au menu contextuel">
+<!ENTITY linkification.settings.popuptoggle "Ajouter &quot;Linkification&quot; au menu contextuel (nécessite le redémarrage de Firefox)">
+<!ENTITY linkification.settings.statusbartoggle "Ajouter l&apos;icône de Linkification dans la barre d&apos;état">
+<!ENTITY linkification.settings.cssdescription "* Tous les liens textuels deviendrons class=&apos;linkification-ext&apos;">
+<!ENTITY linkification.settings.linkifylimit "Transformer les liens des pages">
+<!ENTITY linkification.settings.linkifycharlimit "Avec un nombre de caractères inférieur à :">
+<!ENTITY linkification.settings.linktypes "Linkifier une page, inclus :">
+<!ENTITY linkification.settings.linkifyprotocol "Les liens des protocoles connus">
+<!ENTITY linkification.settings.linkifyknown "Les liens des sous-domaines connus">
+<!ENTITY linkification.settings.linkifyunknown "Les liens des sous-domaines inconnus">
+<!ENTITY linkification.settings.linkifyemail "Les adresses e-mail">
+<!ENTITY linkification.settings.linkifyimage "Les liens vers des images">
+<!ENTITY linkification.settings.highlightlinks "Mise en évidence des liens textuels">
+<!ENTITY linkification.settings.textcolor "Remplacer la couleur du texte *">
+<!ENTITY linkification.settings.backgroundcolor "Remplacer la couleur du fond">
+<!ENTITY linkification.settings.colordesc "* Désactiver cette option affichera les liens en suivant les styles de l&apos;auteur de la page">
+<!ENTITY linkification.settings.linkscaption "Lors du clic sur un lien textuel :">
+<!ENTITY linkification.settings.openinwindow "Ouvrir dans une nouvelle fenêtre">
+<!ENTITY linkification.settings.openintab "Ouvrir dans un nouvel onglet">
+<!ENTITY linkification.settings.opentabinbg "Ouvrir l&apos;onglet en arrière-plan">
+<!ENTITY linkification.settings.linksdescription1 "* Seuls les liens créés par cette extension seront affectés par ces préférences">
+<!ENTITY linkification.settings.linkifysitelistdesc1 "Listes noires/blanches">
+<!ENTITY linkification.settings.linkifysitelistdesc2 "Ne pas transformer les liens textuels des domaines suivants">
+<!ENTITY linkification.settings.linkifysitelistdesc3 "Transformer seulement les liens textuels des domaines suivants">
+<!ENTITY linkification.settings.linkifyprotocoldesc "Protocole:Nom du protocole">
+<!ENTITY linkification.settings.linkifysubdomaindesc "Sous-domaine:Nom du protocole">
+<!ENTITY linkification.settings.linkifyinlinedesc "Éléments intégrés connus">
+<!ENTITY linkification.settings.linkifyexcludedesc "Éléments exclus">
+<!ENTITY linkification.settings.resetdefault "Remettre par défaut">
+<!ENTITY linkification.popup.extension "Linkification">
+<!ENTITY linkification.popup.linkifyopen "Ouvrir le lien sélectionné">
+<!ENTITY linkification-status-options "Options...">

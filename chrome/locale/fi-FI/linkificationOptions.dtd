@@ -1,0 +1,41 @@
+<!ENTITY linkification.settings.title "Linkification-asetukset">
+<!ENTITY linkification.settings.tabgeneral "Yleiset">
+<!ENTITY linkification.settings.tablinks "Linkit">
+<!ENTITY linkification.settings.tabfunctionality "Toiminnot">
+<!ENTITY linkification.settings.tabadvanced "Lisäasetukset">
+<!ENTITY linkification.settings.linkifydesc "Kun sivu ladataan:">
+<!ENTITY linkification.settings.linkifytoggle "Ota käyttöön automaattinen linkitys (Ctrl+Shift+Y vaihtaa tilaa) *">
+<!ENTITY linkification.settings.linkifythorough "Perusteellinen toimintatila (voi hidastaa sivujen latausta)">
+<!ENTITY linkification.settings.linkifydoubleclick "Kaksoisnapautus avaa tekstilinkin">
+<!ENTITY linkification.settings.openselectedtoggle "Näytä &apos;Avaa valittu linkki&apos; ponnahdusvalikossa">
+<!ENTITY linkification.settings.popuptoggle "Näytä Linkification ponnahdusvalikossa">
+<!ENTITY linkification.settings.statusbartoggle "Näytä Linkification tilarivillä">
+<!ENTITY linkification.settings.cssdescription "* Linkitetylle tekstille class=&apos;linkification-ext&apos;">
+<!ENTITY linkification.settings.linkifylimit "Automaattinen linkitys on käytössä vain sivuilla:">
+<!ENTITY linkification.settings.linkifycharlimit "Joilla on vähemmän merkkejä kuin:">
+<!ENTITY linkification.settings.linktypes "Sivua linkitettäessä, linkitä:">
+<!ENTITY linkification.settings.linkifyprotocol "Tunnetut verkkoprotokollat">
+<!ENTITY linkification.settings.linkifyknown "Tunnetut aliverkkotunnukset">
+<!ENTITY linkification.settings.linkifyunknown "Tuntemattomat aliverkkotunnukset">
+<!ENTITY linkification.settings.linkifyemail "Sähköpostiosoitteet">
+<!ENTITY linkification.settings.linkifyimage "Kuvalinkit">
+<!ENTITY linkification.settings.highlightlinks "Linkitetyn tekstin korostus:">
+<!ENTITY linkification.settings.textcolor "Muuta tekstin väri">
+<!ENTITY linkification.settings.backgroundcolor "Muuta taustaväri">
+<!ENTITY linkification.settings.colordesc "* Oletusarvoisesti käytössä on sivun oma tyyli">
+<!ENTITY linkification.settings.linkscaption "Napautettaessa linkkiä vasemmalla painikkeella:">
+<!ENTITY linkification.settings.openinwindow "Avaa linkki uuteen ikkunaan">
+<!ENTITY linkification.settings.openintab "Avaa linkki uuteen välilehteen">
+<!ENTITY linkification.settings.opentabinbg "Avaa uusi välilehti taustalla">
+<!ENTITY linkification.settings.linksdescription1 "* Nämä asetukset vaikuttavat vain Linkificationin luomiin linkkeihin">
+<!ENTITY linkification.settings.linkifysitelistdesc1 "Automaattisen linkityksen valkoinen/musta lista:">
+<!ENTITY linkification.settings.linkifysitelistdesc2 "Älä linkitä automaattisesti seuraavia verkkotunnuksia:">
+<!ENTITY linkification.settings.linkifysitelistdesc3 "Linkitä automaattisesti vain seuraavat verkkotunnukset:">
+<!ENTITY linkification.settings.linkifyprotocoldesc "Teksti-protokolla:Linkki-protokolla">
+<!ENTITY linkification.settings.linkifysubdomaindesc "Teksti-aliverkkotunnus:Linkki-protokolla">
+<!ENTITY linkification.settings.linkifyinlinedesc "Tunnetut inline-elementit">
+<!ENTITY linkification.settings.linkifyexcludedesc "Poisluetut elementit">
+<!ENTITY linkification.settings.resetdefault "Palauta oletusarvot">
+<!ENTITY linkification.popup.extension "Linkification">
+<!ENTITY linkification.popup.linkifyopen "Avaa valittu linkki">
+<!ENTITY linkification-status-options "Asetukset...">

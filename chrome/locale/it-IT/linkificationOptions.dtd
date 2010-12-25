@@ -1,0 +1,41 @@
+<!ENTITY linkification.settings.title "Opzioni Linkification">
+<!ENTITY linkification.settings.tabgeneral "Generale">
+<!ENTITY linkification.settings.tablinks "Link">
+<!ENTITY linkification.settings.tabfunctionality "Funzionalità">
+<!ENTITY linkification.settings.tabadvanced "Avanzate">
+<!ENTITY linkification.settings.linkifydesc "Quando una pagina è caricata:">
+<!ENTITY linkification.settings.linkifytoggle "Attiva trasformazione automatica (Ctrl+Maiusc+Y per alternare stato) *">
+<!ENTITY linkification.settings.linkifythorough "Modo completo (il tempo di caricamento della pagina può essere maggiore)">
+<!ENTITY linkification.settings.linkifydoubleclick "Doppio clic apre link testuali">
+<!ENTITY linkification.settings.openselectedtoggle "Aggiungi &apos;Apri Link Selezionato&apos; nel menu contestuale">
+<!ENTITY linkification.settings.popuptoggle "Aggiungi Linkification nel menu contestuale">
+<!ENTITY linkification.settings.statusbartoggle "Aggiungi Linkification nella barra di stato">
+<!ENTITY linkification.settings.cssdescription "* Tutto il testo trasformato in link avrà class=&apos;linkification-ext&apos;">
+<!ENTITY linkification.settings.linkifylimit "Trasforma automaticamente in link solo le pagine:">
+<!ENTITY linkification.settings.linkifycharlimit "Con un numero di caratteri del testo minore di:">
+<!ENTITY linkification.settings.linktypes "Quando si trasforma in link il contenuto di una pagina, includi:">
+<!ENTITY linkification.settings.linkifyprotocol "Link a protocolli conosciuti">
+<!ENTITY linkification.settings.linkifyknown "Link a sottodomini conosciuti">
+<!ENTITY linkification.settings.linkifyunknown "Link a sottodomini sconosciuti">
+<!ENTITY linkification.settings.linkifyemail "Indirizzi email">
+<!ENTITY linkification.settings.linkifyimage "URL di immagini">
+<!ENTITY linkification.settings.highlightlinks "Evidenziamento testo trasformato in link:">
+<!ENTITY linkification.settings.textcolor "Usa al posto del colore del testo">
+<!ENTITY linkification.settings.backgroundcolor "Usa al posto del colore dello sfondo">
+<!ENTITY linkification.settings.colordesc "* Disattivando queste opzioni i link creati saranno mostrati secondo lo stile dei link della pagina">
+<!ENTITY linkification.settings.linkscaption "Quando si fa clic col tasto sinistro sul testo trasformato in link:">
+<!ENTITY linkification.settings.openinwindow "Apri link in una nuova finestra">
+<!ENTITY linkification.settings.openintab "Apri link in una nuova scheda">
+<!ENTITY linkification.settings.opentabinbg "Apri nuova scheda in secondo piano">
+<!ENTITY linkification.settings.linksdescription1 "* Queste opzioni influiranno solo sui link creati da Linkification">
+<!ENTITY linkification.settings.linkifysitelistdesc1 "Lista domini permessi/bloccati per la trasformazione automatica:">
+<!ENTITY linkification.settings.linkifysitelistdesc2 "Non attivare mai trasformazione automatica per i seguenti domini:">
+<!ENTITY linkification.settings.linkifysitelistdesc3 "Attiva trasformazione automatica solo per i seguenti domini:">
+<!ENTITY linkification.settings.linkifyprotocoldesc "Protocollo del testo:Protocollo del link">
+<!ENTITY linkification.settings.linkifysubdomaindesc "Sottodominio del testo:Protocollo del link">
+<!ENTITY linkification.settings.linkifyinlinedesc "Elementi inline conosciuti">
+<!ENTITY linkification.settings.linkifyexcludedesc "Elementi esclusi">
+<!ENTITY linkification.settings.resetdefault "Ripristina le impostazioni predefinite">
+<!ENTITY linkification.popup.extension "Linkification">
+<!ENTITY linkification.popup.linkifyopen "Apri link selezionato">
+<!ENTITY linkification-status-options "Opzioni...">

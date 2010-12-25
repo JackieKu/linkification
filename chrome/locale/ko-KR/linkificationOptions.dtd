@@ -1,0 +1,41 @@
+<!ENTITY linkification.settings.title "Linkification 설정">
+<!ENTITY linkification.settings.tabgeneral "일반">
+<!ENTITY linkification.settings.tablinks "링크">
+<!ENTITY linkification.settings.tabfunctionality "기능">
+<!ENTITY linkification.settings.tabadvanced "고급">
+<!ENTITY linkification.settings.linkifydesc "페이지를 읽어드린 후:">
+<!ENTITY linkification.settings.linkifytoggle "자동으로 링크를 만들기 (Ctrl+Shift+Y로 전환) *">
+<!ENTITY linkification.settings.linkifythorough "완벽히 링크화 (페이지 로딩 시간을 더 지연시킬 수 있음)">
+<!ENTITY linkification.settings.linkifydoubleclick "더블 클릭하면 텍스트로된 주소을 열기">
+<!ENTITY linkification.settings.openselectedtoggle "선택한 링크 열기를 문맥 메뉴에 표시하기">
+<!ENTITY linkification.settings.popuptoggle "Linkification을 문맥 메뉴에 표시하기">
+<!ENTITY linkification.settings.statusbartoggle "Linkification을 상태 막대에 표시하기">
+<!ENTITY linkification.settings.cssdescription "* 모든 링크화된 텍스트는 class=&apos;linkification-ext&apos;를 가집니다.">
+<!ENTITY linkification.settings.linkifylimit "자동 링크화를 제한할 페이지:">
+<!ENTITY linkification.settings.linkifycharlimit "텍스트로된 링크가 지정된 글자수 이하일 때만 링크로 만들기:">
+<!ENTITY linkification.settings.linktypes "자동으로 링크화할 때 링크로 만들 것:">
+<!ENTITY linkification.settings.linkifyprotocol "알려진 프로토콜 링크">
+<!ENTITY linkification.settings.linkifyknown "알려진 하위 도메인 링크">
+<!ENTITY linkification.settings.linkifyunknown "알려지지 않은 하위 도메인 링크">
+<!ENTITY linkification.settings.linkifyemail "이메일 주소">
+<!ENTITY linkification.settings.linkifyimage "이미지 주소">
+<!ENTITY linkification.settings.highlightlinks "링크화된 텍스트 표시 방법:">
+<!ENTITY linkification.settings.textcolor "글자색을 바꾸기">
+<!ENTITY linkification.settings.backgroundcolor "배경색을 바꾸기">
+<!ENTITY linkification.settings.colordesc "* 아무 것도 지정하지 않으면 해당 문서의 링크 표시 방식을 따릅니다.">
+<!ENTITY linkification.settings.linkscaption "링크화된 문구를 왼쪽 클릭하면:">
+<!ENTITY linkification.settings.openinwindow "새 창에 링크 열기">
+<!ENTITY linkification.settings.openintab "새 탭에 링크 열기">
+<!ENTITY linkification.settings.opentabinbg "새 탭을 활성화하지 않기">
+<!ENTITY linkification.settings.linksdescription1 "* 위의 설정은 Linkfication에 의해 만들어진 링크에만 적용됩니다.">
+<!ENTITY linkification.settings.linkifysitelistdesc1 "자동 링크화 허용/차단 목록:">
+<!ENTITY linkification.settings.linkifysitelistdesc2 "아래의 도메인은 자동으로 링크를 만들지 않기:">
+<!ENTITY linkification.settings.linkifysitelistdesc3 "아래의 도메인만 자동으로 링크를 만들기:">
+<!ENTITY linkification.settings.linkifyprotocoldesc "텍스트 프로토콜:링크 프로토콜">
+<!ENTITY linkification.settings.linkifysubdomaindesc "텍스트 하위 도메인:링크 프로토콜">
+<!ENTITY linkification.settings.linkifyinlinedesc "알려진 인라인 요소">
+<!ENTITY linkification.settings.linkifyexcludedesc "차단된 요소">
+<!ENTITY linkification.settings.resetdefault "기본 값으로 되돌리기">
+<!ENTITY linkification.popup.extension "Linkification">
+<!ENTITY linkification.popup.linkifyopen "선택된 링크를 열기">
+<!ENTITY linkification-status-options "설정...">

@@ -1,0 +1,41 @@
+<!ENTITY linkification.settings.title "Opções do Linkification">
+<!ENTITY linkification.settings.tabgeneral "Geral">
+<!ENTITY linkification.settings.tablinks "Links">
+<!ENTITY linkification.settings.tabfunctionality "Funcionalidade">
+<!ENTITY linkification.settings.tabadvanced "Avançado">
+<!ENTITY linkification.settings.linkifydesc "Quando uma página é carregada:">
+<!ENTITY linkification.settings.linkifytoggle "Ativar Auto-Linkificar (Ctrl+Shift+Y para ativar) *">
+<!ENTITY linkification.settings.linkifythorough "Modo Minucioso (O tempo de carregamento da página pode aumentar)">
+<!ENTITY linkification.settings.linkifydoubleclick "Clique duplo abre links de texto">
+<!ENTITY linkification.settings.openselectedtoggle "Mostrar Abrir Link Selecionado no menu de contexto">
+<!ENTITY linkification.settings.popuptoggle "Mostrar o Linkification no menu de contexto">
+<!ENTITY linkification.settings.statusbartoggle "Mostrar o Linkification na barra de status">
+<!ENTITY linkification.settings.cssdescription "* Todo texto linkificado terá classe=&apos;linkification-ext&apos;">
+<!ENTITY linkification.settings.linkifylimit "Somente Auto-Linkificar páginas:">
+<!ENTITY linkification.settings.linkifycharlimit "Com número de caracteres de texto menor que: ">
+<!ENTITY linkification.settings.linktypes "Quando linkificar uma página, incluir:">
+<!ENTITY linkification.settings.linkifyprotocol "Links de Protocolo Conhecidos">
+<!ENTITY linkification.settings.linkifyknown "Links de Subdomínio Conhecidos">
+<!ENTITY linkification.settings.linkifyunknown "Links de Subdomínio Desconhecidos">
+<!ENTITY linkification.settings.linkifyemail "Endereços de Email">
+<!ENTITY linkification.settings.linkifyimage "URLs de Imagens">
+<!ENTITY linkification.settings.highlightlinks "Destaque do texto Linkificado:">
+<!ENTITY linkification.settings.textcolor "Sobrescrever a Cor do Texto">
+<!ENTITY linkification.settings.backgroundcolor "Sobrescrever a Cor do Fundo">
+<!ENTITY linkification.settings.colordesc "* Desativar estas opções irá exibir os textos linkificados de acordo com o estilo de link da página">
+<!ENTITY linkification.settings.linkscaption "Quando um texto linkificado for clicado:">
+<!ENTITY linkification.settings.openinwindow "Abrir Link em Nova Janela">
+<!ENTITY linkification.settings.openintab "Abrir Link em Nova Aba">
+<!ENTITY linkification.settings.opentabinbg "Abrir nova Aba no Plano de Fundo">
+<!ENTITY linkification.settings.linksdescription1 "* Somente os links criados pelo Linkification serão afetados por estas configurações">
+<!ENTITY linkification.settings.linkifysitelistdesc1 "Lista Branca/Lista Negra do Auto-Linkificar:">
+<!ENTITY linkification.settings.linkifysitelistdesc2 "Nunca Auto-Linkificar os seguintes domínios:">
+<!ENTITY linkification.settings.linkifysitelistdesc3 "Somente Auto-Linkificar os seguintes domínios:">
+<!ENTITY linkification.settings.linkifyprotocoldesc "Protocolo de Texto:Protocolo de Link">
+<!ENTITY linkification.settings.linkifysubdomaindesc "Subdomínio de Texto:Protocolo de Link">
+<!ENTITY linkification.settings.linkifyinlinedesc "Elementos Inline Conhecidos">
+<!ENTITY linkification.settings.linkifyexcludedesc "Elementos Excluídos">
+<!ENTITY linkification.settings.resetdefault "Restaurar Padrão">
+<!ENTITY linkification.popup.extension "Linkification">
+<!ENTITY linkification.popup.linkifyopen "Abrir Link Selecionado">
+<!ENTITY linkification-status-options "Opções...">

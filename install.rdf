@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:em="http://www.mozilla.org/2004/em-rdf#">
+	<Description about="urn:mozilla:install-manifest">
+		<em:id>linkification@jackieku</em:id>
+		<em:name>Linkification</em:name>
+		<em:version>1.4.0</em:version>
+		<em:description>Converts text links into genuine, clickable links.</em:description>
+		<em:creator>y5</em:creator>
+		<em:contributor>Kai-Chiek Ku</em:contributor>
+		<em:extension>true</em:extension>
+		<em:homepageURL>http://yellow5.us/firefox/linkification/</em:homepageURL>
+		<em:optionsURL>chrome://linkification/content/linkificationOptions.xul</em:optionsURL>
+
+		<em:contributor>Tobias Schmidbauer</em:contributor>
+		<em:contributor>ua_bz (Arabic locale)</em:contributor>
+		<em:contributor>Andrew O. Shadoura (Belarusian locale)</em:contributor>
+		<em:contributor>madafaka (Catalan locale)</em:contributor>
+		<em:contributor>The Zero (Czech locale)</em:contributor>
+		<em:contributor>AlleyKat (Danish locale)</em:contributor>
+		<em:contributor>Stefan Pukallus and Jörg Abdinghoff (German locale)</em:contributor>
+		<em:contributor>srxo1978, urko (Spanish locale)</em:contributor>
+		<em:contributor>bahramm (Persian locale)</em:contributor>
+		<em:contributor>kenmooda (Finnish locale)</em:contributor>
+		<em:contributor>Dagobert_78 (French locale)</em:contributor>
+		<em:contributor>ikkejw (Frisian locale)</em:contributor>
+		<em:contributor>SiiiE (Hebrew locale)</em:contributor>
+		<em:contributor>krcko (Croatian locale)</em:contributor>
+		<em:contributor>kami (Hungarian locale)</em:contributor>
+		<em:contributor>Vash (Italian locale)</em:contributor>
+		<em:contributor>Norah (Japanese locale)</em:contributor>
+		<em:contributor>Flactal (Korean locale)</em:contributor>
+		<em:contributor>gandhi2 (Bokmål Norwegian locale)</em:contributor>
+		<em:contributor>Alf (Dutch locale)</em:contributor>
+		<em:contributor>Adam Splitt (Polish locale)</em:contributor>
+		<em:contributor>Teboga (Brazilian Portuguese locale)</em:contributor>
+		<em:contributor>TLemur (Russian locale)</em:contributor>
+		<em:contributor>wladow (Slovak locale)</em:contributor>
+		<em:contributor>miles (Slovenian locale)</em:contributor>
+		<em:contributor>StiffeL (Swedish locale)</em:contributor>
+		<em:contributor>Shaman (Turkish locale)</em:contributor>
+		<em:contributor>yaryi (Ukrainian locale)</em:contributor>
+		<em:contributor>Rick Cart (Simplified Chinese locale)</em:contributor>
+		<em:contributor>Marcus (Traditional Chinese locale)</em:contributor>
+
+		<em:file>
+			<Description about="urn:mozilla:extension:file:linkification.jar">
+				<em:package>content/linkification/</em:package>
+				<em:skin>skin/classic/linkification/</em:skin>
+				<em:locale>locale/ar/</em:locale>
+				<em:locale>locale/be-BY/</em:locale>
+				<em:locale>locale/ca-AD/</em:locale>
+				<em:locale>locale/cs-CZ/</em:locale>
+				<em:locale>locale/da-DK/</em:locale>
+				<em:locale>locale/de-DE/</em:locale>
+				<em:locale>locale/en-US/</em:locale>
+				<em:locale>locale/es-ES/</em:locale>
+				<em:locale>locale/fa-IR/</em:locale>
+				<em:locale>locale/fi-FI/</em:locale>
+				<em:locale>locale/fr-FR/</em:locale>
+				<em:locale>locale/fy-NL/</em:locale>
+				<em:locale>locale/he-IL/</em:locale>
+				<em:locale>locale/hr-HR/</em:locale>
+				<em:locale>locale/hu-HU/</em:locale>
+				<em:locale>locale/it-IT/</em:locale>
+				<em:locale>locale/ja-JP/</em:locale>
+				<em:locale>locale/ko-KR/</em:locale>
+				<em:locale>locale/nb-NO/</em:locale>
+				<em:locale>locale/nl-NL/</em:locale>
+				<em:locale>locale/pl-PL/</em:locale>
+				<em:locale>locale/pt-BR/</em:locale>
+				<em:locale>locale/ru-RU/</em:locale>
+				<em:locale>locale/sk-SK/</em:locale>
+				<em:locale>locale/sl-SI/</em:locale>
+				<em:locale>locale/sv-SE/</em:locale>
+				<em:locale>locale/tr-TR/</em:locale>
+				<em:locale>locale/uk-UA/</em:locale>
+				<em:locale>locale/zh-CN/</em:locale>
+				<em:locale>locale/zh-TW/</em:locale>
+			</Description>
+		</em:file>
+
+		<!-- Firefox -->
+		<em:targetApplication>
+			<Description>
+				<em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
+				<em:minVersion>4.0b8pre</em:minVersion>
+				<em:maxVersion>4.0.*</em:maxVersion>
+			</Description>
+		</em:targetApplication>
+	</Description>
+</RDF>

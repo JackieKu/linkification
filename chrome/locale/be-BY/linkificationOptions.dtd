@@ -1,0 +1,41 @@
+<!ENTITY linkification.settings.title "Налады Linkification">
+<!ENTITY linkification.settings.tabgeneral "Агульныя">
+<!ENTITY linkification.settings.tablinks "Выгляд спасылак">
+<!ENTITY linkification.settings.tabfunctionality "Дзеянні">
+<!ENTITY linkification.settings.tabadvanced "Прасунутыя">
+<!ENTITY linkification.settings.linkifydesc "Пры загрузцы старонкі:">
+<!ENTITY linkification.settings.linkifytoggle "Аўтаматычна ператвараць тэкставыя спасылкі ў гіпер-спасылкі (Ctrl+Shift+Y для ўключэння/выключэнні) *">
+<!ENTITY linkification.settings.linkifythorough "Турбо-рэжым (Загрузка старонак можа запаволіцца)">
+<!ENTITY linkification.settings.linkifydoubleclick "Адчыняць тэкставыя спасылкі падвойнай пстрычкай">
+<!ENTITY linkification.settings.openselectedtoggle "Дадаць &apos;Адкрыць выделеные спасылкі&apos; у кантэкстнае меню">
+<!ENTITY linkification.settings.popuptoggle "Дадаць &apos;Linkification&apos; у кантэкстнае меню">
+<!ENTITY linkification.settings.statusbartoggle "Дадаць абразок Linkification у радок стану">
+<!ENTITY linkification.settings.cssdescription "* У тэкставых спасылак будзе атрыбут class, роўны &apos;linkification-ext&apos;">
+<!ENTITY linkification.settings.linkifylimit "Аўтаматычна ператвараць тэкст у спасылкі толькі на старонках:">
+<!ENTITY linkification.settings.linkifycharlimit "з лікам знакаў менш, чым:">
+<!ENTITY linkification.settings.linktypes "Пры ператварэнні спасылак, уключаць:">
+<!ENTITY linkification.settings.linkifyprotocol "Спасылкі з вядомымі пратаколамі">
+<!ENTITY linkification.settings.linkifyknown "Спасылкі з вядомымі даменамі">
+<!ENTITY linkification.settings.linkifyunknown "Спасылкі з невядомымі даменамі">
+<!ENTITY linkification.settings.linkifyemail "Адрасы e-mail">
+<!ENTITY linkification.settings.linkifyimage "Спасылкі на малюнкі">
+<!ENTITY linkification.settings.highlightlinks "Падсвятленне тэкставых спасылак:">
+<!ENTITY linkification.settings.textcolor "Замяніць колер тэксту">
+<!ENTITY linkification.settings.backgroundcolor "Замяніць колер фону">
+<!ENTITY linkification.settings.colordesc "* Пры адключэнні гэтых налад, тэкст, пераўтвораны ў спасылкі,\n\nбудет адлюстраваны ў адпаведнасці са стылямі старонкі">
+<!ENTITY linkification.settings.linkscaption "Пры шелчке левай кнопкай на тэкставыя спасылкі:">
+<!ENTITY linkification.settings.openinwindow "Адчыняць іх у новым акне">
+<!ENTITY linkification.settings.openintab "Адчыняць іх ва ўкладках і пераходзіць туды">
+<!ENTITY linkification.settings.opentabinbg "Адчыняць іх ва ўкладках і не пераходзіць туды">
+<!ENTITY linkification.settings.linksdescription1 "* Гэтыя налады будуць ужытыя толькі да спасылак, створаным Linkification">
+<!ENTITY linkification.settings.linkifysitelistdesc1 "Чорны/Белы спісы аўтаматычнага ператварэння:">
+<!ENTITY linkification.settings.linkifysitelistdesc2 "Ніколі аўтаматычна не ператвараць тэкст у спасылкі на старонках:">
+<!ENTITY linkification.settings.linkifysitelistdesc3 "Аўтаматычна ператвараць тэкст у спасылкі толькі на старонках:">
+<!ENTITY linkification.settings.linkifyprotocoldesc "Спіс пратаколаў для ператварэння спасылак">
+<!ENTITY linkification.settings.linkifysubdomaindesc "Спіс даменаў для ператварэння спасылак">
+<!ENTITY linkification.settings.linkifyinlinedesc "Тэгі, у якіх ператварэнне спасылак працуе">
+<!ENTITY linkification.settings.linkifyexcludedesc "Тэгі, у якіх ператварэнне спасылак не працуе">
+<!ENTITY linkification.settings.resetdefault "Скінуць налады">
+<!ENTITY linkification.popup.extension "Linkification">
+<!ENTITY linkification.popup.linkifyopen "Адкрыць вылучаныя спасылкі">
+<!ENTITY linkification-status-options "Налады...">

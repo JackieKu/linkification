@@ -1,0 +1,41 @@
+<!ENTITY linkification.settings.title "Linkification postavke">
+<!ENTITY linkification.settings.tabgeneral "Općenito">
+<!ENTITY linkification.settings.tablinks "Veze">
+<!ENTITY linkification.settings.tabfunctionality "Funkcionalnost">
+<!ENTITY linkification.settings.tabadvanced "Napredno">
+<!ENTITY linkification.settings.linkifydesc "Kada je stranica učitana:">
+<!ENTITY linkification.settings.linkifytoggle "Omogući automatsko vezivanje (Ctrl+Shift+Y za uključiti) *">
+<!ENTITY linkification.settings.linkifythorough "Detaljni način (Vrijeme učitavanja stranice može biti sporije)">
+<!ENTITY linkification.settings.linkifydoubleclick "Dvoklik otvara tekstualne veze">
+<!ENTITY linkification.settings.openselectedtoggle "Prikaži Otvori odabranu vezu u kontekstnom izborniku">
+<!ENTITY linkification.settings.popuptoggle "Prikaži Linkification u kontekstnom izborniku">
+<!ENTITY linkification.settings.statusbartoggle "Prikaži Linkification u statusnoj traci">
+<!ENTITY linkification.settings.cssdescription "* Sav vezani tekst će imati class=&apos;linkification-ext&apos;">
+<!ENTITY linkification.settings.linkifylimit "Veži samo stranice:">
+<!ENTITY linkification.settings.linkifycharlimit "Sa ukupnim brojem znakova običnog teksta manjim od: ">
+<!ENTITY linkification.settings.linktypes "Prilikom vezivanja stranice, uključi:">
+<!ENTITY linkification.settings.linkifyprotocol "Znane veze protokola">
+<!ENTITY linkification.settings.linkifyknown "Znane veze poddomena">
+<!ENTITY linkification.settings.linkifyunknown "Nepoznate veze poddomena">
+<!ENTITY linkification.settings.linkifyemail "Email adrese">
+<!ENTITY linkification.settings.linkifyimage "Web adrese slika">
+<!ENTITY linkification.settings.highlightlinks "Naglašavanje vezanog teksta:">
+<!ENTITY linkification.settings.textcolor "Premosti boju teksta">
+<!ENTITY linkification.settings.backgroundcolor "Premosti boju pozadine">
+<!ENTITY linkification.settings.colordesc "* Onemogućavanje ovoga će prikazati vezani tekst u skladu sa stilom stranice">
+<!ENTITY linkification.settings.linkscaption "Kada se na vezani tekst klikne lijevom tipkom miša:">
+<!ENTITY linkification.settings.openinwindow "Otvori vezu u novom prozoru">
+<!ENTITY linkification.settings.openintab "Otvori vezu u novom tabu">
+<!ENTITY linkification.settings.opentabinbg "Otvori novi tab u pozadini">
+<!ENTITY linkification.settings.linksdescription1 "* Samo će veze kreirane od strane Linkification biti obuhvaćeni ovim postavkama">
+<!ENTITY linkification.settings.linkifysitelistdesc1 "Automatsko vezivanje Bijela lista/Crna lista:">
+<!ENTITY linkification.settings.linkifysitelistdesc2 "Nikada automatski ne vezuj slijedeće domene:">
+<!ENTITY linkification.settings.linkifysitelistdesc3 "Automatski vezuj samo slijedeće domene:">
+<!ENTITY linkification.settings.linkifyprotocoldesc "Tekst Protokol:Protokol veze">
+<!ENTITY linkification.settings.linkifysubdomaindesc "Tekst poddomene:Protokol veze">
+<!ENTITY linkification.settings.linkifyinlinedesc "Znani uključeni elementi">
+<!ENTITY linkification.settings.linkifyexcludedesc "Isključeni elementi">
+<!ENTITY linkification.settings.resetdefault "Vrati na zadano">
+<!ENTITY linkification.popup.extension "Linkification">
+<!ENTITY linkification.popup.linkifyopen "Otvori odabranu vezu">
+<!ENTITY linkification-status-options "Postavke...">

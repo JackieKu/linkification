@@ -1,0 +1,41 @@
+<!ENTITY linkification.settings.title "Možnosti Linkification">
+<!ENTITY linkification.settings.tabgeneral "Obecné">
+<!ENTITY linkification.settings.tablinks "Odkazy">
+<!ENTITY linkification.settings.tabfunctionality "Automatické převádění">
+<!ENTITY linkification.settings.tabadvanced "Rozšířené">
+<!ENTITY linkification.settings.linkifydesc "Když je stránka načtena:">
+<!ENTITY linkification.settings.linkifytoggle "Povolit automatické převedení (Ctrl+Shift+Y pro přepnutí) *">
+<!ENTITY linkification.settings.linkifythorough "&quot;Důkladný&quot; režim (Načítání stránek může být pomalejší)">
+<!ENTITY linkification.settings.linkifydoubleclick "Dvojklepnutí otevírá textové odkazy">
+<!ENTITY linkification.settings.openselectedtoggle "Zobrazovat &quot;Otevřít odkaz&quot; v místní nabídce">
+<!ENTITY linkification.settings.popuptoggle "Přidat do místní nabídky">
+<!ENTITY linkification.settings.statusbartoggle "Zobrazovat Linkification ve stavovém řádku">
+<!ENTITY linkification.settings.cssdescription "* Veškerý převedený text bude mít class=&apos;linkification-ext&apos;">
+<!ENTITY linkification.settings.linkifylimit "Automaticky převádět pouze stránky:">
+<!ENTITY linkification.settings.linkifycharlimit "S počtem znaků čistého textu menším než:">
+<!ENTITY linkification.settings.linktypes "Když se převádí stránka, převést:">
+<!ENTITY linkification.settings.linkifyprotocol "Odkazy se známým protokolem">
+<!ENTITY linkification.settings.linkifyknown "Odkazy na známé domény 3. řádu">
+<!ENTITY linkification.settings.linkifyunknown "Odkazy na neznámé domény 3. řádu">
+<!ENTITY linkification.settings.linkifyemail "Emailové adresy">
+<!ENTITY linkification.settings.linkifyimage "Odkazy na obrázky">
+<!ENTITY linkification.settings.highlightlinks "Zvýraznění převedeného textu:">
+<!ENTITY linkification.settings.textcolor "Potlačit barvu textu">
+<!ENTITY linkification.settings.backgroundcolor "Potlačit barvu textu">
+<!ENTITY linkification.settings.colordesc "* Pokud budou tyto možnosti vypnuté, zobrazí se převedený text podle stylu stránky">
+<!ENTITY linkification.settings.linkscaption "Při klepnutí levým tlačítkem na převedený text:">
+<!ENTITY linkification.settings.openinwindow "Otevírat odkazy v novém okně">
+<!ENTITY linkification.settings.openintab "Otevírat odkazy v novém panelu">
+<!ENTITY linkification.settings.opentabinbg "Otevírat nové panely na pozadí">
+<!ENTITY linkification.settings.linksdescription1 "* Pouze odkazy vytvořené pomocí Linkification budou ovlivněny tímto nastavením">
+<!ENTITY linkification.settings.linkifysitelistdesc1 "Seznam automaticky převáděných domén:">
+<!ENTITY linkification.settings.linkifysitelistdesc2 "Nikdy automaticky nepřevádět texty z následujících domén:">
+<!ENTITY linkification.settings.linkifysitelistdesc3 "Vždy automaticky převádět pouze text z následujících domén:">
+<!ENTITY linkification.settings.linkifyprotocoldesc "Protokol textu:Protokol odkazu">
+<!ENTITY linkification.settings.linkifysubdomaindesc "Poddoména textu:Protokol odkazu">
+<!ENTITY linkification.settings.linkifyinlinedesc "Známě řádkové elementy">
+<!ENTITY linkification.settings.linkifyexcludedesc "Vynechané prvky">
+<!ENTITY linkification.settings.resetdefault "Obnovit výchozí">
+<!ENTITY linkification.popup.extension "Linkification">
+<!ENTITY linkification.popup.linkifyopen "Otevřít vybraný odkaz">
+<!ENTITY linkification-status-options "Možnosti...">

@@ -1,0 +1,41 @@
+<!ENTITY linkification.settings.title "Možnosti">
+<!ENTITY linkification.settings.tabgeneral "Splošno">
+<!ENTITY linkification.settings.tablinks "Povezave">
+<!ENTITY linkification.settings.tabfunctionality "Funkcionalnost">
+<!ENTITY linkification.settings.tabadvanced "Napredno">
+<!ENTITY linkification.settings.linkifydesc "Ko je naložena stran:">
+<!ENTITY linkification.settings.linkifytoggle "Omogoči samodejno povezavo (Ctrl+Shift+Y za preklop)*">
+<!ENTITY linkification.settings.linkifythorough "Temeljiti način (čas nalaganja je lahko daljši)">
+<!ENTITY linkification.settings.linkifydoubleclick "Dvoklik odpre povezavo v besedilu">
+<!ENTITY linkification.settings.openselectedtoggle "Pokaži izbrano odprto povezavo v pojavnem meniju">
+<!ENTITY linkification.settings.popuptoggle "Pokaži izdelano povezavo v pojavnem meniju">
+<!ENTITY linkification.settings.statusbartoggle "Pokaži izdelano povezavo v vrstici stanja">
+<!ENTITY linkification.settings.cssdescription "* Vse besedilo povezave bo imelo lastnost class=&apos;linkification-ext&apos;">
+<!ENTITY linkification.settings.linkifylimit "Samo samopovezane strani:">
+<!ENTITY linkification.settings.linkifycharlimit "S številom navadnih znakov manj kot:">
+<!ENTITY linkification.settings.linktypes "Pri navezovanju na stran vključi:">
+<!ENTITY linkification.settings.linkifyprotocol "povezave znanih protokolov">
+<!ENTITY linkification.settings.linkifyknown "povezave znanih poddomen">
+<!ENTITY linkification.settings.linkifyunknown "povezave neznanih poddomen">
+<!ENTITY linkification.settings.linkifyemail "e-poštne naslove">
+<!ENTITY linkification.settings.linkifyimage "URL-je slik">
+<!ENTITY linkification.settings.highlightlinks "Poudarjanje besedila s povezavo:">
+<!ENTITY linkification.settings.textcolor "Zamenjaj barvo besedila">
+<!ENTITY linkification.settings.backgroundcolor "Zamenjaj barvo ozadja">
+<!ENTITY linkification.settings.colordesc "* Z onemogočanjem le teh bo besedilo povezavo prikazano glede na slog povezav strani">
+<!ENTITY linkification.settings.linkscaption "Ko levo kliknete na besedilo povezave:">
+<!ENTITY linkification.settings.openinwindow "Odpri povezavo v novem oknu">
+<!ENTITY linkification.settings.openintab "Odpri povezavo v novem zavihku">
+<!ENTITY linkification.settings.opentabinbg "Odpri nov zavihek v ozadju">
+<!ENTITY linkification.settings.linksdescription1 "* Te nastavitve vplivajo le na povezave, ki nastanejo s to razširitvijo">
+<!ENTITY linkification.settings.linkifysitelistdesc1 "Seznam dovoljenih/prepovedanih samopovezav:">
+<!ENTITY linkification.settings.linkifysitelistdesc2 "Nikoli ne samopoveži naslednjih domen:">
+<!ENTITY linkification.settings.linkifysitelistdesc3 "Samopoveži samo naslednje domene:">
+<!ENTITY linkification.settings.linkifyprotocoldesc "besedilni protokol:protokol povezave">
+<!ENTITY linkification.settings.linkifysubdomaindesc "besedilna poddomena:protokol povezave">
+<!ENTITY linkification.settings.linkifyinlinedesc "Znani elementi na strani">
+<!ENTITY linkification.settings.linkifyexcludedesc "Izključeni elementi">
+<!ENTITY linkification.settings.resetdefault "Ponastavi na privzeto">
+<!ENTITY linkification.popup.extension "Povezovanje">
+<!ENTITY linkification.popup.linkifyopen "Odpri izbrano povezavo">
+<!ENTITY linkification-status-options "Možnosti ...">

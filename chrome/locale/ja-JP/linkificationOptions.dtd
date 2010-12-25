@@ -1,0 +1,41 @@
+<!ENTITY linkification.settings.title "Linkification オプション">
+<!ENTITY linkification.settings.tabgeneral "全般">
+<!ENTITY linkification.settings.tablinks "リンク">
+<!ENTITY linkification.settings.tabfunctionality "機能">
+<!ENTITY linkification.settings.tabadvanced "詳細">
+<!ENTITY linkification.settings.linkifydesc "ページが読み込まれた時の動作設定:">
+<!ENTITY linkification.settings.linkifytoggle "自動リンクを有効 (Ctrl+Shift+Y to toggle) *">
+<!ENTITY linkification.settings.linkifythorough "完全モード (ページの読み込み速度が遅くなる可能性があります)">
+<!ENTITY linkification.settings.linkifydoubleclick "テキスト表示のアドレスをダブルクリックで開く">
+<!ENTITY linkification.settings.openselectedtoggle "選択されたリンクを開くをコンテキストメニューに表示">
+<!ENTITY linkification.settings.popuptoggle "コンテキストメニューに Linkification を表示">
+<!ENTITY linkification.settings.statusbartoggle "Linkification をステータスバーに表示">
+<!ENTITY linkification.settings.cssdescription "* すべてのリンク化されたテキストは class=&apos;linkification-ext&apos; を持ちます。">
+<!ENTITY linkification.settings.linkifylimit "ページを自動的にリンク化する条件:">
+<!ENTITY linkification.settings.linkifycharlimit "テキストの文字数が右記よりも少ない場合:">
+<!ENTITY linkification.settings.linktypes "ページのリンク化 設定">
+<!ENTITY linkification.settings.linkifyprotocol "登録済みのプロトコル">
+<!ENTITY linkification.settings.linkifyknown "登録済みのサブドメイン">
+<!ENTITY linkification.settings.linkifyunknown "未登録のサブドメイン">
+<!ENTITY linkification.settings.linkifyemail "メールアドレス">
+<!ENTITY linkification.settings.linkifyimage "画像の URL">
+<!ENTITY linkification.settings.highlightlinks "リンク化されたテキストの強調表示:">
+<!ENTITY linkification.settings.textcolor "テキストの色">
+<!ENTITY linkification.settings.backgroundcolor "背景の色">
+<!ENTITY linkification.settings.colordesc "* この機能を無効にした場合 Firefox の設定が利用されます。">
+<!ENTITY linkification.settings.linkscaption "リンク化されたテキストがクリックされた時:">
+<!ENTITY linkification.settings.openinwindow "リンクを新しいウィンドウで開く">
+<!ENTITY linkification.settings.openintab "リンクを新しいタブで開く">
+<!ENTITY linkification.settings.opentabinbg "バックグラウンドのタブで開く">
+<!ENTITY linkification.settings.linksdescription1 "* この設定は Linkification によって作成されたリンクにのみ適用されます。">
+<!ENTITY linkification.settings.linkifysitelistdesc1 "自動リンク化 許可リスト/非許可リスト:">
+<!ENTITY linkification.settings.linkifysitelistdesc2 "リンク化を許可しないドメイン:">
+<!ENTITY linkification.settings.linkifysitelistdesc3 "リンク化を許可するドメイン:">
+<!ENTITY linkification.settings.linkifyprotocoldesc "プロトコル">
+<!ENTITY linkification.settings.linkifysubdomaindesc "サブドメイン">
+<!ENTITY linkification.settings.linkifyinlinedesc "インラインのタグ">
+<!ENTITY linkification.settings.linkifyexcludedesc "禁止するタグ">
+<!ENTITY linkification.settings.resetdefault "設定を初期化する">
+<!ENTITY linkification.popup.extension "Linkification">
+<!ENTITY linkification.popup.linkifyopen "選択されたリンクを開く">
+<!ENTITY linkification-status-options "オプション...">

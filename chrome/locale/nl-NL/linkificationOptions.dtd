@@ -1,0 +1,41 @@
+<!ENTITY linkification.settings.title "Linkification Opties">
+<!ENTITY linkification.settings.tabgeneral "Algemeen">
+<!ENTITY linkification.settings.tablinks "Koppelingen">
+<!ENTITY linkification.settings.tabfunctionality "Functionaliteit">
+<!ENTITY linkification.settings.tabadvanced "Geavanceerd">
+<!ENTITY linkification.settings.linkifydesc "Wanneer een pagina wordt geladen:">
+<!ENTITY linkification.settings.linkifytoggle "Auto-Linkification inschakelen (Ctrl+Shift+Y om te schakelen) *">
+<!ENTITY linkification.settings.linkifythorough "Grondige mode (pagina laadtijd kan trager worden)">
+<!ENTITY linkification.settings.linkifydoubleclick "Dubbelklikken opent tekstkoppelingen">
+<!ENTITY linkification.settings.openselectedtoggle "&apos;Geselecteerde koppelingen openen&apos; in contextmenu weergeven">
+<!ENTITY linkification.settings.popuptoggle "&apos;Linkification&apos; in contextmenu weergeven">
+<!ENTITY linkification.settings.statusbartoggle "&apos;Linkification&apos; in statusbalk weergeven">
+<!ENTITY linkification.settings.cssdescription "* Alle &apos;linkified&apos; tekst zal class=&apos;linkification-ext&apos; hebben">
+<!ENTITY linkification.settings.linkifylimit "Alleen Auto-Linkify pagina&apos;s:">
+<!ENTITY linkification.settings.linkifycharlimit "Met een aantal platte tekstkarakters kleiner dan:">
+<!ENTITY linkification.settings.linktypes "Bij het &apos;linkifying&apos; van een pagina, toevoegen:">
+<!ENTITY linkification.settings.linkifyprotocol "Bekende protocolkoppelingen">
+<!ENTITY linkification.settings.linkifyknown "Bekende subdomeinkoppelingen">
+<!ENTITY linkification.settings.linkifyunknown "Onbekende subdomeinkoppelingen">
+<!ENTITY linkification.settings.linkifyemail "Email-adres">
+<!ENTITY linkification.settings.linkifyimage "URL&apos;s afbeelden">
+<!ENTITY linkification.settings.highlightlinks "&apos;Linkified&apos; tekstmarkering:">
+<!ENTITY linkification.settings.textcolor "Tekstkleur negeren">
+<!ENTITY linkification.settings.backgroundcolor "Achtergrondkleur negeren">
+<!ENTITY linkification.settings.colordesc "* indien uitgeschakeld wordt &apos;linkified&apos;-tekst conform de stijl van de paginakoppeling weergegeven">
+<!ENTITY linkification.settings.linkscaption "Bij linksklikken op &apos;linkified&apos;-tekst:">
+<!ENTITY linkification.settings.openinwindow "Koppeling in een nieuw venster openen">
+<!ENTITY linkification.settings.openintab "Koppeling in een nieuwe tab openen">
+<!ENTITY linkification.settings.opentabinbg "Nieuwe tab in de achtergrond openen">
+<!ENTITY linkification.settings.linksdescription1 "* alleen door &apos;Linkification&apos; gemaakte koppelingen worden door deze instellingen beïnvloed">
+<!ENTITY linkification.settings.linkifysitelistdesc1 "Auto-Linkify Toestemmings-/Uitsluitingslijst">
+<!ENTITY linkification.settings.linkifysitelistdesc2 "Auto-Linkify niet gebruiken bij de volgende domeinen:">
+<!ENTITY linkification.settings.linkifysitelistdesc3 "Auto-Linkify uitsluitend gebruiken bij de volgende domeinen:">
+<!ENTITY linkification.settings.linkifyprotocoldesc "Tekstprotocol:Koppelingprotocol">
+<!ENTITY linkification.settings.linkifysubdomaindesc "Tekst-subdomein:Koppelingprotocol">
+<!ENTITY linkification.settings.linkifyinlinedesc "Bekende Inline-elementen">
+<!ENTITY linkification.settings.linkifyexcludedesc "Elementen uitsluiten">
+<!ENTITY linkification.settings.resetdefault "Standaardinstellingen herstellen">
+<!ENTITY linkification.popup.extension "Linkification">
+<!ENTITY linkification.popup.linkifyopen "Geselecteerde koppeling openen">
+<!ENTITY linkification-status-options "Opties...">

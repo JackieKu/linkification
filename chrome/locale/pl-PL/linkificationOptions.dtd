@@ -1,0 +1,41 @@
+<!ENTITY linkification.settings.title "Linkification - opcje">
+<!ENTITY linkification.settings.tabgeneral "Ogólne">
+<!ENTITY linkification.settings.tablinks "Odnośniki">
+<!ENTITY linkification.settings.tabfunctionality "Zachowanie">
+<!ENTITY linkification.settings.tabadvanced "Zaawansowane">
+<!ENTITY linkification.settings.linkifydesc "Gdy strona zostanie wczytana:">
+<!ENTITY linkification.settings.linkifytoggle "Włącz automatyczne tworzenie odnośników [Ctrl+Shift+Y] *">
+<!ENTITY linkification.settings.linkifythorough "Użyj trybu gruntownego (czas wczytywania strony może się wydłużyć)">
+<!ENTITY linkification.settings.linkifydoubleclick "Dwukrotne kliknięcie otwiera odnośniki tekstowe">
+<!ENTITY linkification.settings.openselectedtoggle "Wyświetl element &quot;Otwórz zaznaczony odnośnik&quot; w menu kontekstowym">
+<!ENTITY linkification.settings.popuptoggle "Wyświetl element &quot;Linkification&quot; w menu kontekstowym">
+<!ENTITY linkification.settings.statusbartoggle "Wyświetl ikonę &quot;Linkification&quot; na pasku stanu">
+<!ENTITY linkification.settings.cssdescription "* Każdy stworzony odnośnik będzie posiadał atrubut class=&apos;linkification-ext&apos;">
+<!ENTITY linkification.settings.linkifylimit "Twórz automatycznie odnośniki tylko dla stron:">
+<!ENTITY linkification.settings.linkifycharlimit "z ilością znaków na stronie mniejszą niż:">
+<!ENTITY linkification.settings.linktypes "Gdy tworzysz odnośniki, dołącz:">
+<!ENTITY linkification.settings.linkifyprotocol "odnośniki znanych protokołów">
+<!ENTITY linkification.settings.linkifyknown "odnośniki znanych subdomen">
+<!ENTITY linkification.settings.linkifyunknown "odnośniki nieznanych subdomen">
+<!ENTITY linkification.settings.linkifyemail "adresy e-mail">
+<!ENTITY linkification.settings.linkifyimage "adresy URL obrazków">
+<!ENTITY linkification.settings.highlightlinks "Wyróżnianie tworzonych odnośników:">
+<!ENTITY linkification.settings.textcolor "Kolor tekstu">
+<!ENTITY linkification.settings.backgroundcolor "Kolor tła">
+<!ENTITY linkification.settings.colordesc "* Wyłączenie tych opcji spowoduje wyświetlanie odnośników zgodnie ze stylem strony">
+<!ENTITY linkification.settings.linkscaption "Utworzone odnośniki otwieraj w:">
+<!ENTITY linkification.settings.openinwindow "nowym oknie">
+<!ENTITY linkification.settings.openintab "nowej karcie">
+<!ENTITY linkification.settings.opentabinbg "nowe karty otwieraj w tle">
+<!ENTITY linkification.settings.linksdescription1 "* Opcje te dotyczą tylko odnośników utworzonych przez &quot;Linkification&quot;">
+<!ENTITY linkification.settings.linkifysitelistdesc1 "Reguły wyjątków automatycznego tworzenia odnośników:">
+<!ENTITY linkification.settings.linkifysitelistdesc2 "Nigdy nie twórz odnośników dla poniższych domen:">
+<!ENTITY linkification.settings.linkifysitelistdesc3 "Twórz odnośniki tylko dla poniższych domen:">
+<!ENTITY linkification.settings.linkifyprotocoldesc "Tekst protokołu:Protokół odnośnika">
+<!ENTITY linkification.settings.linkifysubdomaindesc "Tekst subdomeny:Protokół odnośnika">
+<!ENTITY linkification.settings.linkifyinlinedesc "Znane słowa kluczowe &quot;inline&quot;">
+<!ENTITY linkification.settings.linkifyexcludedesc "Elementy wyłączone">
+<!ENTITY linkification.settings.resetdefault "Domyślne">
+<!ENTITY linkification.popup.extension "Linkification">
+<!ENTITY linkification.popup.linkifyopen "Otwórz zaznaczony odnośnik">
+<!ENTITY linkification-status-options "Opcje">

@@ -1,0 +1,41 @@
+<!ENTITY linkification.settings.title "Linkification">
+<!ENTITY linkification.settings.tabgeneral "Algemien">
+<!ENTITY linkification.settings.tablinks "Links">
+<!ENTITY linkification.settings.tabfunctionality "Funksjenaliteit">
+<!ENTITY linkification.settings.tabadvanced "Avansearre">
+<!ENTITY linkification.settings.linkifydesc "As in side laden is:">
+<!ENTITY linkification.settings.linkifytoggle "Set Auto-Linkifikaasje oan (Ctrl+Shift+Y) *">
+<!ENTITY linkification.settings.linkifythorough "Djipgeande Mode (Laden kin wat langer duorje)">
+<!ENTITY linkification.settings.linkifydoubleclick "Dûbelklik iepent tekstlinks">
+<!ENTITY linkification.settings.openselectedtoggle "Lit Iepenje Selekteare Link sjen yn kontekstmenu">
+<!ENTITY linkification.settings.popuptoggle "Lit Linkification yn kontekstmenu sjen">
+<!ENTITY linkification.settings.statusbartoggle "Lit Linkification yn &apos;e statusbalke sjen">
+<!ENTITY linkification.settings.cssdescription "* Alle linkifiseare tekst sil class=&apos;linkification-ext&apos; hawwe">
+<!ENTITY linkification.settings.linkifylimit "Auto-Linkifisear allinnich siden:">
+<!ENTITY linkification.settings.linkifycharlimit "Mei oantal gewoane tekst tekens minder as:">
+<!ENTITY linkification.settings.linktypes "Pas dit yn by it linkifisearen fan in side:">
+<!ENTITY linkification.settings.linkifyprotocol "Bekende Protokollinks">
+<!ENTITY linkification.settings.linkifyknown "Bekende Subdomeinlinks">
+<!ENTITY linkification.settings.linkifyunknown "Unbekende Subdomeinlinks">
+<!ENTITY linkification.settings.linkifyemail "Emailadressen">
+<!ENTITY linkification.settings.linkifyimage "Printsje URLs">
+<!ENTITY linkification.settings.highlightlinks "Oplochting fan linkifiseare tekst:">
+<!ENTITY linkification.settings.textcolor "Tekstkleur Oerwâldzje">
+<!ENTITY linkification.settings.backgroundcolor "Eftergrûnkleur Oerwâldzje">
+<!ENTITY linkification.settings.colordesc "* Utsetten fan dizze opsjes sil linkifiseare tekst sjen litte as gewoane links.">
+<!ENTITY linkification.settings.linkscaption "As der op linkifiseare tekst links-klikt wurdt:">
+<!ENTITY linkification.settings.openinwindow "Iepenje Link yn Nei Finster">
+<!ENTITY linkification.settings.openintab "Iepenje Link yn Nei Ljepblêd">
+<!ENTITY linkification.settings.opentabinbg "Iepenje Nei Ljepblêd op &apos;e Eftergrûn">
+<!ENTITY linkification.settings.linksdescription1 "* Allinnich links makke troch Linkification sille beynfloed wurre">
+<!ENTITY linkification.settings.linkifysitelistdesc1 "Auto-Linkifisear wyte/swarte list">
+<!ENTITY linkification.settings.linkifysitelistdesc2 "Auto-Linkifisear dizze domeinen noait:">
+<!ENTITY linkification.settings.linkifysitelistdesc3 "Auto-Linkifisear allinnich dizze domeinen:">
+<!ENTITY linkification.settings.linkifyprotocoldesc "Tekst Protokol:Link Protokol">
+<!ENTITY linkification.settings.linkifysubdomaindesc "Tekst Subdomein:Link Protokol">
+<!ENTITY linkification.settings.linkifyinlinedesc "Bekinde Inline Eleminten">
+<!ENTITY linkification.settings.linkifyexcludedesc "Utsletten Eleminten">
+<!ENTITY linkification.settings.resetdefault "Weromsette nei Standert">
+<!ENTITY linkification.popup.extension "Linkification">
+<!ENTITY linkification.popup.linkifyopen "Iepenje Selekteare Link">
+<!ENTITY linkification-status-options "Opsjes...">

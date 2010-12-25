@@ -1,0 +1,41 @@
+<!ENTITY linkification.settings.title "Linkification innstillinger">
+<!ENTITY linkification.settings.tabgeneral "Generelt">
+<!ENTITY linkification.settings.tablinks "Lenker">
+<!ENTITY linkification.settings.tabfunctionality "Funksjonalitet">
+<!ENTITY linkification.settings.tabadvanced "Avansert">
+<!ENTITY linkification.settings.linkifydesc "Når en side åpnes:">
+<!ENTITY linkification.settings.linkifytoggle "Slå på automatisk laging av lenker (Ctrl+Shift+Y for å slå på / av) *">
+<!ENTITY linkification.settings.linkifythorough "Grundig modus (sideåpning kan ta lengre tid)">
+<!ENTITY linkification.settings.linkifydoubleclick "Dobbelklikk åpner tekstlenker">
+<!ENTITY linkification.settings.openselectedtoggle "Vis &apos;åpne valgt lenke&apos; i høyreklikksmenyen">
+<!ENTITY linkification.settings.popuptoggle "Vis Linkification i høyreklikksmenyen">
+<!ENTITY linkification.settings.statusbartoggle "Vis Linkification i statuslinjen">
+<!ENTITY linkification.settings.cssdescription "* All omgjort tekst vil ha følgende beskrivelse: class=&apos;linkification-ext&apos;">
+<!ENTITY linkification.settings.linkifylimit "Automatisk laging av lenker kun for sider:">
+<!ENTITY linkification.settings.linkifycharlimit "med antall tegn i ren tekst mindre enn:">
+<!ENTITY linkification.settings.linktypes "Ved omgjøring av en nettside, inkluder:">
+<!ENTITY linkification.settings.linkifyprotocol "Lenker til kjente protokoller">
+<!ENTITY linkification.settings.linkifyknown "Lenker til kjente underdomener">
+<!ENTITY linkification.settings.linkifyunknown "Lenker til ukjente underdomener">
+<!ENTITY linkification.settings.linkifyemail "Epostadresser">
+<!ENTITY linkification.settings.linkifyimage "Bildeadresser">
+<!ENTITY linkification.settings.highlightlinks "Utheving av tekst omgjort til lenke:">
+<!ENTITY linkification.settings.textcolor "Overkjør tekstfarge">
+<!ENTITY linkification.settings.backgroundcolor "Overkjør bakgrunnsfarge">
+<!ENTITY linkification.settings.colordesc "* Ved å slå av disse vil tekst omgjort til lenker bli vist i tråd med lenkestilen til siden">
+<!ENTITY linkification.settings.linkscaption "Når jeg venstreklikker på tekst omgjort til lenke:">
+<!ENTITY linkification.settings.openinwindow "Åpne lenke i nytt vindu">
+<!ENTITY linkification.settings.openintab "Åpne lenke i ny fane">
+<!ENTITY linkification.settings.opentabinbg "Åpne ny fane i bakgrunnen">
+<!ENTITY linkification.settings.linksdescription1 "* Kun lenker laget av Linkification vil bli berørt av disse innstillingene">
+<!ENTITY linkification.settings.linkifysitelistdesc1 "Automatisk laging av lenker - hvitliste/svarteliste">
+<!ENTITY linkification.settings.linkifysitelistdesc2 "Aldri lag lenker automatisk for følgende domener:">
+<!ENTITY linkification.settings.linkifysitelistdesc3 "Lag lenker automatisk kun for følgende domener:">
+<!ENTITY linkification.settings.linkifyprotocoldesc "Tekst protokoll:Lenkeprotokoll">
+<!ENTITY linkification.settings.linkifysubdomaindesc "Tekst underdomene:Lenkeprotokoll">
+<!ENTITY linkification.settings.linkifyinlinedesc "Kjente integrerte elementer">
+<!ENTITY linkification.settings.linkifyexcludedesc "Ekskluderte elementer">
+<!ENTITY linkification.settings.resetdefault "Nullstill">
+<!ENTITY linkification.popup.extension "Linkification">
+<!ENTITY linkification.popup.linkifyopen "Åpne valgt lenke">
+<!ENTITY linkification-status-options "Innstillinger...">

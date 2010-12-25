@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://browser/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://linkification/skin/browser.css" type="text/css"?>
+
+<!DOCTYPE dialog SYSTEM "chrome://linkification/locale/linkificationOptions.dtd">
+
+<overlay id="linkificationOverlay" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+	<script type="application/x-javascript" src="chrome://linkification/content/linkification.js" />
+
+	<stringbundleset id="stringbundleset">
+		<stringbundle id="linkification-string-bundle" src="chrome://linkification/locale/linkification.properties"/>
+	</stringbundleset>
+
+	<keyset id="mainKeyset">
+	  <key id="linkifyhotkey" modifiers="control,shift" key="L" oncommand="objLinkify.UserLinkify()" />
+	  <key id="linkifytogglekey" modifiers="control,shift" key="Y" oncommand="objLinkify.ToggleLinkify()" />
+	</keyset>
+
+	<popup id="contentAreaContextMenu">
+		<menuitem id="linkification-contextmenu-open" label="&linkification.popup.linkifyopen;" oncommand="objLinkify.OpenSelected()" />
+		<menu id="linkification-contextmenu" label="&linkification.popup.extension;" collapsed="true">
+			<menupopup>
+				<menuitem id="linkification-contextmenu-linkify" oncommand="objLinkify.UserLinkify()" />
+				<menuitem id="linkification-contextmenu-listoption" oncommand="objLinkify.ListSite()" />
+				<menuseparator />
+				<menuitem label="&linkification-status-options;" oncommand="objLinkify.Options()" />
+			</menupopup>
+		</menu>
+	</popup>
+
+	<statusbar id="status-bar">
+		<statusbarpanel id="linkification-status" hidden="false" persist="hidden">
+			<popup id="linkification-status-popup" onpopupshowing="objLinkify.InitStatusMenu()">
+				<menuitem id="linkification-status-linkify" oncommand="objLinkify.UserLinkify()" />
+				<menuitem id="linkification-status-listoption" oncommand="objLinkify.ListSite()" />
+				<menuseparator />
+				<menuitem label="&linkification-status-options;" oncommand="objLinkify.Options()" />
+			</popup>
+			<hbox id="linkification-status-hbox" class="statusbarpanel-menu-iconic" src="chrome://linkification/skin/link-off.png" context="linkification-status-popup" onclick="objLinkify.StatusBarClicked(event)" />
+		</statusbarpanel>
+	</statusbar>
+</overlay>

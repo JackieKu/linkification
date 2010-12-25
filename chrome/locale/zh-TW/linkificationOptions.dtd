@@ -1,0 +1,41 @@
+<!ENTITY linkification.settings.title "Linkification 選項">
+<!ENTITY linkification.settings.tabgeneral "一般">
+<!ENTITY linkification.settings.tablinks "鏈結">
+<!ENTITY linkification.settings.tabfunctionality "功能">
+<!ENTITY linkification.settings.tabadvanced "進階">
+<!ENTITY linkification.settings.linkifydesc "當網頁已載入時：">
+<!ENTITY linkification.settings.linkifytoggle "允許自動鏈結化（使用 Ctrl+Shift+Y 切換）*">
+<!ENTITY linkification.settings.linkifythorough "完全模式（網頁下載可能會比較慢）">
+<!ENTITY linkification.settings.linkifydoubleclick "雙擊滑鼠左鍵打開文字鏈結">
+<!ENTITY linkification.settings.openselectedtoggle "在右鍵選單中顯示「打開選取的鏈結」">
+<!ENTITY linkification.settings.popuptoggle "在右鍵菜單中顯示 Linkification">
+<!ENTITY linkification.settings.statusbartoggle "在狀態欄顯示 Linkification">
+<!ENTITY linkification.settings.cssdescription "* 所有鏈結化文字都包含 class=&apos;linkification-ext&apos; 屬性">
+<!ENTITY linkification.settings.linkifylimit "僅自動鏈結化以下網頁：">
+<!ENTITY linkification.settings.linkifycharlimit "網頁內文字數量少於：">
+<!ENTITY linkification.settings.linktypes "當鏈結化頁面時包含：">
+<!ENTITY linkification.settings.linkifyprotocol "已知協定的鏈結">
+<!ENTITY linkification.settings.linkifyknown "已知子網域的鏈結">
+<!ENTITY linkification.settings.linkifyunknown "未知子網域的鏈結">
+<!ENTITY linkification.settings.linkifyemail "電子郵件地址">
+<!ENTITY linkification.settings.linkifyimage "圖片的鍊結位址">
+<!ENTITY linkification.settings.highlightlinks "強調鏈結化文字：">
+<!ENTITY linkification.settings.textcolor "改變文字顏色">
+<!ENTITY linkification.settings.backgroundcolor "改變背景顏色">
+<!ENTITY linkification.settings.colordesc "* 若不使用這些功能，鏈結化文字將與網頁內鏈結風格保持一致">
+<!ENTITY linkification.settings.linkscaption "當滑鼠左鍵按下鏈接化文字時：">
+<!ENTITY linkification.settings.openinwindow "在新增視窗打開鏈結">
+<!ENTITY linkification.settings.openintab "在新增分頁打開鏈結">
+<!ENTITY linkification.settings.opentabinbg "在背景打開新增分頁">
+<!ENTITY linkification.settings.linksdescription1 "* 這些設定只會影響到利用 Linkification 產生的鏈接">
+<!ENTITY linkification.settings.linkifysitelistdesc1 "自動鏈結化黑/白名單：">
+<!ENTITY linkification.settings.linkifysitelistdesc2 "從不自動鏈接化下列網域的網站：">
+<!ENTITY linkification.settings.linkifysitelistdesc3 "僅自動鏈接化下列網域的網站：">
+<!ENTITY linkification.settings.linkifyprotocoldesc "文字協定:鏈結協定">
+<!ENTITY linkification.settings.linkifysubdomaindesc "文字子網域:鏈結協定">
+<!ENTITY linkification.settings.linkifyinlinedesc "已知元素">
+<!ENTITY linkification.settings.linkifyexcludedesc "排除元素">
+<!ENTITY linkification.settings.resetdefault "恢復為預設值">
+<!ENTITY linkification.popup.extension "Linkification">
+<!ENTITY linkification.popup.linkifyopen "打開選取的鏈結">
+<!ENTITY linkification-status-options "選項">

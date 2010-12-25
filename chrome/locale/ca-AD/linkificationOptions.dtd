@@ -1,0 +1,41 @@
+<!ENTITY linkification.settings.title "Opcions del Linkification">
+<!ENTITY linkification.settings.tabgeneral "General">
+<!ENTITY linkification.settings.tablinks "Enllaços">
+<!ENTITY linkification.settings.tabfunctionality "Funcionalitat">
+<!ENTITY linkification.settings.tabadvanced "Avançat">
+<!ENTITY linkification.settings.linkifydesc "Quan una pàgina es carregui:">
+<!ENTITY linkification.settings.linkifytoggle "Activa Auto-Conversió d&apos;enllaços (Ctrl+Shift+Y per activar-ho) *">
+<!ENTITY linkification.settings.linkifythorough "Mode Thorough (La càrrega de la pàgina pot ser més lenta)">
+<!ENTITY linkification.settings.linkifydoubleclick "Obre enllaços de text quan hi faci doble clic">
+<!ENTITY linkification.settings.openselectedtoggle "Mostra obert l&apos;enllaç seleccionat al menú contextual">
+<!ENTITY linkification.settings.popuptoggle "Mostra el Linkification al menú contextual">
+<!ENTITY linkification.settings.statusbartoggle "Montra el Linkification a la barra d&apos;estat">
+<!ENTITY linkification.settings.cssdescription "* Tots els enllaços convertits tindran la classe=&apos;linkification-ext&apos;">
+<!ENTITY linkification.settings.linkifylimit "Només Auto-Converteix en ellaços les pàgines:">
+<!ENTITY linkification.settings.linkifycharlimit "Amb un nombre de caracters de text pla menor que:">
+<!ENTITY linkification.settings.linktypes "Quan converteixis els enllaços d&apos;una pàgina en text, inclou-hi:">
+<!ENTITY linkification.settings.linkifyprotocol "Enllaços de protocol coneguts">
+<!ENTITY linkification.settings.linkifyknown "Enllaços coneguts a subdominis">
+<!ENTITY linkification.settings.linkifyunknown "Enllaços desconeguts a subdominis">
+<!ENTITY linkification.settings.linkifyemail "Adreçes de correu">
+<!ENTITY linkification.settings.linkifyimage "URLs com a imatges">
+<!ENTITY linkification.settings.highlightlinks "Ressalta els enlços convertits en text">
+<!ENTITY linkification.settings.textcolor "Mostra el text en colors">
+<!ENTITY linkification.settings.backgroundcolor "Mostre el color del fons">
+<!ENTITY linkification.settings.colordesc "* Si ho deshabiliteu es mostrarà el text convertit a enllaç segons la pàgina d&apos;estils">
+<!ENTITY linkification.settings.linkscaption "Quan es converteixi el text marca&apos;l amb el botó esquerre:">
+<!ENTITY linkification.settings.openinwindow "Obre l&apos;enllaç en un nova finestra">
+<!ENTITY linkification.settings.openintab "Obre l&apos;enllaç en una nova pestanya">
+<!ENTITY linkification.settings.opentabinbg "Obre l&apos;enllaç en una pestanya en segon terme">
+<!ENTITY linkification.settings.linksdescription1 "* Aquesta configuració només afectarà als enllaços creats per Linkification">
+<!ENTITY linkification.settings.linkifysitelistdesc1 "Llista Blanca/Negra d&apos;auto-enllaços">
+<!ENTITY linkification.settings.linkifysitelistdesc2 "No creis auto-enllaços per als dominis següents:">
+<!ENTITY linkification.settings.linkifysitelistdesc3 "Només Auto-Converteix per als següents dominis:">
+<!ENTITY linkification.settings.linkifyprotocoldesc "Protocol de Text:Protocol d&apos;enllaç">
+<!ENTITY linkification.settings.linkifysubdomaindesc "Subdomini de Text:Protocol d&apos;enllaç">
+<!ENTITY linkification.settings.linkifyinlinedesc "Elements indentats coneguts">
+<!ENTITY linkification.settings.linkifyexcludedesc "Elements exclosos">
+<!ENTITY linkification.settings.resetdefault "Opcions per defecte">
+<!ENTITY linkification.popup.extension "Linkification">
+<!ENTITY linkification.popup.linkifyopen "Obre l&apos;enllaç seleccionat">
+<!ENTITY linkification-status-options "Opcions...">

@@ -1,0 +1,128 @@
+<?xml version="1.0"?>
+
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+
+<!DOCTYPE dialog SYSTEM "chrome://linkification/locale/linkificationOptions.dtd">
+
+<dialog id="linkificationOptions"
+	xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+	buttons="accept, cancel"
+	onload="objLinkOptions.LinkOptions_Init();"
+	ondialogaccept="return objLinkOptions.LinkOptions_Update();"
+	title="&linkification.settings.title;">
+
+	<script type="application/x-javascript" src="chrome://linkification/content/linkification-options.js" />
+	<tabbox>
+	<tabs>
+		<tab label="&linkification.settings.tabgeneral;"/>
+		<tab label="&linkification.settings.tablinks;"/>
+		<tab label="&linkification.settings.tabfunctionality;"/>
+		<tab label="&linkification.settings.tabadvanced;"/>
+	</tabs>
+	<tabpanels>
+		<tabpanel id="Linkify_General">
+			<vbox>
+				<groupbox style="width: 400px">
+					<caption label="&linkification.settings.linkifydesc;" />
+					<checkbox id="linkify_toggle" label="&linkification.settings.linkifytoggle;" />
+					<checkbox id="linkify_thorough" label="&linkification.settings.linkifythorough;" />
+					<checkbox id="linkify_doubleclick" label="&linkification.settings.linkifydoubleclick;" />
+					<checkbox style="margin-top: 10px;" id="linkify_openselectedtoggle" label="&linkification.settings.openselectedtoggle;" />
+					<checkbox id="linkify_popuptoggle" label="&linkification.settings.popuptoggle;" />
+					<checkbox id="linkify_statusbartoggle" label="&linkification.settings.statusbartoggle;" />
+					<description style="margin-top: 10px">&linkification.settings.cssdescription;</description>
+				</groupbox>
+				<groupbox style="margin-top: 10px;">
+					<caption label="&linkification.settings.linkifylimit;" />
+					<hbox>
+						<checkbox id="linkify_charlimitenabled" label="&linkification.settings.linkifycharlimit;" oncommand="objLinkOptions.LinkOptions_Toggle()" />
+						<textbox id="linkify_charlimit" style="width: 50px" />
+					</hbox>
+				</groupbox>
+			</vbox>
+		</tabpanel>
+		<tabpanel id="Linkify_Links">
+			<vbox>
+				<groupbox style="width: 400px">
+					<caption label="&linkification.settings.linktypes;" />
+					<checkbox id="linkify_protocol" label="&linkification.settings.linkifyprotocol;" />
+					<checkbox id="linkify_known" label="&linkification.settings.linkifyknown;" />
+					<checkbox id="linkify_unknown" label="&linkification.settings.linkifyunknown;" />
+					<checkbox id="linkify_email" label="&linkification.settings.linkifyemail;" />
+					<checkbox id="linkify_image" label="&linkification.settings.linkifyimage;" />
+				</groupbox>
+				<groupbox style="margin-top: 10px">
+					<caption label="&linkification.settings.highlightlinks;" />
+					<hbox>
+						<hbox style="width: 5px">
+						</hbox>
+						<hbox style="width: 180px">
+							<colorpicker id="linkify_textcolorpicker" palettename="standard" type="button" />
+							<checkbox id="linkify_textbox" label="&linkification.settings.textcolor;" />
+						</hbox>
+						<hbox style="width: 180px">
+							<colorpicker id="linkify_backgroundcolorpicker" palettename="standard" type="button" />
+							<checkbox id="linkify_backgroundbox" label="&linkification.settings.backgroundcolor;" />
+						</hbox>
+					</hbox>
+					<description style="margin-top: 10px">
+						&linkification.settings.colordesc;
+					</description>
+				</groupbox>
+			</vbox>
+		</tabpanel>
+		<tabpanel id="Linkify_Functionality">
+			<vbox>
+				<groupbox style="width: 400px">
+					<caption label="&linkification.settings.linkscaption;" />
+					<checkbox id="linkify_openinwindowbox" label="&linkification.settings.openinwindow;" oncommand="objLinkOptions.LinkOptions_ToggleWindow()" />
+					<checkbox id="linkify_openintabbox" label="&linkification.settings.openintab;" oncommand="objLinkOptions.LinkOptions_ToggleTab()" />
+					<checkbox id="linkify_opentabinbgbox" label="&linkification.settings.opentabinbg;" />
+					<description style="margin-top: 10px">&linkification.settings.linksdescription1;</description>
+				</groupbox>
+				<groupbox style="margin-top: 10px">
+					<caption label="&linkification.settings.linkifysitelistdesc1;" />
+					<checkbox id="linkify_blacklist" label="&linkification.settings.linkifysitelistdesc2;" oncommand="objLinkOptions.LinkOptions_ToggleBlacklist()" />
+					<checkbox id="linkify_whitelist" label="&linkification.settings.linkifysitelistdesc3;" oncommand="objLinkOptions.LinkOptions_ToggleWhitelist()" />
+					<hbox style="margin-top: 10px">
+						<textbox id="linkify_sitelist" style="width: 250px" />
+						<button id="linkify_defaultsitelist" label="&linkification.settings.resetdefault;" oncommand="objLinkOptions.LinkOptions_DefaultSiteList()" />
+					</hbox>
+				</groupbox>
+			</vbox>
+		</tabpanel>
+		<tabpanel id="Linkify_Advanced">
+			<vbox>
+				<groupbox style="width: 400px">
+					<caption label="&linkification.settings.linkifyprotocoldesc;" />
+					<hbox>
+						<textbox id="linkify_textprotocollist" style="width: 270px" />
+						<button id="linkify_defaultprotocol" label="&linkification.settings.resetdefault;" oncommand="objLinkOptions.LinkOptions_DefaultProtocol()" />
+					</hbox>
+				</groupbox>
+				<groupbox style="margin-top: 10px">
+					<caption label="&linkification.settings.linkifysubdomaindesc;" />
+					<hbox>
+						<textbox id="linkify_subdomainprotocollist" style="width: 270px" />
+						<button id="linkify_defaultsubdomain" label="&linkification.settings.resetdefault;" oncommand="objLinkOptions.LinkOptions_DefaultSubdomain()" />
+					</hbox>
+				</groupbox>
+				<groupbox style="margin-top: 10px">
+					<caption label="&linkification.settings.linkifyinlinedesc;" />
+					<hbox>
+						<textbox id="linkify_inlineelementlist" style="width: 270px" />
+						<button id="linkify_inlineelement" label="&linkification.settings.resetdefault;" oncommand="objLinkOptions.LinkOptions_DefaultInline()" />
+					</hbox>
+				</groupbox>
+				<groupbox style="margin-top: 10px">
+					<caption label="&linkification.settings.linkifyexcludedesc;" />
+					<hbox>
+						<textbox id="linkify_excludeelementlist" style="width: 270px" />
+						<button id="linkify_excludeelement" label="&linkification.settings.resetdefault;" oncommand="objLinkOptions.LinkOptions_DefaultExclude()" />
+					</hbox>
+				</groupbox>
+			</vbox>
+		</tabpanel>
+	</tabpanels>
+	</tabbox>
+</dialog>

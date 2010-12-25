@@ -1,0 +1,35 @@
+overlay chrome://navigator/content/navigatorOverlay.xul chrome://linkification/content/linkificationOverlay.xul
+overlay chrome://browser/content/browser.xul chrome://linkification/content/linkificationOverlay.xul
+
+content linkification chrome//content/linkification/
+skin linkification classic/1.0 chrome//skin/classic/linkification/
+
+locale linkification ar chrome//locale/ar/
+locale linkification be-BY chrome//locale/be-BY/
+locale linkification ca-AD chrome//locale/ca-AD/
+locale linkification cs-CZ chrome//locale/cs-CZ/
+locale linkification da-DK chrome//locale/da-DK/
+locale linkification de-DE chrome//locale/de-DE/
+locale linkification en-US chrome//locale/en-US/
+locale linkification es-ES chrome//locale/es-ES/
+locale linkification fa-IR chrome//locale/fa-IR/
+locale linkification fi-FI chrome//locale/fi-FI/
+locale linkification fr-FR chrome//locale/fr-FR/
+locale linkification fy-NL chrome//locale/fy-NL/
+locale linkification he-IL chrome//locale/he-IL/
+locale linkification hr-HR chrome//locale/hr-HR/
+locale linkification hu-HU chrome//locale/hu-HU/
+locale linkification it-IT chrome//locale/it-IT/
+locale linkification ja-JP chrome//locale/ja-JP/
+locale linkification ko-KR chrome//locale/ko-KR/
+locale linkification nb-NO chrome//locale/nb-NO/
+locale linkification nl-NL chrome//locale/nl-NL/
+locale linkification pl-PL chrome//locale/pl-PL/
+locale linkification pt-BR chrome//locale/pt-BR/
+locale linkification ru-RU chrome//locale/ru-RU/
+locale linkification sk-SK chrome//locale/sk-SK/
+locale linkification sl-SI chrome//locale/sl-SI/
+locale linkification sv-SE chrome//locale/sv-SE/
+locale linkification tr-TR chrome//locale/tr-TR/
+locale linkification uk-UA chrome//locale/uk-UA/
+locale linkification zh-TW chrome//locale/zh-TW/

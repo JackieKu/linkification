@@ -1,0 +1,41 @@
+<!ENTITY linkification.settings.title "Nastavenia rozšírenia Linkification">
+<!ENTITY linkification.settings.tabgeneral "Všeobecné">
+<!ENTITY linkification.settings.tablinks "Odkazy">
+<!ENTITY linkification.settings.tabfunctionality "Funkčnosť">
+<!ENTITY linkification.settings.tabadvanced "Rozšírené">
+<!ENTITY linkification.settings.linkifydesc "Pri načítaní stránky:">
+<!ENTITY linkification.settings.linkifytoggle "Zapnúť automatické rozpoznávanie odkazov (prepína sa pomocou Ctrl+Shift+Y) *">
+<!ENTITY linkification.settings.linkifythorough "Dôsledný mód (načítanie stránky môže byť pomalšie)">
+<!ENTITY linkification.settings.linkifydoubleclick "Dvojitým kliknutím otvárať textové odkazy">
+<!ENTITY linkification.settings.openselectedtoggle "Zobraziť Otvoriť označený odkaz v kontextovej ponuke">
+<!ENTITY linkification.settings.popuptoggle "Zobraziť Linkification v kontextovej ponuke">
+<!ENTITY linkification.settings.statusbartoggle "Zobraziť Linkification v stavovom riadku">
+<!ENTITY linkification.settings.cssdescription "* všetkým textovým odkazom bude priradené class=&apos;linkification-ext&apos;">
+<!ENTITY linkification.settings.linkifylimit "Automaticky vytvárať odkazy na stránkach:">
+<!ENTITY linkification.settings.linkifycharlimit "Kde počet znakov textu je menší ako:">
+<!ENTITY linkification.settings.linktypes "Pri vytváraní odkazov na stránke zahrnúť:">
+<!ENTITY linkification.settings.linkifyprotocol "Odkazy známych protokolov">
+<!ENTITY linkification.settings.linkifyknown "Odkazy známych domén">
+<!ENTITY linkification.settings.linkifyunknown "Odkazy neznámych subdomén">
+<!ENTITY linkification.settings.linkifyemail "Emailové adresy">
+<!ENTITY linkification.settings.linkifyimage "Odkazy obrázkov">
+<!ENTITY linkification.settings.highlightlinks "Zvýrazňovanie textových odkazov:">
+<!ENTITY linkification.settings.textcolor "Zmeniť farbu textu">
+<!ENTITY linkification.settings.backgroundcolor "Zmeniť farbu pozadia">
+<!ENTITY linkification.settings.colordesc "* ak túto funkciu vypnete, text sa prispôsobí štýlu stránky">
+<!ENTITY linkification.settings.linkscaption "Po kliknutí na textový odkaz ľavým tlačidlom myši:">
+<!ENTITY linkification.settings.openinwindow "Otvoriť odkaz v novom okne">
+<!ENTITY linkification.settings.openintab "Otvoriť odkaz na novej karte">
+<!ENTITY linkification.settings.opentabinbg "Otvoriť na novej karte na pozadí">
+<!ENTITY linkification.settings.linksdescription1 "* týmto nastavením budú ovplyvnené len odkazy vytvorené rozšírením Linkification">
+<!ENTITY linkification.settings.linkifysitelistdesc1 "Biela/čierna listina automatického vytvárania odkazov">
+<!ENTITY linkification.settings.linkifysitelistdesc2 "Nikdy automaticky nevytvárať odkazy pre nasledujúce domény:">
+<!ENTITY linkification.settings.linkifysitelistdesc3 "Automaticky vytvárať odkazy pre nasledujúce domény:">
+<!ENTITY linkification.settings.linkifyprotocoldesc "Text protokolu:Odkaz protokolu">
+<!ENTITY linkification.settings.linkifysubdomaindesc "Text subdomény:Odkaz protokolu">
+<!ENTITY linkification.settings.linkifyinlinedesc "Známe vnútorné elementy">
+<!ENTITY linkification.settings.linkifyexcludedesc "Vynechané prvky">
+<!ENTITY linkification.settings.resetdefault "Obnoviť na predvolené">
+<!ENTITY linkification.popup.extension "Linkification">
+<!ENTITY linkification.popup.linkifyopen "Otvoriť označený odkaz">
+<!ENTITY linkification-status-options "Nastavenia...">

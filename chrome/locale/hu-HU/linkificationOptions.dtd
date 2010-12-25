@@ -1,0 +1,41 @@
+<!ENTITY linkification.settings.title "Linkifikálás Beállítások">
+<!ENTITY linkification.settings.tabgeneral "Általános">
+<!ENTITY linkification.settings.tablinks "Linkek">
+<!ENTITY linkification.settings.tabfunctionality "Működés">
+<!ENTITY linkification.settings.tabadvanced "Haladó">
+<!ENTITY linkification.settings.linkifydesc "Amikor betöltődött az oldal:">
+<!ENTITY linkification.settings.linkifytoggle "Automata Linkifikálás engedélyezése (Ctrl+Shift+Y kombinációval válthat) *">
+<!ENTITY linkification.settings.linkifythorough "Áteresztő mód (Az oldalbetöltés lassulhat)">
+<!ENTITY linkification.settings.linkifydoubleclick "Szöveges linkek megnyitása duplakattintással">
+<!ENTITY linkification.settings.openselectedtoggle "A Kiválasztot és megnyitott link megjelenítése a Helyi menüben">
+<!ENTITY linkification.settings.popuptoggle "Linkifikálás menü megjelenítése a Helyi menüben">
+<!ENTITY linkification.settings.statusbartoggle "Linkifikálás megjelenítése az Állapotsorban">
+<!ENTITY linkification.settings.cssdescription "* Minden Linkifikált szöveg class=&apos;linkification-ext&apos; tulajdonságú lesz">
+<!ENTITY linkification.settings.linkifylimit "Csak az Automatikusan Linkifikált oldalakat:">
+<!ENTITY linkification.settings.linkifycharlimit "Amelyek kevesebb mint ennyi karaktert tartalmaznak:">
+<!ENTITY linkification.settings.linktypes "Oldal Linkifikálásába vegye bele:">
+<!ENTITY linkification.settings.linkifyprotocol "Ismert protokolú linkeket">
+<!ENTITY linkification.settings.linkifyknown "Ismert aldoménű linkeket">
+<!ENTITY linkification.settings.linkifyunknown "Ismeretlen aldoménű linkeket">
+<!ENTITY linkification.settings.linkifyemail "E-mail címeket">
+<!ENTITY linkification.settings.linkifyimage "Kép URL-eket">
+<!ENTITY linkification.settings.highlightlinks "Linkifikált szöveg kiemelése:">
+<!ENTITY linkification.settings.textcolor "Szövegszín felülbírálása">
+<!ENTITY linkification.settings.backgroundcolor "Háttérszín felülbírálása">
+<!ENTITY linkification.settings.colordesc "* Kikapcsolva, a Linkifikált szöveg az oldal link stílusát használja">
+<!ENTITY linkification.settings.linkscaption "Bal egérgombbal kattintva a Linkifikált szövegen:">
+<!ENTITY linkification.settings.openinwindow "Megnyitás új ablakban">
+<!ENTITY linkification.settings.openintab "Megnyitás új lapon">
+<!ENTITY linkification.settings.opentabinbg "Megnyitás új lapon a háttérben">
+<!ENTITY linkification.settings.linksdescription1 "* Csak a Linkifikáció által létrehozott linkekre vonatkozó beállítások">
+<!ENTITY linkification.settings.linkifysitelistdesc1 "Automata Linkifikáció a Fehérlista/Feketelista alapján:">
+<!ENTITY linkification.settings.linkifysitelistdesc2 "Nincsen Automata Linkifikáció a következő doméneken:">
+<!ENTITY linkification.settings.linkifysitelistdesc3 "Automata Linkifikáció csak a következő doméneken:">
+<!ENTITY linkification.settings.linkifyprotocoldesc "Szöveges protokol: Link protokol">
+<!ENTITY linkification.settings.linkifysubdomaindesc "Szöveg aldomén: Link protokol">
+<!ENTITY linkification.settings.linkifyinlinedesc "Ismert Sorban lévő elemek">
+<!ENTITY linkification.settings.linkifyexcludedesc "Kizárt elemek">
+<!ENTITY linkification.settings.resetdefault "Alapértelmezések visszaállítása">
+<!ENTITY linkification.popup.extension "Linkification">
+<!ENTITY linkification.popup.linkifyopen "Kiválasztott link megnyitása">
+<!ENTITY linkification-status-options "Beállítások...">

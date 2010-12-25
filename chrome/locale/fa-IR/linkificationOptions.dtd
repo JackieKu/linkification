@@ -1,0 +1,41 @@
+<!ENTITY linkification.settings.title "تنظيمات پيوندسازی">
+<!ENTITY linkification.settings.tabgeneral "عمومی">
+<!ENTITY linkification.settings.tablinks "پيوندها">
+<!ENTITY linkification.settings.tabfunctionality "عملی">
+<!ENTITY linkification.settings.tabadvanced "پيشرفته">
+<!ENTITY linkification.settings.linkifydesc "در هنگام بارگذاری صفحه:">
+<!ENTITY linkification.settings.linkifytoggle "فعال‌کردن پیوندساز خودکار (Ctrl+Shift+Y برای تعویض) *">
+<!ENTITY linkification.settings.linkifythorough "Thorough Mode (Page load time may be slower)">
+<!ENTITY linkification.settings.linkifydoubleclick "دوبار فشاردادن باعث گشایش پیوند متنی می‌شود">
+<!ENTITY linkification.settings.openselectedtoggle "نمایش گشودن پیوند انتخابی در منو">
+<!ENTITY linkification.settings.popuptoggle "نمایش پیوندسازی در منو">
+<!ENTITY linkification.settings.statusbartoggle "نمایش پیوند سازی در نوار وضعیت">
+<!ENTITY linkification.settings.cssdescription "* All linkified text will have class=&apos;linkification-ext&apos;">
+<!ENTITY linkification.settings.linkifylimit "پیوندسازی خودکار فقط برای صفحه‌ها:">
+<!ENTITY linkification.settings.linkifycharlimit "With number of plain text characters less than: ">
+<!ENTITY linkification.settings.linktypes "When linkifying a page, include:">
+<!ENTITY linkification.settings.linkifyprotocol "پیوند قراردادهای معتبر">
+<!ENTITY linkification.settings.linkifyknown "پیوند زیردامنه‌های معتبر">
+<!ENTITY linkification.settings.linkifyunknown "پیوند زیردامنه‌های نامعتبر">
+<!ENTITY linkification.settings.linkifyemail "نشانی‌های ايميل">
+<!ENTITY linkification.settings.linkifyimage "نشانی‌های تصوير">
+<!ENTITY linkification.settings.highlightlinks "پررنگ کردن متن پیوندی شده:">
+<!ENTITY linkification.settings.textcolor "جای‌گذاری رنگ متن">
+<!ENTITY linkification.settings.backgroundcolor "جای‌گذاری رنگ زمینه">
+<!ENTITY linkification.settings.colordesc "* Disabling these will display linkified text according to page link style">
+<!ENTITY linkification.settings.linkscaption "When linkified text is left-clicked:">
+<!ENTITY linkification.settings.openinwindow "گشودن پیوند در پنجره نو">
+<!ENTITY linkification.settings.openintab "گشودن پیوند در برگه نو">
+<!ENTITY linkification.settings.opentabinbg "گشودن برگه نو در عقب">
+<!ENTITY linkification.settings.linksdescription1 "* Only links created by Linkification will be affected by these settings">
+<!ENTITY linkification.settings.linkifysitelistdesc1 "Auto-Linkify Whitelist/Blacklist:">
+<!ENTITY linkification.settings.linkifysitelistdesc2 "دامنه‌های زیر هرگز پیوندسازی نشوند:">
+<!ENTITY linkification.settings.linkifysitelistdesc3 "فقط دامنه‌های زیر پیوندسازی شوند:">
+<!ENTITY linkification.settings.linkifyprotocoldesc "Text Protocol:Link Protocol">
+<!ENTITY linkification.settings.linkifysubdomaindesc "Text Subdomain:Link Protocol">
+<!ENTITY linkification.settings.linkifyinlinedesc "عناصر داخلی آشنا">
+<!ENTITY linkification.settings.linkifyexcludedesc "عناصر جلوگیری شده">
+<!ENTITY linkification.settings.resetdefault "بازگشت به پيش‌گزيده">
+<!ENTITY linkification.popup.extension "پيوندي‌کردن">
+<!ENTITY linkification.popup.linkifyopen "گشودن پيوند انتخاب شده">
+<!ENTITY linkification-status-options "تنظيمات...">

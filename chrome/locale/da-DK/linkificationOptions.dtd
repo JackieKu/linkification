@@ -1,0 +1,41 @@
+<!ENTITY linkification.settings.title "Linkificering indstillinger">
+<!ENTITY linkification.settings.tabgeneral "Generelt">
+<!ENTITY linkification.settings.tablinks "Links">
+<!ENTITY linkification.settings.tabfunctionality "Funktionalitet">
+<!ENTITY linkification.settings.tabadvanced "Avanceret">
+<!ENTITY linkification.settings.linkifydesc "Når en side indlæses:">
+<!ENTITY linkification.settings.linkifytoggle "Slå Auto-linkificering til (Ctrl+Shift+Y for at skifte) *">
+<!ENTITY linkification.settings.linkifythorough "Grundig modus (Sideindlæsningstiden kan være længere)">
+<!ENTITY linkification.settings.linkifydoubleclick "Dobbeltklik åbner tekstlinks">
+<!ENTITY linkification.settings.openselectedtoggle "Vis Åbn markerede-link i kontekstmenu">
+<!ENTITY linkification.settings.popuptoggle "Vis linkificering i kontekstmenu">
+<!ENTITY linkification.settings.statusbartoggle "Vis linkificering i statuslinie">
+<!ENTITY linkification.settings.cssdescription "* Al linkificeret tekst vil have class=&apos;linkification-ext&apos;">
+<!ENTITY linkification.settings.linkifylimit "Auto-linkificér kun sider:">
+<!ENTITY linkification.settings.linkifycharlimit "Med antal almindelige teksttegn mindre end:">
+<!ENTITY linkification.settings.linktypes "Når linkificerer en side, inkluder:">
+<!ENTITY linkification.settings.linkifyprotocol "Kendte protokol-links">
+<!ENTITY linkification.settings.linkifyknown "Kendte subdomænelinks">
+<!ENTITY linkification.settings.linkifyunknown "Ukendte subdomænelinks">
+<!ENTITY linkification.settings.linkifyemail "Email-adresser">
+<!ENTITY linkification.settings.linkifyimage "Billed-URL&apos;er">
+<!ENTITY linkification.settings.highlightlinks "Linkificeret tekst farvemarkering:">
+<!ENTITY linkification.settings.textcolor "Tilsidesæt tekstfarve">
+<!ENTITY linkification.settings.backgroundcolor "Tilsidesæt baggrundsfarve">
+<!ENTITY linkification.settings.colordesc "* Slået fra vil disse vise linkificeret tekst ifølge sidens style for links">
+<!ENTITY linkification.settings.linkscaption "Når linkificeret tekst venstreklikkes:">
+<!ENTITY linkification.settings.openinwindow "Åbn link i nyt vindue">
+<!ENTITY linkification.settings.openintab "Åbn link i nyt faneblad">
+<!ENTITY linkification.settings.opentabinbg "Åbn nyt faneblad i baggrunden">
+<!ENTITY linkification.settings.linksdescription1 "* Kun links oprettet af Linkificering vil blive påvirket af disse indstillinger">
+<!ENTITY linkification.settings.linkifysitelistdesc1 "Auto-linkificer Hvid liste/Sort liste">
+<!ENTITY linkification.settings.linkifysitelistdesc2 "Auto-linkificér aldrig følgende domæner:">
+<!ENTITY linkification.settings.linkifysitelistdesc3 "Auto-linkificer kun følgende domæner:">
+<!ENTITY linkification.settings.linkifyprotocoldesc "Tekst protokol: Linkprotokol">
+<!ENTITY linkification.settings.linkifysubdomaindesc "Tekst subdomæne:Linkprotokol">
+<!ENTITY linkification.settings.linkifyinlinedesc "Kendte inline-elementer">
+<!ENTITY linkification.settings.linkifyexcludedesc "Ekskluderede elementer">
+<!ENTITY linkification.settings.resetdefault "Nulstil til standard">
+<!ENTITY linkification.popup.extension "Linkifikation">
+<!ENTITY linkification.popup.linkifyopen "Åbn markerede link">
+<!ENTITY linkification-status-options "Indstillinger...">

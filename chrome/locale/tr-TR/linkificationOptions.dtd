@@ -1,0 +1,41 @@
+<!ENTITY linkification.settings.title "Bağlantılaştırma Seçenekleri">
+<!ENTITY linkification.settings.tabgeneral "Genel">
+<!ENTITY linkification.settings.tablinks "Bağlantılar">
+<!ENTITY linkification.settings.tabfunctionality "İşlevsellik">
+<!ENTITY linkification.settings.tabadvanced "Gelişmiş">
+<!ENTITY linkification.settings.linkifydesc "Bir sayfa yüklendiği zaman:">
+<!ENTITY linkification.settings.linkifytoggle "Otomatik-Bağlantılaştırmayı Etkin Kıl (Tetiklemek için Ctrl+Shift+Y) *">
+<!ENTITY linkification.settings.linkifythorough "Dikkatli Mod (Sayfa yüklenme zamanı yavaşlayabilir)">
+<!ENTITY linkification.settings.linkifydoubleclick "Çift tıklama yazı bağlantılarını açar">
+<!ENTITY linkification.settings.openselectedtoggle "Seçili Bağlantıyı Aç&apos;ı bağlam menüsünde göster">
+<!ENTITY linkification.settings.popuptoggle "Seçili Bağlantıyı Aç&apos;ı bağlam menüsünde göster">
+<!ENTITY linkification.settings.statusbartoggle "Bağlantılaştırma&apos;yı durum çubuğunda göster">
+<!ENTITY linkification.settings.cssdescription "* Tüm bağlantılaştırılmış yazılar class=&apos;linkification-ext&apos; e sahip olacaktır.">
+<!ENTITY linkification.settings.linkifylimit "Sadece Otomatik-Bağlantılaştır sayfaları:">
+<!ENTITY linkification.settings.linkifycharlimit "En az şu kadar düz yazı karakteri ile:">
+<!ENTITY linkification.settings.linktypes "Bir sayfayı açarken içer:">
+<!ENTITY linkification.settings.linkifyprotocol "Bilinen Protokol Bağlantıları">
+<!ENTITY linkification.settings.linkifyknown "Bilinen Ara Alan Adı Bağlantıları">
+<!ENTITY linkification.settings.linkifyunknown "Bilinmeyen Ara Alan Adı Bağlantıları">
+<!ENTITY linkification.settings.linkifyemail "E-posta Adresleri">
+<!ENTITY linkification.settings.linkifyimage "Resim URL&apos;leri">
+<!ENTITY linkification.settings.highlightlinks "Bağlantılaştırılmış yazı işaretleme:">
+<!ENTITY linkification.settings.textcolor "Yazı Rengini Geçersiz Kıl">
+<!ENTITY linkification.settings.backgroundcolor "Yazı Arkaplan Rengini Geçersiz Kıl">
+<!ENTITY linkification.settings.colordesc "* Bunları etkisizleştirmek bağlantılaştırılmış yazıları sayfa stiline göre gösterir">
+<!ENTITY linkification.settings.linkscaption "Bağlantılaştırılmış yazıya sol-tıklandığında:">
+<!ENTITY linkification.settings.openinwindow "Bağlantıyı Yeni Pencerede Aç">
+<!ENTITY linkification.settings.openintab "Bağlantıyı Yeni Sekmede Aç">
+<!ENTITY linkification.settings.opentabinbg "Bağlantıyı Yeni Arkaplandaki Sekmede Aç">
+<!ENTITY linkification.settings.linksdescription1 "* Bu ayarlardan sadece Bağlantılaştırma tarafından yaratılan bağlantılar etkilenecektir">
+<!ENTITY linkification.settings.linkifysitelistdesc1 "Otomatik-Bağlantılaştırma Kara/Beyaz Listesi:">
+<!ENTITY linkification.settings.linkifysitelistdesc2 "Aşağıdaki alan adlarını hiçbirzaman bağlantılaştırma:">
+<!ENTITY linkification.settings.linkifysitelistdesc3 "Sadece aşağıdaki alan adlarını bağlantılaştır:">
+<!ENTITY linkification.settings.linkifyprotocoldesc "Yazı Protokolü:Bağlantı Protokolü">
+<!ENTITY linkification.settings.linkifysubdomaindesc "Yazı Ara-alanadı:Bağlantı Protokolü">
+<!ENTITY linkification.settings.linkifyinlinedesc "Bilinen &apos;Inline&apos; Elementler">
+<!ENTITY linkification.settings.linkifyexcludedesc "Harici Elementler">
+<!ENTITY linkification.settings.resetdefault "Varsayılana Dön">
+<!ENTITY linkification.popup.extension "Linkification">
+<!ENTITY linkification.popup.linkifyopen "Seçili Bağlantıyı Aç">
+<!ENTITY linkification-status-options "Seçenekler...">

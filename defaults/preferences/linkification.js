@@ -1,0 +1,1 @@
+pref("extensions.{35106bca-6c78-48c7-ac28-56df30b51d2a}.description", "chrome://linkification/locale/linkification.properties");

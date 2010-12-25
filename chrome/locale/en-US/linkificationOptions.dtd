@@ -1,0 +1,41 @@
+<!ENTITY linkification.settings.title "Linkification Options">
+<!ENTITY linkification.settings.tabgeneral "General">
+<!ENTITY linkification.settings.tablinks "Links">
+<!ENTITY linkification.settings.tabfunctionality "Functionality">
+<!ENTITY linkification.settings.tabadvanced "Advanced">
+<!ENTITY linkification.settings.linkifydesc "When a page is loaded:">
+<!ENTITY linkification.settings.linkifytoggle "Enable Auto-Linkification (Ctrl+Shift+Y to toggle) *">
+<!ENTITY linkification.settings.linkifythorough "Thorough Mode (Page load time may be slower)">
+<!ENTITY linkification.settings.linkifydoubleclick "Double-click opens text links">
+<!ENTITY linkification.settings.openselectedtoggle "Show Open Selected Link in context menu">
+<!ENTITY linkification.settings.popuptoggle "Show Linkification in context menu">
+<!ENTITY linkification.settings.statusbartoggle "Show Linkification in status bar">
+<!ENTITY linkification.settings.cssdescription "* All linkified text will have class=&apos;linkification-ext&apos;">
+<!ENTITY linkification.settings.linkifylimit "Only Auto-Linkify pages:">
+<!ENTITY linkification.settings.linkifycharlimit "With number of plain text characters less than: ">
+<!ENTITY linkification.settings.linktypes "When linkifying a page, include:">
+<!ENTITY linkification.settings.linkifyprotocol "Known Protocol Links">
+<!ENTITY linkification.settings.linkifyknown "Known Subdomain Links">
+<!ENTITY linkification.settings.linkifyunknown "Unknown Subdomain Links">
+<!ENTITY linkification.settings.linkifyemail "Email Addresses">
+<!ENTITY linkification.settings.linkifyimage "Image URLs">
+<!ENTITY linkification.settings.highlightlinks "Linkified text highlighting:">
+<!ENTITY linkification.settings.textcolor "Override Text Color">
+<!ENTITY linkification.settings.backgroundcolor "Override Background Color">
+<!ENTITY linkification.settings.colordesc "* Disabling these will display linkified text according to page link style">
+<!ENTITY linkification.settings.linkscaption "When linkified text is left-clicked:">
+<!ENTITY linkification.settings.openinwindow "Open Link in New Window">
+<!ENTITY linkification.settings.openintab "Open Link in New Tab">
+<!ENTITY linkification.settings.opentabinbg "Open New Tab in Background">
+<!ENTITY linkification.settings.linksdescription1 "* Only links created by Linkification will be affected by these settings">
+<!ENTITY linkification.settings.linkifysitelistdesc1 "Auto-Linkify Whitelist/Blacklist:">
+<!ENTITY linkification.settings.linkifysitelistdesc2 "Never Auto-Linkify the following domains:">
+<!ENTITY linkification.settings.linkifysitelistdesc3 "Only Auto-Linkify the following domains:">
+<!ENTITY linkification.settings.linkifyprotocoldesc "Text Protocol:Link Protocol">
+<!ENTITY linkification.settings.linkifysubdomaindesc "Text Subdomain:Link Protocol">
+<!ENTITY linkification.settings.linkifyinlinedesc "Known Inline Elements">
+<!ENTITY linkification.settings.linkifyexcludedesc "Excluded Elements">
+<!ENTITY linkification.settings.resetdefault "Reset to Default">
+<!ENTITY linkification.popup.extension "Linkification">
+<!ENTITY linkification.popup.linkifyopen "Open Selected Link">
+<!ENTITY linkification-status-options "Options...">

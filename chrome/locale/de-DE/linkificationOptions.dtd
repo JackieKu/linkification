@@ -1,0 +1,41 @@
+<!ENTITY linkification.settings.title "Linkifizierer Einstellungen">
+<!ENTITY linkification.settings.tabgeneral "Allgemein">
+<!ENTITY linkification.settings.tablinks "Links">
+<!ENTITY linkification.settings.tabfunctionality "Funktionalität">
+<!ENTITY linkification.settings.tabadvanced "Erweitert">
+<!ENTITY linkification.settings.linkifydesc "Wenn die Seite geladen ist:">
+<!ENTITY linkification.settings.linkifytoggle "Auto-Linkifizierer aktivieren (Ctrl+Shift+Y zum Umschalten) *">
+<!ENTITY linkification.settings.linkifythorough "Thorough Mode (Page load time may be slower)">
+<!ENTITY linkification.settings.linkifydoubleclick "Doppelklick öffnet Text-Links">
+<!ENTITY linkification.settings.openselectedtoggle "Zeige &apos;Öffne markierten Link&apos; im Kontextmenü">
+<!ENTITY linkification.settings.popuptoggle "Zeige Linkifizierer im Kontextmenü">
+<!ENTITY linkification.settings.statusbartoggle "Zeige Linkifizierer in Statusleiste">
+<!ENTITY linkification.settings.cssdescription "* Jeder linkifizierte Text hat die Klasse: class=&apos;linkification-ext&apos;">
+<!ENTITY linkification.settings.linkifylimit "Nur Seiten Auto-Linkifizieren:">
+<!ENTITY linkification.settings.linkifycharlimit "Die weniger reine Text-Zeichen haben als: ">
+<!ENTITY linkification.settings.linktypes "Beim Linkifizieren miteinschließen:">
+<!ENTITY linkification.settings.linkifyprotocol "Bekannte Protokolle">
+<!ENTITY linkification.settings.linkifyknown "Bekannte Subdomains">
+<!ENTITY linkification.settings.linkifyunknown "Unbekannte Subdomains">
+<!ENTITY linkification.settings.linkifyemail "Email-Adressen">
+<!ENTITY linkification.settings.linkifyimage "Grafik URLs">
+<!ENTITY linkification.settings.highlightlinks "Hervorheben von linkifizierten Text:">
+<!ENTITY linkification.settings.textcolor "Überschreibe Text Farbe">
+<!ENTITY linkification.settings.backgroundcolor "Überschreibe Hintergrund Farbe">
+<!ENTITY linkification.settings.colordesc "* Wenn diese Einstellungen deaktiviert sind, wird der linkifizierte Text wie ein normaler Link der Seite angezeigt.">
+<!ENTITY linkification.settings.linkscaption "Bei Linksklick auf linkifizierten Text:">
+<!ENTITY linkification.settings.openinwindow "Öffne Link in neuem Fenster">
+<!ENTITY linkification.settings.openintab "Öffne Link in neuem Tab">
+<!ENTITY linkification.settings.opentabinbg "Öffne neue Tabs im Hintergrund">
+<!ENTITY linkification.settings.linksdescription1 "* Nur vom Linkifizierer erstellte Links werden von diesen Einstellungen beeinflusst.">
+<!ENTITY linkification.settings.linkifysitelistdesc1 "Auto-Linkifizierer Whitelist/Blacklist:">
+<!ENTITY linkification.settings.linkifysitelistdesc2 "Folgende Domains niemals Auto-Linkifizieren:">
+<!ENTITY linkification.settings.linkifysitelistdesc3 "Nur folgende Domains Auto-Linkifizieren:">
+<!ENTITY linkification.settings.linkifyprotocoldesc "Text Protokoll:Link Protokoll">
+<!ENTITY linkification.settings.linkifysubdomaindesc "Text Subdomain:Link Protokoll">
+<!ENTITY linkification.settings.linkifyinlinedesc "Linkifiziere Text zwischen diesen Tags">
+<!ENTITY linkification.settings.linkifyexcludedesc "Ausgeschlossene Elemente">
+<!ENTITY linkification.settings.resetdefault "Auf Standard zurücksetzen">
+<!ENTITY linkification.popup.extension "Linkifizierer">
+<!ENTITY linkification.popup.linkifyopen "Öffne markierten Link">
+<!ENTITY linkification-status-options "Optionen...">

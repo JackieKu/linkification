@@ -1,0 +1,41 @@
+<!ENTITY linkification.settings.title "خيارات الرابط الآلي">
+<!ENTITY linkification.settings.tabgeneral "عام">
+<!ENTITY linkification.settings.tablinks "الروابط">
+<!ENTITY linkification.settings.tabfunctionality "الوظيفة">
+<!ENTITY linkification.settings.tabadvanced "متقدم">
+<!ENTITY linkification.settings.linkifydesc "عند تحميل الصفحة:">
+<!ENTITY linkification.settings.linkifytoggle "فعل الروابط تلقائيا (Ctrl+Shift+Y للتبديل) *">
+<!ENTITY linkification.settings.linkifythorough "الوضع الشامل (زمن تحميل الصفحة قد يكون ابطأ)">
+<!ENTITY linkification.settings.linkifydoubleclick "النقرة-المزدوجة تفتح روابط النص">
+<!ENTITY linkification.settings.openselectedtoggle "إعرض إفتح الروابط المحددة في قائمة السياق">
+<!ENTITY linkification.settings.popuptoggle "إعرض الرابط الآلي في قائمة السياق">
+<!ENTITY linkification.settings.statusbartoggle "إعرض الرابط الآلي في شريط الحالة">
+<!ENTITY linkification.settings.cssdescription "* كل النص المربوط سيملك الصنف=&apos;الرابط الآلي-ext&apos;">
+<!ENTITY linkification.settings.linkifylimit "فقط اربط آليا الصفحات:">
+<!ENTITY linkification.settings.linkifycharlimit "ذات عدد محارف النص المجرد لا يتجاوز:">
+<!ENTITY linkification.settings.linktypes "عند ربط صفحة, ضمّن:">
+<!ENTITY linkification.settings.linkifyprotocol "روابط البروتوكولات المعروفة">
+<!ENTITY linkification.settings.linkifyknown "روابط المجال الفرعي المعروفة">
+<!ENTITY linkification.settings.linkifyunknown "روابط المجال الفرعي المجهولة">
+<!ENTITY linkification.settings.linkifyemail "عناوين البريد الالكتروني">
+<!ENTITY linkification.settings.linkifyimage "عناوين الصور">
+<!ENTITY linkification.settings.highlightlinks "إضاءة النص المربوط">
+<!ENTITY linkification.settings.textcolor "تجاهل لون النص">
+<!ENTITY linkification.settings.backgroundcolor "تجاهل لون الخلفية">
+<!ENTITY linkification.settings.colordesc "* تعطيل هذه سيعرض النص المربوط حسب نمط روابط الصفحة">
+<!ENTITY linkification.settings.linkscaption "عند النقر-الايسر على النص المربوط:">
+<!ENTITY linkification.settings.openinwindow "فتح الرابط في نافذة جديدة">
+<!ENTITY linkification.settings.openintab "فتح الرابط في لسان جديد">
+<!ENTITY linkification.settings.opentabinbg "فتح اللسان الجديد في الخلفية">
+<!ENTITY linkification.settings.linksdescription1 "* فقط الروابط المنشأة بـ الرابط الآلي ستتأثر بهذه الاعدادات">
+<!ENTITY linkification.settings.linkifysitelistdesc1 "القائمة البيضاء/القائمة السوداء للربط الآلي">
+<!ENTITY linkification.settings.linkifysitelistdesc2 "لا تربط آليا المجالات التالية:">
+<!ENTITY linkification.settings.linkifysitelistdesc3 "اربط آليا المجالات التالية فقط:">
+<!ENTITY linkification.settings.linkifyprotocoldesc "بروتوكول النص:بروتوكول الرابط">
+<!ENTITY linkification.settings.linkifysubdomaindesc "المجال الفرعي للنص:بروتوكول الرابط">
+<!ENTITY linkification.settings.linkifyinlinedesc "العناصر الداخلة المعروفة">
+<!ENTITY linkification.settings.linkifyexcludedesc "العناصر المستثناة">
+<!ENTITY linkification.settings.resetdefault "استعادة الافتراضات">
+<!ENTITY linkification.popup.extension "الرابط الآلي">
+<!ENTITY linkification.popup.linkifyopen "افتح النص المحدد">
+<!ENTITY linkification-status-options "خيارات...">

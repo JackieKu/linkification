@@ -1,0 +1,41 @@
+<!ENTITY linkification.settings.title "Linkification 选项">
+<!ENTITY linkification.settings.tabgeneral "常规">
+<!ENTITY linkification.settings.tablinks "链接">
+<!ENTITY linkification.settings.tabfunctionality "功能">
+<!ENTITY linkification.settings.tabadvanced "高级">
+<!ENTITY linkification.settings.linkifydesc "打开页面时：">
+<!ENTITY linkification.settings.linkifytoggle "允许自动链接化（使用 Ctrl+Shift+Y 切换）*">
+<!ENTITY linkification.settings.linkifythorough "完全模式（打开页面可能会比较慢）">
+<!ENTITY linkification.settings.linkifydoubleclick "双击打开文字链接">
+<!ENTITY linkification.settings.openselectedtoggle "在右键菜单中显示打开选中的链接">
+<!ENTITY linkification.settings.popuptoggle "在右键菜单中显示 Linkification">
+<!ENTITY linkification.settings.statusbartoggle "在状态栏显示 Linkification">
+<!ENTITY linkification.settings.cssdescription "* 所有链接化文字都包含 class=&apos;linkification-ext&apos; 属性">
+<!ENTITY linkification.settings.linkifylimit "仅自动链接化以下页面：">
+<!ENTITY linkification.settings.linkifycharlimit "页面内文字数量少于：">
+<!ENTITY linkification.settings.linktypes "链接化页面时包含：">
+<!ENTITY linkification.settings.linkifyprotocol "已知协议的链接">
+<!ENTITY linkification.settings.linkifyknown "已知子域的链接">
+<!ENTITY linkification.settings.linkifyunknown "未知子域的链接">
+<!ENTITY linkification.settings.linkifyemail "电子邮件地址">
+<!ENTITY linkification.settings.linkifyimage "链接化图象 URLs">
+<!ENTITY linkification.settings.highlightlinks "高亮链接化文字：">
+<!ENTITY linkification.settings.textcolor "改变文字颜色">
+<!ENTITY linkification.settings.backgroundcolor "改变背景颜色">
+<!ENTITY linkification.settings.colordesc "* 禁止此功能，链接化文字将与页面内链接风格保持一致">
+<!ENTITY linkification.settings.linkscaption "左键点击链接化文字时：">
+<!ENTITY linkification.settings.openinwindow "在新建窗口打开链接">
+<!ENTITY linkification.settings.openintab "在新建标签页打开链接">
+<!ENTITY linkification.settings.opentabinbg "在后台打开新建标签页">
+<!ENTITY linkification.settings.linksdescription1 "* 此功能只影响利用该扩展产生的链接">
+<!ENTITY linkification.settings.linkifysitelistdesc1 "自动链接化黑/ 白名单：">
+<!ENTITY linkification.settings.linkifysitelistdesc2 "从不自动链接化下列网站：">
+<!ENTITY linkification.settings.linkifysitelistdesc3 "仅自动链接化下列网站：">
+<!ENTITY linkification.settings.linkifyprotocoldesc "文字协议：链接协议">
+<!ENTITY linkification.settings.linkifysubdomaindesc "文字子域：链接协议">
+<!ENTITY linkification.settings.linkifyinlinedesc "已知元素">
+<!ENTITY linkification.settings.linkifyexcludedesc "排除元素">
+<!ENTITY linkification.settings.resetdefault "还原至默认状态">
+<!ENTITY linkification.popup.extension "Linkification">
+<!ENTITY linkification.popup.linkifyopen "打开选中的链接">
+<!ENTITY linkification-status-options "选项">

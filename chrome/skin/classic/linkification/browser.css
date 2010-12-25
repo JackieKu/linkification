@@ -1,0 +1,14 @@
+#linkification-status
+{
+	margin: 0px !important;
+	padding: 0px !important;
+}
+
+#linkification-status-hbox
+{
+	width: 22px !important;
+	height: 16px !important;
+	padding: 0px 3px !important;
+
+	cursor: pointer !important;
+}

@@ -1,0 +1,41 @@
+<!ENTITY linkification.settings.title "אפשרויות Linkification">
+<!ENTITY linkification.settings.tabgeneral "כללי">
+<!ENTITY linkification.settings.tablinks "קישורים">
+<!ENTITY linkification.settings.tabfunctionality "שימושיות">
+<!ENTITY linkification.settings.tabadvanced "מתקדם">
+<!ENTITY linkification.settings.linkifydesc "כאשר עמוד נטען:">
+<!ENTITY linkification.settings.linkifytoggle "אפשר הפיכה אוטומטית של טקסט לקישורים (Ctrl+Shift+Y להפעלה\כיבוי) *">
+<!ENTITY linkification.settings.linkifythorough "סגנון יסודי (עליית הדפים עלולה להיות איטית יותר)">
+<!ENTITY linkification.settings.linkifydoubleclick "לחיצה כפולה פותחת קישורי טקסט">
+<!ENTITY linkification.settings.openselectedtoggle "הצג בתפריט הלחצן הימני את הקישור הפתוח שנבחר">
+<!ENTITY linkification.settings.popuptoggle "הצג את Linkification בתפריט הלחצן הימני">
+<!ENTITY linkification.settings.statusbartoggle "הצג את Linkification בשורת המצב">
+<!ENTITY linkification.settings.cssdescription "*לכל טקסט מומר יהיה class=&apos;linkification-ext&apos;">
+<!ENTITY linkification.settings.linkifylimit "המר טקסט לקישור אוטומטית בעמודים אלו בלבד:">
+<!ENTITY linkification.settings.linkifycharlimit "עם מספר של תווי טקסט פשוטים קטן מ:">
+<!ENTITY linkification.settings.linktypes "כאשר ממירים עמוד, כלול:">
+<!ENTITY linkification.settings.linkifyprotocol "פרוטוקלי קישורים ידועים">
+<!ENTITY linkification.settings.linkifyknown "קישורי סב דומיינים (תת שמות מתחם) ידועים">
+<!ENTITY linkification.settings.linkifyunknown "קישורי סב דומיינים (תת שמות מתחם) לא ידועים">
+<!ENTITY linkification.settings.linkifyemail "כתובות אימייל">
+<!ENTITY linkification.settings.linkifyimage "כתובות אינטרנט של תמונות">
+<!ENTITY linkification.settings.highlightlinks "הדגשת טקסט מומר (מטקסט לקישור):">
+<!ENTITY linkification.settings.textcolor "דרוס צבע הטקסט">
+<!ENTITY linkification.settings.backgroundcolor "דרוס צבעי רקע">
+<!ENTITY linkification.settings.colordesc "*ניטרול אפשרות זו יציג טקסט מומר, לפי סגנון קישורי העמוד">
+<!ENTITY linkification.settings.linkscaption "כאשר לוחצים לחיצה שמאלית על טקסט מומר:">
+<!ENTITY linkification.settings.openinwindow "פתח קישור בחלון חדש">
+<!ENTITY linkification.settings.openintab "פתח קישור בלשונית חדשה">
+<!ENTITY linkification.settings.opentabinbg "פתח לשונית חדשה ברקע">
+<!ENTITY linkification.settings.linksdescription1 "*רק קישורים שנוצרו על-ידי Linkification יושפעו מהגדרות אלו">
+<!ENTITY linkification.settings.linkifysitelistdesc1 "המרה אוטומטית לרשימה שחורה\לבנה:">
+<!ENTITY linkification.settings.linkifysitelistdesc2 "אל תמיר אוטומטית אף-פעם את שמות המתחם הבאים:">
+<!ENTITY linkification.settings.linkifysitelistdesc3 "המר אוטומטית תמיד את שמות המתחם הבאים:">
+<!ENTITY linkification.settings.linkifyprotocoldesc "פרוטוקול טקסט:פרוטוקול קישור">
+<!ENTITY linkification.settings.linkifysubdomaindesc "סב דומיין (תת שם מתחם) טקסטואלי:פרוטוקול טקסט">
+<!ENTITY linkification.settings.linkifyinlinedesc "אלמנטים מותמעים ידועים">
+<!ENTITY linkification.settings.linkifyexcludedesc "אלמנטים שנשללו">
+<!ENTITY linkification.settings.resetdefault "אפס לברירת מחדל">
+<!ENTITY linkification.popup.extension "Linkification">
+<!ENTITY linkification.popup.linkifyopen "פתח קישור נבחר">
+<!ENTITY linkification-status-options "אפשרויות...">

@@ -1,0 +1,41 @@
+<!ENTITY linkification.settings.title "Inställningar Linkification">
+<!ENTITY linkification.settings.tabgeneral "Generella">
+<!ENTITY linkification.settings.tablinks "Länkar">
+<!ENTITY linkification.settings.tabfunctionality "Funktion">
+<!ENTITY linkification.settings.tabadvanced "Avancerat">
+<!ENTITY linkification.settings.linkifydesc "När en sida laddas:">
+<!ENTITY linkification.settings.linkifytoggle "Aktivera Auto-linkifiering (Ctrl+Shift+Y för att slå av/på) *">
+<!ENTITY linkification.settings.linkifythorough "Grundligt läge (sidans laddningstid kan öka)">
+<!ENTITY linkification.settings.linkifydoubleclick "Dubbelklick öppnar textlänkar">
+<!ENTITY linkification.settings.openselectedtoggle "Visa Öppna vald länk i snabbmeny">
+<!ENTITY linkification.settings.popuptoggle "Visa Linkification i snabbmeny">
+<!ENTITY linkification.settings.statusbartoggle "Visa Linkification i statusfältet">
+<!ENTITY linkification.settings.cssdescription "* All linkifierad text har class=&apos;linkification-ext&apos;">
+<!ENTITY linkification.settings.linkifylimit "Auto-linkifera endast sidor:">
+<!ENTITY linkification.settings.linkifycharlimit "Med ett färre antal klartext tecken än:">
+<!ENTITY linkification.settings.linktypes "Vid linkifiering av en sida, inkludera:">
+<!ENTITY linkification.settings.linkifyprotocol "Kända protokoll-länkar">
+<!ENTITY linkification.settings.linkifyknown "Kända subdomän-länkar">
+<!ENTITY linkification.settings.linkifyunknown "Okända subdomän-länkar">
+<!ENTITY linkification.settings.linkifyemail "E-postadresser">
+<!ENTITY linkification.settings.linkifyimage "Bild URL:er">
+<!ENTITY linkification.settings.highlightlinks "Framhäv linkifierad text:">
+<!ENTITY linkification.settings.textcolor "Åsidosätt textfärg">
+<!ENTITY linkification.settings.backgroundcolor "Åsidosätt bakgrundsfärg">
+<!ENTITY linkification.settings.colordesc "* Inaktivering av dessa visar linkifierad text enligt sidans stil för länkar">
+<!ENTITY linkification.settings.linkscaption "När linkifierad text vänsterklickas:">
+<!ENTITY linkification.settings.openinwindow "Öppna länk i nytt fönster">
+<!ENTITY linkification.settings.openintab "Öppna länk i ny flik">
+<!ENTITY linkification.settings.opentabinbg "Öppna ny flik i bakgrunden">
+<!ENTITY linkification.settings.linksdescription1 "* Endast länkar skapade av Linkification påverkas av dessa inställningar">
+<!ENTITY linkification.settings.linkifysitelistdesc1 "Auto-linkifiera Vitlista/Svartlista:">
+<!ENTITY linkification.settings.linkifysitelistdesc2 "Auto-linkifiera aldrig dessa domäner:">
+<!ENTITY linkification.settings.linkifysitelistdesc3 "Auto-linkifiera endast dessa domäner:">
+<!ENTITY linkification.settings.linkifyprotocoldesc "Text protokoll:Länk protokoll">
+<!ENTITY linkification.settings.linkifysubdomaindesc "Text subdomän:Länk protokoll">
+<!ENTITY linkification.settings.linkifyinlinedesc "Kända inline-element">
+<!ENTITY linkification.settings.linkifyexcludedesc "Exkluderade element">
+<!ENTITY linkification.settings.resetdefault "Återställ till standard">
+<!ENTITY linkification.popup.extension "Linkification">
+<!ENTITY linkification.popup.linkifyopen "Öppna vald länk">
+<!ENTITY linkification-status-options "Inställningar...">
