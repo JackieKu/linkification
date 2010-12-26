@@ -1,7 +1,16 @@
-var objLinkify =
+(function() {
+
+const Cc = Components.classes;
+const Ci = Components.interfaces;
+const Cu = Components.utils;
+const Co = Components.Constructor;
+
+Cu.import("resource://gre/modules/XPCOMUtils.jsm");
+Cu.import("resource://gre/modules/Services.jsm");
+
+window.objLinkify =
 {
-	objMozillaPrefs : Components.classes['@mozilla.org/preferences-service;1'].getService(Components.interfaces.nsIPrefBranch),
-	objLinkifyPrefs : Components.classes['@mozilla.org/preferences-service;1'].getService(Components.interfaces.nsIPrefService).getBranch('linkification.settings.'),
+	objMozillaPrefs : Services.prefs,
 
 	sDefaultTextColor : '#006620',
 	sDefaultBackgroundColor : '#fff9ab',
@@ -78,21 +87,21 @@ var objLinkify =
 
 	InitServices: function()
 	{
-		window.addEventListener('load', objLinkify.InitServices, false);
-		objLinkify.objStringBundle = document.getElementById('linkification-string-bundle');
-
  		document.getElementById('contentAreaContextMenu').addEventListener('popupshowing', objLinkify.PopupShowing, false);
 
-		objLinkify.Init();
+		// XXX
+		setTimeout(function() {
+			objLinkify.Init();
 
-		if (typeof(getBrowser) != 'undefined')
-		{
-			var ndBrowser = getBrowser();
-			ndBrowser.addEventListener('click', objLinkify.WindowClick, true);
-			ndBrowser.addEventListener('dblclick', objLinkify.WindowDoubleClick, false);
-			ndBrowser.addEventListener('load', objLinkify.AutoLinkify, true);
-			ndBrowser.addEventListener('focus', objLinkify.WindowFocus, true);
-		}
+			if (typeof(getBrowser) != 'undefined')
+			{
+				var ndBrowser = getBrowser();
+				ndBrowser.addEventListener('click', objLinkify.WindowClick, true);
+				ndBrowser.addEventListener('dblclick', objLinkify.WindowDoubleClick, false);
+				ndBrowser.addEventListener('load', objLinkify.AutoLinkify, true);
+				ndBrowser.addEventListener('focus', objLinkify.WindowFocus, true);
+			}
+		}, 3000);
 
 		return true;
 	},
@@ -112,14 +121,14 @@ var objLinkify =
 
 		this.aExcludeElements = this.sExcludeElements.split(',');
 		this.aInlineElements = this.sInlineElements.split(',');
-		this.aInlineHash = Array();
+		this.aInlineHash = [];
 		for (ctr = 0; ctr < this.aInlineElements.length; ++ctr)
 		{
 			this.aInlineHash[this.aInlineElements[ctr]] = true;
 		}
 
-		this.aProtocol = Array();
-		this.aRecognizeProtocolAs = Array();
+		this.aProtocol = [];
+		this.aRecognizeProtocolAs = [];
 
 		var aTextLinkProtocol;
 		var aTextProtocolList = this.sProtocols.split(',');
@@ -145,8 +154,8 @@ var objLinkify =
 			}
 		}
 
-		this.aSubDomain = Array();
-		this.aRecognizeSubDomainAs = Array();
+		this.aSubDomain = [];
+		this.aRecognizeSubDomainAs = [];
 
 		var aSubdomainProtocolList = this.sSubDomains.split(',');
 		for (ctr = 0; ctr < aSubdomainProtocolList.length; ++ctr)
@@ -678,7 +687,7 @@ var objLinkify =
 
 		var objStopTime = new Date();
 
-		var aAttributes = Array();
+		var aAttributes = [];
 		aAttributes['class'] = 'linkification-ext';
 
 		ndBody.setAttribute('linkified', this.GetElementsByAttributes(ndDocument, aAttributes).length);
@@ -797,7 +806,7 @@ var objLinkify =
 
 		var objStopTime = new Date();
 
-		var aAttributes = Array();
+		var aAttributes = [];
 		aAttributes['class'] = 'linkification-ext';
 
 		ndBody.setAttribute('linkified', this.GetElementsByAttributes(ndDocument, aAttributes).length);
@@ -937,7 +946,7 @@ var objLinkify =
 
 		var ndParent;
 
-		var aAttributes = Array();
+		var aAttributes = [];
 		aAttributes['class'] = 'linkification-ext';
 		var aAnchors = this.GetElementsByAttributes(ndDocument, aAttributes);
 
@@ -1101,7 +1110,7 @@ var objLinkify =
 
 		if (sLocation)
 		{
-			var aNewList = Array();
+			var aNewList = [];
 			for (var ctr = 0; ctr < aSiteList.length; ++ctr)
 			{
 				if (aSiteList[ctr] != sLocation)
@@ -1133,7 +1142,7 @@ var objLinkify =
 	{
 		if (ndWindow == ndWindow.top)
 		{
-			this.aFrameWindows = Array();
+			this.aFrameWindows = [];
 			this.aFrameWindows.push(ndWindow);
 		}
 
@@ -1321,7 +1330,7 @@ var objLinkify =
 		sQuery = sQuery.substring(0, sQuery.length - 4);
 		var objResult = this.XPathQuery(sQuery, ndDocument);
 
-		var aNodes = Array();
+		var aNodes = [];
 		for (var ctr = 0; ctr < objResult.snapshotLength; ++ctr)
 		{
 			aNodes.push(objResult.snapshotItem(ctr));
@@ -1465,4 +1474,9 @@ var objLinkify =
 	}
 };
 
+XPCOMUtils.defineLazyGetter(objLinkify, "objLinkifyPrefs", function() Services.prefs.getBranch('linkification.settings.'));
+XPCOMUtils.defineLazyGetter(objLinkify, "objStringBundle", function() document.getElementById('linkification-string-bundle'));
+
 window.addEventListener('load', objLinkify.InitServices, false);
+
+})();
