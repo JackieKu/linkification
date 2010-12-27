@@ -10,27 +10,26 @@ const Cr = Components.results;
 Cu.import("resource://gre/modules/XPCOMUtils.jsm");
 Cu.import("resource://gre/modules/Services.jsm");
 
-var sAlphanumeric = '[^`~!@#$%^&*()_=+\\[{\\]}\\\\|;:\'",<.>\\/?\\s]';
+const sAlphanumeric = '[^`~!@#$%^&*()_=+\\[{\\]}\\\\|;:\'",<.>\\/?\\s]';
 
-var sURLPathChars = '[^\\^\\[\\]{}|\\\\\'"<>`\\s]';
-var sEndChars = '[^!@\\^()\\[\\]{}|\\\\:;\'",.?<>`\\s]';
-var sUserNamePasswordChars = '[^@:<>(){}`\'"\\/\\[\\]\\s]';
-var sGetStringChars = '[^\\^*\\[\\]{}|\\\\"<>\\/`\\s]';
+const sURLPathChars = '[^\\^\\[\\]{}|\\\\\'"<>`\\s]';
+const sEndChars = '[^!@\\^()\\[\\]{}|\\\\:;\'",.?<>`\\s]';
+const sUserNamePasswordChars = '[^@:<>(){}`\'"\\/\\[\\]\\s]';
+const sGetStringChars = '[^\\^*\\[\\]{}|\\\\"<>\\/`\\s]';
 
-var sTopLevelDomains = '[a-z]{2,6}';
-var sIPv4Address = '(?:(?:(?:[0-1]?[0-9]?[0-9])|(?:2[0-4][0-9])|(?:25[0-5]))(?:\\.(?:(?:[0-1]?[0-9]?[0-9])|(?:2[0-4][0-9])|(?:25[0-5]))){3})';
-var sIPv6Address = '(?:[A-Fa-f0-9:]{16,39})';
-var sIPAddress = '(?:' + sIPv4Address + '|' + sIPv6Address + ')';
+const sTopLevelDomains = '[a-z]{2,6}';
+const sIPv4Address = '(?:(?:(?:[0-1]?[0-9]?[0-9])|(?:2[0-4][0-9])|(?:25[0-5]))(?:\\.(?:(?:[0-1]?[0-9]?[0-9])|(?:2[0-4][0-9])|(?:25[0-5]))){3})';
+const sIPv6Address = '(?:[A-Fa-f0-9:]{16,39})';
+const sIPAddress = '(?:' + sIPv4Address + '|' + sIPv6Address + ')';
+
+const sAllSubDomain = sAlphanumeric + '+';
+const sURLPath = sURLPathChars + '*' + sEndChars;
+
+const sOtherAuth = '(?:' + sUserNamePasswordChars + '+:' + sUserNamePasswordChars + '+@(' + sIPAddress + '|(?:(?:' + sAllSubDomain + '\\.)+' + sTopLevelDomains + '))(?:\/(?:(?:' + sURLPath + ')?)?)?(?:[#?](?:' + sURLPath + ')?)?)';
+const sOtherOptionalAuth = '(?:(?:' + sUserNamePasswordChars + '+@)?(' + sIPAddress + '|(?:(?:' + sAllSubDomain + '\\.)+' + sTopLevelDomains + '))\/(?:' + sURLPath + '(?:[#?](?:' + sURLPath + ')?)?)?)';
+const sOtherOptionalAuthSelected = '(?:(?:[^*=/<>(){}\\[\\]\\s]+@)?((' + sIPAddress + '|(?:(?:' + sAllSubDomain + '\\.)+' + sTopLevelDomains + ')))(?:/(?:' + sURLPath + ')?)?(?:[#?](?:' + sURLPath + ')?)?)';
 
 var Linkification = {
-	sDefaultTextColor : '#006620',
-	sDefaultBackgroundColor : '#fff9ab',
-	sDefaultProtocol : 'news:news,nntp:nntp,telnet:telnet,irc:irc,mms:mms,ed2k:ed2k,file:file,about:about!,mailto:mailto!,xmpp:xmpp!,h...s:https,f.p:ftp,h.?.?p:http',
-	sDefaultSubdomain : 'www:http,ftp:ftp,irc:irc,jabber:xmpp!',
-	sDefaultSiteList : 'localhost,google.com',
-	sDefaultInlineElements : 'a,abbr,acronym,b,basefont,bdo,big,cite,code,dfn,em,font,i,kbd,label,nobr,q,s,samp,small,span,strike,strong,sub,sup,tt,u,wbr,var',
-	sDefaultExcludeElements : "a,applet,area,embed,frame,frameset,head,iframe,img,map,meta,noscript,object,option,param,script,select,style,textarea,title,*[@onclick],*[@onmousedown],*[@onmouseup],*[@tiddler],*[@class='linkification-disabled']",
-
 	init: function() {
 		XPCOMUtils.defineLazyGetter(this, "aExcludeElements", function() this.sExcludeElements.split(','));
 		XPCOMUtils.defineLazyGetter(this, "aInlineElements", function() this.sInlineElements.split(','));
@@ -106,20 +105,14 @@ var Linkification = {
 			var sProtocol = '(' + this.oProtocol.aProtocol.join('|') + ')';
 			var sSubDomain = '(' + this.oSubDomain.aSubDomain.join('|') + ')';
 
-			var sAllSubDomain = sAlphanumeric + '+';
-			var sURLPath = sURLPathChars + '*' + sEndChars;
-
 			var sWWWAuth = '(?:(?:(?:' + sUserNamePasswordChars + '+:)?' + sUserNamePasswordChars + '+@)?' + sSubDomain + '\\.(?:' + sAllSubDomain + '\\.)+' + sTopLevelDomains + '(?:[/#?](?:' + sURLPath + ')?)?)';
-			var sOtherOptionalAuth = '(?:(?:' + sUserNamePasswordChars + '+@)?(' + sIPAddress + '|(?:(?:' + sAllSubDomain + '\\.)+' + sTopLevelDomains + '))\/(?:' + sURLPath + '(?:[#?](?:' + sURLPath + ')?)?)?)';
-			var sOtherAuth = '(?:' + sUserNamePasswordChars + '+:' + sUserNamePasswordChars + '+@(' + sIPAddress + '|(?:(?:' + sAllSubDomain + '\\.)+' + sTopLevelDomains + '))(?:\/(?:(?:' + sURLPath + ')?)?)?(?:[#?](?:' + sURLPath + ')?)?)';
 
 			var sRegExpHTTP = '(?:' + sProtocol + sURLPath + ')';
 			var sRegExpWWW = '(?:' + sWWWAuth + '|' + sOtherOptionalAuth + '|' + sOtherAuth + ')';
 			var sRegExpEmail = '(' + sUserNamePasswordChars + '+@' + '(?:(?:(?:' + sAllSubDomain + '\\.)+' + sTopLevelDomains + ')|(?:' + sIPAddress + '))(?:' + sGetStringChars + '+' + sEndChars + ')?)';
 			o.sRegExpAll = new RegExp(sRegExpHTTP + '|' + sRegExpWWW + '|' + sRegExpEmail, 'i');
 
-			sOtherOptionalAuth = '(?:(?:[^*=/<>(){}\\[\\]\\s]+@)?((' + sIPAddress + '|(?:(?:' + sAllSubDomain + '\\.)+' + sTopLevelDomains + ')))(?:/(?:' + sURLPath + ')?)?(?:[#?](?:' + sURLPath + ')?)?)';
-			sRegExpWWW = '(?:' + sWWWAuth + '|' + sOtherOptionalAuth + ')';
+			sRegExpWWW = '(?:' + sWWWAuth + '|' + sOtherOptionalAuthSelected + ')';
 			o.sRegExpSelected = new RegExp('^(?:' + sRegExpHTTP + '|' + sRegExpEmail + '|' + sRegExpWWW + ')$', 'i');
 
 			return o;
@@ -169,8 +162,17 @@ var Linkification = {
 	get nCharLimit() this.prefs.getIntPref('Linkify_CharLimit')
 };
 
-XPCOMUtils.defineLazyGetter(Linkification, "prefs", function() Services.prefs.getBranch('extensions.linkification.'));
 XPCOMUtils.defineLazyGetter(Linkification, "stringBundle", function() Services.strings.createBundle("chrome://linkification/locale/linkification.properties"));
+XPCOMUtils.defineLazyGetter(Linkification, "prefs", function() Services.prefs.getBranch('extensions.linkification.'));
+XPCOMUtils.defineLazyGetter(Linkification, "defaultPrefs", function() Services.prefs.getDefaultBranch('extensions.linkification.'));
+XPCOMUtils.defineLazyGetter(Linkification, "sDefaultTextColor", function() this.defaultPrefs.getCharPref('Linkify_TextColor'));
+XPCOMUtils.defineLazyGetter(Linkification, "sDefaultBackgroundColor", function() this.defaultPrefs.getCharPref('Linkify_BackgroundColor'));
+XPCOMUtils.defineLazyGetter(Linkification, "sDefaultProtocol", function() this.defaultPrefs.getCharPref('Linkify_TextProtocolList'));
+XPCOMUtils.defineLazyGetter(Linkification, "sDefaultSubdomain", function() this.defaultPrefs.getCharPref('Linkify_SubdomainProtocolList'));
+XPCOMUtils.defineLazyGetter(Linkification, "sDefaultSiteList", function() this.defaultPrefs.getCharPref('Linkify_SiteList'));
+XPCOMUtils.defineLazyGetter(Linkification, "sDefaultInlineElements", function() this.defaultPrefs.getCharPref('Linkify_InlineElements'));
+XPCOMUtils.defineLazyGetter(Linkification, "sDefaultExcludeElements", function() this.defaultPrefs.getCharPref('Linkify_ExcludeElements'));
+
 
 Linkification.init();
 

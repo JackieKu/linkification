@@ -194,14 +194,8 @@ window.objLinkify =
 		}
 
 		var ndLinkify = document.getElementById('linkification-contextmenu-linkify');
-		if (objLinkify.nLinkified > 0)
-		{
-			ndLinkify.setAttribute('label', Linkification.stringBundle.GetStringFromName('linkification_popup_unlinkifypage'));
-		}
-		else
-		{
-			ndLinkify.setAttribute('label', Linkification.stringBundle.GetStringFromName('linkification_popup_linkifypage'));
-		}
+		ndLinkify.setAttribute('label', Linkification.stringBundle.GetStringFromName(
+			objLinkify.nLinkified > 0 ? 'linkification_popup_unlinkifypage' : 'linkification_popup_linkifypage'));
 
 		var sHost = objLinkify.GetHost();
 		var sLocation = objLinkify.GetSiteListed(sHost);
@@ -235,14 +229,8 @@ window.objLinkify =
 	InitStatusMenu: function()
 	{
 		var ndLinkify = document.getElementById('linkification-status-linkify');
-		if (objLinkify.nLinkified > 0)
-		{
-			ndLinkify.setAttribute('label', Linkification.stringBundle.GetStringFromName('linkification_popup_unlinkifypage'));
-		}
-		else
-		{
-			ndLinkify.setAttribute('label', Linkification.stringBundle.GetStringFromName('linkification_popup_linkifypage'));
-		}
+		ndLinkify.setAttribute('label', Linkification.stringBundle.GetStringFromName(
+			objLinkify.nLinkified > 0 ? 'linkification_popup_unlinkifypage': 'linkification_popup_linkifypage'));
 
 		var sHost = objLinkify.GetHost();
 		var sLocation = objLinkify.GetSiteListed(sHost);
@@ -1294,8 +1282,6 @@ window.objLinkify =
 		return true;
 	}
 };
-
-//XPCOMUtils.defineLazyGetter(objLinkify, "objStringBundle", function() document.getElementById('linkification-string-bundle'));
 
 window.addEventListener('load', objLinkify.InitServices, false);
 
