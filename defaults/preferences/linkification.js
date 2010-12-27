@@ -11,6 +11,7 @@ pref("extensions.linkification.Linkify_TextColor", "#006620");
 pref("extensions.linkification.Linkify_BackgroundColor", "#fff9ab");
 pref("extensions.linkification.Linkify_OpenInWindow", false);
 pref("extensions.linkification.Linkify_OpenInTab", false);
+pref("extensions.linkification.Linkify_OpenTabInBG", false);
 pref("extensions.linkification.Linkify_LinkifyImages", true);
 pref("extensions.linkification.Linkify_LinkifyProtocol", true);
 pref("extensions.linkification.Linkify_LinkifyKnown", true);
