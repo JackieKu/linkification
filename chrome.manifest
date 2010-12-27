@@ -3,6 +3,7 @@ overlay chrome://browser/content/browser.xul chrome://linkification/content/link
 
 content linkification chrome//content/linkification/
 skin linkification classic/1.0 chrome//skin/classic/linkification/
+resource linkification modules/
 
 locale linkification ar chrome//locale/ar/
 locale linkification be-BY chrome//locale/be-BY/

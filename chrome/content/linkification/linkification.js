@@ -7,110 +7,19 @@ const Co = Components.Constructor;
 
 Cu.import("resource://gre/modules/XPCOMUtils.jsm");
 Cu.import("resource://gre/modules/Services.jsm");
+Cu.import("resource://linkification/linkification.jsm");
 
 window.objLinkify =
 {
-	objMozillaPrefs : Services.prefs,
-
-	sDefaultTextColor : '#006620',
-	sDefaultBackgroundColor : '#fff9ab',
-	sDefaultProtocol : 'news:news,nntp:nntp,telnet:telnet,irc:irc,mms:mms,ed2k:ed2k,file:file,about:about!,mailto:mailto!,xmpp:xmpp!,h...s:https,f.p:ftp,h.?.?p:http',
-	sDefaultSubdomain : 'www:http,ftp:ftp,irc:irc,jabber:xmpp!',
-	sDefaultSiteList : 'localhost,google.com',
-	sDefaultInlineElements : 'a,abbr,acronym,b,basefont,bdo,big,cite,code,dfn,em,font,i,kbd,label,nobr,q,s,samp,small,span,strike,strong,sub,sup,tt,u,wbr,var',
-	sDefaultExcludeElements : "a,applet,area,embed,frame,frameset,head,iframe,img,map,meta,noscript,object,option,param,script,select,style,textarea,title,*[@onclick],*[@onmousedown],*[@onmouseup],*[@tiddler],*[@class='linkification-disabled']",
-
 	sSelectedLink : '',
 
 	nLinkified : 0,
-
-	GetPreferences: function()
-	{
-		this.bThorough = this.objLinkifyPrefs.prefHasUserValue('Linkify_Thorough') ? this.objLinkifyPrefs.getBoolPref('Linkify_Thorough') : false;
-		this.bAutoLinkify = this.objLinkifyPrefs.prefHasUserValue('Linkify_Toggle') ? this.objLinkifyPrefs.getBoolPref('Linkify_Toggle') : true;
-		this.bDoubleClick = this.objLinkifyPrefs.prefHasUserValue('Linkify_DoubleClick') ? this.objLinkifyPrefs.getBoolPref('Linkify_DoubleClick') : true;
-		this.bOpenSelected = this.objLinkifyPrefs.prefHasUserValue('Linkify_OpenSelected_Toggle') ? this.objLinkifyPrefs.getBoolPref('Linkify_OpenSelected_Toggle') : true;
-		this.bContextMenu = this.objLinkifyPrefs.prefHasUserValue('Linkify_Popup_Toggle') ? this.objLinkifyPrefs.getBoolPref('Linkify_Popup_Toggle') : false;
-		this.bStatusBar = this.objLinkifyPrefs.prefHasUserValue('Linkify_StatusBar_Toggle') ? this.objLinkifyPrefs.getBoolPref('Linkify_StatusBar_Toggle') : true;
-		this.bTextColor = this.objLinkifyPrefs.prefHasUserValue('Linkify_HighlightText') ? this.objLinkifyPrefs.getBoolPref('Linkify_HighlightText') : false;
-		this.bBackgroundColor = this.objLinkifyPrefs.prefHasUserValue('Linkify_HighlightBG') ? this.objLinkifyPrefs.getBoolPref('Linkify_HighlightBG') : false;
-		this.sTextColor = this.objLinkifyPrefs.prefHasUserValue('Linkify_TextColor') ? this.objLinkifyPrefs.getCharPref('Linkify_TextColor') : this.sDefaultTextColor;
-		this.sBackgroundColor = this.objLinkifyPrefs.prefHasUserValue('Linkify_BackgroundColor') ? this.objLinkifyPrefs.getCharPref('Linkify_BackgroundColor') : this.sDefaultBackgroundColor;
-		this.bLinksOpenWindows = this.objLinkifyPrefs.prefHasUserValue('Linkify_OpenInWindow') ? this.objLinkifyPrefs.getBoolPref('Linkify_OpenInWindow') : false;
-		this.bLinksOpenTabs = this.objLinkifyPrefs.prefHasUserValue('Linkify_OpenInTab') ? this.objLinkifyPrefs.getBoolPref('Linkify_OpenInTab') : false;
-		this.bTabsOpenInBG = this.objLinkifyPrefs.prefHasUserValue('Linkify_OpenTabInBG') ? this.objLinkifyPrefs.getBoolPref('Linkify_OpenTabInBG') : false;
-		this.bLinkifyImageURLs = this.objLinkifyPrefs.prefHasUserValue('Linkify_LinkifyImages') ? this.objLinkifyPrefs.getBoolPref('Linkify_LinkifyImages') : true;
-		this.bLinkifyProtocol = this.objLinkifyPrefs.prefHasUserValue('Linkify_LinkifyProtocol') ? this.objLinkifyPrefs.getBoolPref('Linkify_LinkifyProtocol') : true;
-		this.bLinkifyKnown = this.objLinkifyPrefs.prefHasUserValue('Linkify_LinkifyKnown') ? this.objLinkifyPrefs.getBoolPref('Linkify_LinkifyKnown') : true;
-		this.bLinkifyUnknown = this.objLinkifyPrefs.prefHasUserValue('Linkify_LinkifyUnknown') ? this.objLinkifyPrefs.getBoolPref('Linkify_LinkifyUnknown') : true;
-		this.bLinkifyEmail = this.objLinkifyPrefs.prefHasUserValue('Linkify_LinkifyEmail') ? this.objLinkifyPrefs.getBoolPref('Linkify_LinkifyEmail') : true;
-		this.sProtocols = this.objLinkifyPrefs.prefHasUserValue('Linkify_TextProtocolList') ? this.objLinkifyPrefs.getCharPref('Linkify_TextProtocolList') : this.sDefaultProtocol;
-		this.sSubDomains = this.objLinkifyPrefs.prefHasUserValue('Linkify_SubdomainProtocolList') ? this.objLinkifyPrefs.getCharPref('Linkify_SubdomainProtocolList') : this.sDefaultSubdomain;
-		this.sInlineElements = this.objLinkifyPrefs.prefHasUserValue('Linkify_InlineElements') ? this.objLinkifyPrefs.getCharPref('Linkify_InlineElements') : this.sDefaultInlineElements;
-		this.sExcludeElements = this.objLinkifyPrefs.prefHasUserValue('Linkify_ExcludeElements') ? this.objLinkifyPrefs.getCharPref('Linkify_ExcludeElements') : this.sDefaultExcludeElements;
-		this.bUseBlacklist = this.objLinkifyPrefs.prefHasUserValue('Linkify_Blacklist') ? this.objLinkifyPrefs.getBoolPref('Linkify_Blacklist') : true;
-		this.bUseWhitelist = this.objLinkifyPrefs.prefHasUserValue('Linkify_Whitelist') ? this.objLinkifyPrefs.getBoolPref('Linkify_Whitelist') : false;
-		this.sSitelist = this.objLinkifyPrefs.prefHasUserValue('Linkify_SiteList') ? this.objLinkifyPrefs.getCharPref('Linkify_SiteList') : this.sDefaultSiteList;
-		this.bEnableCharLimit = this.objLinkifyPrefs.prefHasUserValue('Linkify_CharLimitEnabled') ? this.objLinkifyPrefs.getBoolPref('Linkify_CharLimitEnabled') : false;
-		this.nCharLimit = this.objLinkifyPrefs.prefHasUserValue('Linkify_CharLimit') ? this.objLinkifyPrefs.getIntPref('Linkify_CharLimit') : 15000;
-
-		if (this.objLinkifyPrefs.prefHasUserValue('Linkify_Thorough') && (this.bThorough == false)) this.objLinkifyPrefs.clearUserPref('Linkify_Thorough');
-		if (this.objLinkifyPrefs.prefHasUserValue('Linkify_Toggle') && (this.bAutoLinkify == true)) this.objLinkifyPrefs.clearUserPref('Linkify_Toggle');
-		if (this.objLinkifyPrefs.prefHasUserValue('Linkify_DoubleClick') && (this.bDoubleClick == true)) this.objLinkifyPrefs.clearUserPref('Linkify_DoubleClick');
-		if (this.objLinkifyPrefs.prefHasUserValue('Linkify_OpenSelected_Toggle') && (this.bOpenSelected == true)) this.objLinkifyPrefs.clearUserPref('Linkify_OpenSelected_Toggle');
-		if (this.objLinkifyPrefs.prefHasUserValue('Linkify_Popup_Toggle') && (this.bContextMenu == false)) this.objLinkifyPrefs.clearUserPref('Linkify_Popup_Toggle');
-		if (this.objLinkifyPrefs.prefHasUserValue('Linkify_StatusBar_Toggle') && (this.bStatusBar == true)) this.objLinkifyPrefs.clearUserPref('Linkify_StatusBar_Toggle');
-		if (this.objLinkifyPrefs.prefHasUserValue('Linkify_HighlightText') && (this.bTextColor == false)) this.objLinkifyPrefs.clearUserPref('Linkify_HighlightText');
-		if (this.objLinkifyPrefs.prefHasUserValue('Linkify_HighlightBG') && (this.bBackgroundColor == false)) this.objLinkifyPrefs.clearUserPref('Linkify_HighlightBG');
-		if (this.objLinkifyPrefs.prefHasUserValue('Linkify_TextColor') && (this.sTextColor == this.sDefaultTextColor)) this.objLinkifyPrefs.clearUserPref('Linkify_TextColor');
-		if (this.objLinkifyPrefs.prefHasUserValue('Linkify_BackgroundColor') && (this.sBackgroundColor == this.sDefaultBackgroundColor)) this.objLinkifyPrefs.clearUserPref('Linkify_BackgroundColor');
-		if (this.objLinkifyPrefs.prefHasUserValue('Linkify_OpenInWindow') && (this.bLinksOpenWindows == false)) this.objLinkifyPrefs.clearUserPref('Linkify_OpenInWindow');
-		if (this.objLinkifyPrefs.prefHasUserValue('Linkify_OpenInTab') && (this.bLinksOpenTabs == false)) this.objLinkifyPrefs.clearUserPref('Linkify_OpenInTab');
-		if (this.objLinkifyPrefs.prefHasUserValue('Linkify_OpenTabInBG') && (this.bTabsOpenInBG == false)) this.objLinkifyPrefs.clearUserPref('Linkify_OpenTabInBG');
-		if (this.objLinkifyPrefs.prefHasUserValue('Linkify_LinkifyImages') && (this.bLinkifyImageURLs == true)) this.objLinkifyPrefs.clearUserPref('Linkify_LinkifyImages');
-		if (this.objLinkifyPrefs.prefHasUserValue('Linkify_LinkifyProtocol') && (this.bLinkifyProtocol == true)) this.objLinkifyPrefs.clearUserPref('Linkify_LinkifyProtocol');
-		if (this.objLinkifyPrefs.prefHasUserValue('Linkify_LinkifyKnown') && (this.bLinkifyKnown == true)) this.objLinkifyPrefs.clearUserPref('Linkify_LinkifyKnown');
-		if (this.objLinkifyPrefs.prefHasUserValue('Linkify_LinkifyUnknown') && (this.bLinkifyUnknown == true)) this.objLinkifyPrefs.clearUserPref('Linkify_LinkifyUnknown');
-		if (this.objLinkifyPrefs.prefHasUserValue('Linkify_LinkifyEmail') && (this.bLinkifyEmail == true)) this.objLinkifyPrefs.clearUserPref('Linkify_LinkifyEmail');
-		if (this.objLinkifyPrefs.prefHasUserValue('Linkify_TextProtocolList') && (this.sProtocols == this.sDefaultProtocol)) this.objLinkifyPrefs.clearUserPref('Linkify_TextProtocolList');
-		if (this.objLinkifyPrefs.prefHasUserValue('Linkify_SubdomainProtocolList') && (this.sSubDomains == this.sDefaultSubdomain)) this.objLinkifyPrefs.clearUserPref('Linkify_SubdomainProtocolList');
-		if (this.objLinkifyPrefs.prefHasUserValue('Linkify_InlineElements') && (this.sInlineElements == this.sDefaultInlineElements)) this.objLinkifyPrefs.clearUserPref('Linkify_InlineElements');
-		if (this.objLinkifyPrefs.prefHasUserValue('Linkify_ExcludeElements') && (this.sExcludeElements == this.sDefaultExcludeElements)) this.objLinkifyPrefs.clearUserPref('Linkify_ExcludeElements');
-		if (this.objLinkifyPrefs.prefHasUserValue('Linkify_Blacklist') && (this.bUseBlacklist == true)) this.objLinkifyPrefs.clearUserPref('Linkify_Blacklist');
-		if (this.objLinkifyPrefs.prefHasUserValue('Linkify_Whitelist') && (this.bUseWhitelist == false)) this.objLinkifyPrefs.clearUserPref('Linkify_Whitelist');
-		if (this.objLinkifyPrefs.prefHasUserValue('Linkify_SiteList') && (this.sSitelist == this.sDefaultSiteList)) this.objLinkifyPrefs.clearUserPref('Linkify_SiteList');
-		if (this.objLinkifyPrefs.prefHasUserValue('Linkify_CharLimitEnabled') && (this.bEnableCharLimit == false)) this.objLinkifyPrefs.clearUserPref('Linkify_CharLimitEnabled');
-		if (this.objLinkifyPrefs.prefHasUserValue('Linkify_CharLimit') && (this.nCharLimit == 15000)) this.objLinkifyPrefs.clearUserPref('Linkify_CharLimit');
-
-		return true;
-	},
 
 	InitServices: function()
 	{
  		document.getElementById('contentAreaContextMenu').addEventListener('popupshowing', objLinkify.PopupShowing, false);
 
-		// XXX
-		setTimeout(function() {
-			objLinkify.Init();
-
-			if (typeof(getBrowser) != 'undefined')
-			{
-				var ndBrowser = getBrowser();
-				ndBrowser.addEventListener('click', objLinkify.WindowClick, true);
-				ndBrowser.addEventListener('dblclick', objLinkify.WindowDoubleClick, false);
-				ndBrowser.addEventListener('load', objLinkify.AutoLinkify, true);
-				ndBrowser.addEventListener('focus', objLinkify.WindowFocus, true);
-			}
-		}, 3000);
-
-		return true;
-	},
-
-	Init: function()
-	{
-		this.GetPreferences();
-
-		if (this.bStatusBar)
+		if (Linkification.bStatusBar)
 		{
 			document.getElementById('linkification-status').setAttribute('collapsed', 'false');
 		}
@@ -119,100 +28,14 @@ window.objLinkify =
 			document.getElementById('linkification-status').setAttribute('collapsed', 'true');
 		}
 
-		this.aExcludeElements = this.sExcludeElements.split(',');
-		this.aInlineElements = this.sInlineElements.split(',');
-		this.aInlineHash = [];
-		for (ctr = 0; ctr < this.aInlineElements.length; ++ctr)
+		if (typeof(getBrowser) != 'undefined')
 		{
-			this.aInlineHash[this.aInlineElements[ctr]] = true;
+			var ndBrowser = getBrowser();
+			ndBrowser.addEventListener('click', objLinkify.WindowClick, true);
+			ndBrowser.addEventListener('dblclick', objLinkify.WindowDoubleClick, false);
+			ndBrowser.addEventListener('load', objLinkify.AutoLinkify, true);
+			ndBrowser.addEventListener('focus', objLinkify.WindowFocus, true);
 		}
-
-		this.aProtocol = [];
-		this.aRecognizeProtocolAs = [];
-
-		var aTextLinkProtocol;
-		var aTextProtocolList = this.sProtocols.split(',');
-		var ctr;
-		for (ctr = 0; ctr < aTextProtocolList.length; ++ctr)
-		{
-			aTextLinkProtocol = aTextProtocolList[ctr].split(':');
-			if ((aTextLinkProtocol[0].length > 0) && (aTextLinkProtocol[1].length > 0))
-			{
-				if (aTextLinkProtocol[1].substr(aTextLinkProtocol[1].length - 1) == '!')
-				{
-					aTextLinkProtocol[0] += ':';
-					aTextLinkProtocol[1] = aTextLinkProtocol[1].substr(0, aTextLinkProtocol[1].length - 1) + ':';
-				}
-				else
-				{
-					aTextLinkProtocol[0] += ':\\/\\/';
-					aTextLinkProtocol[1] += '://';
-				}
-
-				this.aProtocol.push(aTextLinkProtocol[0]);
-				this.aRecognizeProtocolAs.push(aTextLinkProtocol[1]);
-			}
-		}
-
-		this.aSubDomain = [];
-		this.aRecognizeSubDomainAs = [];
-
-		var aSubdomainProtocolList = this.sSubDomains.split(',');
-		for (ctr = 0; ctr < aSubdomainProtocolList.length; ++ctr)
-		{
-			aTextLinkProtocol = aSubdomainProtocolList[ctr].split(':');
-			if ((aTextLinkProtocol[0].length > 0) && (aTextLinkProtocol[1].length > 0))
-			{
-				if (aTextLinkProtocol[1].substr(aTextLinkProtocol[1].length - 1) == '!')
-				{
-					aTextLinkProtocol[1] = aTextLinkProtocol[1].substr(0, aTextLinkProtocol[1].length - 1) + ':';
-				}
-				else
-				{
-					aTextLinkProtocol[1] += '://';
-				}
-
-				this.aSubDomain.push(aTextLinkProtocol[0]);
-				this.aRecognizeSubDomainAs.push(aTextLinkProtocol[1]);
-			}
-		}
-
-		var sProtocol = '(' + this.aProtocol.join('|') + ')';
-		var sSubDomain = '(' + this.aSubDomain.join('|') + ')';
-
-		var sAlphanumeric = '[^`~!@#$%^&*()_=+\\[{\\]}\\\\|;:\'",<.>\\/?\\s]';
-
-		var sURLPathChars = '[^\\^\\[\\]{}|\\\\\'"<>`\\s]';
-		var sEndChars = '[^!@\\^()\\[\\]{}|\\\\:;\'",.?<>`\\s]';
-		var sUserNamePasswordChars = '[^@:<>(){}`\'"\\/\\[\\]\\s]';
-		var sGetStringChars = '[^\\^*\\[\\]{}|\\\\"<>\\/`\\s]';
-
-		var sTopLevelDomains = '[a-z]{2,6}';
-		var sIPv4Address = '(?:(?:(?:[0-1]?[0-9]?[0-9])|(?:2[0-4][0-9])|(?:25[0-5]))(?:\\.(?:(?:[0-1]?[0-9]?[0-9])|(?:2[0-4][0-9])|(?:25[0-5]))){3})';
-		var sIPv6Address = '(?:[A-Fa-f0-9:]{16,39})';
-		var sIPAddress = '(?:' + sIPv4Address + '|' + sIPv6Address + ')';
-		var sAllSubDomain = sAlphanumeric + '+';
-		var sURLPath = sURLPathChars + '*' + sEndChars;
-
-		var sWWWAuth = '(?:(?:(?:' + sUserNamePasswordChars + '+:)?' + sUserNamePasswordChars + '+@)?' + sSubDomain + '\\.(?:' + sAllSubDomain + '\\.)+' + sTopLevelDomains + '(?:[/#?](?:' + sURLPath + ')?)?)';
-		var sOtherOptionalAuth = '(?:(?:' + sUserNamePasswordChars + '+@)?(' + sIPAddress + '|(?:(?:' + sAllSubDomain + '\\.)+' + sTopLevelDomains + '))\/(?:' + sURLPath + '(?:[#?](?:' + sURLPath + ')?)?)?)';
-		var sOtherAuth = '(?:' + sUserNamePasswordChars + '+:' + sUserNamePasswordChars + '+@(' + sIPAddress + '|(?:(?:' + sAllSubDomain + '\\.)+' + sTopLevelDomains + '))(?:\/(?:(?:' + sURLPath + ')?)?)?(?:[#?](?:' + sURLPath + ')?)?)';
-
-		var sRegExpHTTP = '(?:' + sProtocol + sURLPath + ')';
-		var sRegExpWWW = '(?:' + sWWWAuth + '|' + sOtherOptionalAuth + '|' + sOtherAuth + ')';
-		var sRegExpEmail = '(' + sUserNamePasswordChars + '+@' + '(?:(?:(?:' + sAllSubDomain + '\\.)+' + sTopLevelDomains + ')|(?:' + sIPAddress + '))(?:' + sGetStringChars + '+' + sEndChars + ')?)';
-		this.sRegExpAll = RegExp(sRegExpHTTP + '|' + sRegExpWWW + '|' + sRegExpEmail, 'i');
-
-		sOtherOptionalAuth = '(?:(?:[^*=/<>(){}\\[\\]\\s]+@)?((' + sIPAddress + '|(?:(?:' + sAllSubDomain + '\\.)+' + sTopLevelDomains + ')))(?:/(?:' + sURLPath + ')?)?(?:[#?](?:' + sURLPath + ')?)?)';
-		sRegExpWWW = '(?:' + sWWWAuth + '|' + sOtherOptionalAuth + ')';
-		this.sRegExpSelected = RegExp('^(?:' + sRegExpHTTP + '|' + sRegExpEmail + '|' + sRegExpWWW + ')$', 'i');
-
-		this.sXPath = '//text()[not(ancestor::' + this.aExcludeElements.join(' or ancestor::') + ') and (';
-		for (ctr = 0; ctr < this.aSubDomain.length; ++ctr)
-		{
-			this.sXPath += "contains(translate(., '" + this.aSubDomain[ctr].toUpperCase() + "', '" + this.aSubDomain[ctr].toLowerCase() + "'), '" + this.aSubDomain[ctr].toLowerCase() + "') or ";
-		}
-		this.sXPath += "contains(., '@') or contains(., '/') or contains(., ':'))]";
 
 		return true;
 	},
@@ -226,7 +49,7 @@ window.objLinkify =
 			ndClicked = e.target;
 
 			var ndMenu = document.getElementById('linkification-contextmenu');
-			if (!objLinkify.bContextMenu || (ndClicked.nodeName == 'TEXTAREA') || (ndClicked.nodeName == 'INPUT') || (ndClicked.nodeName == 'A'))
+			if (!Linkification.bContextMenu || (ndClicked.nodeName == 'TEXTAREA') || (ndClicked.nodeName == 'INPUT') || (ndClicked.nodeName == 'A'))
 			{
 				ndMenu.setAttribute('collapsed', 'true');
 				return true;
@@ -257,7 +80,7 @@ window.objLinkify =
 
 	WindowDoubleClick: function(e)
 	{
-		if (!objLinkify.bDoubleClick)
+		if (!Linkification.bDoubleClick)
 		{
 			return false;
 		}
@@ -285,7 +108,7 @@ window.objLinkify =
 			}
 		}
 
-		if ((ndWindow == false) || (typeof(ndWindow.getSelection) == 'undefined'))
+		if (!ndWindow || (typeof(ndWindow.getSelection) == 'undefined'))
 		{
 			return false;
 		}
@@ -307,7 +130,7 @@ window.objLinkify =
 		var aBodyTags = ndDocument.getElementsByTagName('body');
 		var ndBody = (aBodyTags.length > 0) ? aBodyTags[0] : false;
 
-		if (!objLinkify.bAutoLinkify || !ndBody || (ndBody.getAttribute('linkifying') == true))
+		if (!Linkification.bAutoLinkify || !ndBody || (ndBody.getAttribute('linkifying') == true))
 		{
 			return false;
 		}
@@ -316,12 +139,12 @@ window.objLinkify =
 		var sHost = objLinkify.GetHost(ndDocument);
 		var sLocation = objLinkify.GetSiteListed(sHost);
 
-		if ((!sLocation && objLinkify.bUseWhitelist) || (sLocation && objLinkify.bUseBlacklist))
+		if ((!sLocation && Linkification.bUseWhitelist) || (sLocation && Linkification.bUseBlacklist))
 		{
 			return false;
 		}
 
-		if (objLinkify.bEnableCharLimit)
+		if (Linkification.bEnableCharLimit)
 		{
 			var objRange = document.createRange();
 			objRange.setEnd(ndBody, ndBody.childNodes.length);
@@ -329,13 +152,13 @@ window.objLinkify =
 
 			var nPageLength = objRange.toString().length;
 			objRange.detach();
-			if (nPageLength > objLinkify.nCharLimit)
+			if (nPageLength > Linkification.nCharLimit)
 			{
 				return false;
 			}
 		}
 
-		if (objLinkify.bThorough)
+		if (Linkification.bThorough)
 		{
 			objLinkify.Linkify_Thorough(ndDocument);
 		}
@@ -356,7 +179,7 @@ window.objLinkify =
 		var ndOpen = document.getElementById('linkification-contextmenu-open');
 		objLinkify.sSelectedLink = objLinkify.GetSelectedText();
 
-		if (objLinkify.bOpenSelected && (objLinkify.sSelectedLink.length > 0))
+		if (Linkification.bOpenSelected && (objLinkify.sSelectedLink.length > 0))
 		{
 			ndOpen.setAttribute('collapsed', 'false');
 		}
@@ -365,7 +188,7 @@ window.objLinkify =
 			ndOpen.setAttribute('collapsed', 'true');
 		}
 
-		if (!objLinkify.bContextMenu)
+		if (!Linkification.bContextMenu)
 		{
 			return true;
 		}
@@ -373,11 +196,11 @@ window.objLinkify =
 		var ndLinkify = document.getElementById('linkification-contextmenu-linkify');
 		if (objLinkify.nLinkified > 0)
 		{
-			ndLinkify.setAttribute('label', objLinkify.objStringBundle.getString('linkification_popup_unlinkifypage'));
+			ndLinkify.setAttribute('label', Linkification.stringBundle.GetStringFromName('linkification_popup_unlinkifypage'));
 		}
 		else
 		{
-			ndLinkify.setAttribute('label', objLinkify.objStringBundle.getString('linkification_popup_linkifypage'));
+			ndLinkify.setAttribute('label', Linkification.stringBundle.GetStringFromName('linkification_popup_linkifypage'));
 		}
 
 		var sHost = objLinkify.GetHost();
@@ -386,7 +209,7 @@ window.objLinkify =
 		var ndList = document.getElementById('linkification-contextmenu-listoption');
 		ndList.setAttribute('collapsed', 'true');
 
-		if ((!objLinkify.bUseWhitelist &&	!objLinkify.bUseBlacklist) || !sHost)
+		if ((!Linkification.bUseWhitelist && !Linkification.bUseBlacklist) || !sHost)
 		{
 			return true;
 		}
@@ -394,12 +217,12 @@ window.objLinkify =
 		var sList;
 		if (sLocation)
 		{
-			sList = objLinkify.bUseWhitelist ? objLinkify.objStringBundle.getString('linkification_status_whitelist_remove') : objLinkify.objStringBundle.getString('linkification_status_blacklist_remove');
+			sList = Linkification.stringBundle.GetStringFromName(Linkification.bUseWhitelist ? 'linkification_status_whitelist_remove' : 'linkification_status_blacklist_remove');
 			sList = sList.replace('xxxxxxx', "'" + sLocation + "'");
 		}
 		else
 		{
-			sList = objLinkify.bUseWhitelist ? objLinkify.objStringBundle.getString('linkification_status_whitelist_add') : objLinkify.objStringBundle.getString('linkification_status_blacklist_add');
+			sList = Linkification.stringBundle.GetStringFromName(Linkification.bUseWhitelist ? 'linkification_status_whitelist_add' : 'linkification_status_blacklist_add');
 			sList = sList.replace('xxxxxxx', "'" + sHost + "'");
 		}
 
@@ -414,11 +237,11 @@ window.objLinkify =
 		var ndLinkify = document.getElementById('linkification-status-linkify');
 		if (objLinkify.nLinkified > 0)
 		{
-			ndLinkify.setAttribute('label', objLinkify.objStringBundle.getString('linkification_popup_unlinkifypage'));
+			ndLinkify.setAttribute('label', Linkification.stringBundle.GetStringFromName('linkification_popup_unlinkifypage'));
 		}
 		else
 		{
-			ndLinkify.setAttribute('label', objLinkify.objStringBundle.getString('linkification_popup_linkifypage'));
+			ndLinkify.setAttribute('label', Linkification.stringBundle.GetStringFromName('linkification_popup_linkifypage'));
 		}
 
 		var sHost = objLinkify.GetHost();
@@ -427,7 +250,7 @@ window.objLinkify =
 		var ndList = document.getElementById('linkification-status-listoption');
 		ndList.setAttribute('collapsed', 'true');
 
-		if ((!objLinkify.bUseWhitelist &&	!objLinkify.bUseBlacklist) || !sHost)
+		if ((!Linkification.bUseWhitelist && !Linkification.bUseBlacklist) || !sHost)
 		{
 			return true;
 		}
@@ -435,12 +258,12 @@ window.objLinkify =
 		var sList;
 		if (sLocation)
 		{
-			sList = objLinkify.bUseWhitelist ? objLinkify.objStringBundle.getString('linkification_status_whitelist_remove') : objLinkify.objStringBundle.getString('linkification_status_blacklist_remove');
+			sList = Linkification.stringBundle.GetStringFromName(Linkification.bUseWhitelist ? 'linkification_status_whitelist_remove' : 'linkification_status_blacklist_remove');
 			sList = sList.replace('xxxxxxx', "'" + sLocation + "'");
 		}
 		else
 		{
-			sList = objLinkify.bUseWhitelist ? objLinkify.objStringBundle.getString('linkification_status_whitelist_add') : objLinkify.objStringBundle.getString('linkification_status_blacklist_add');
+			sList = Linkification.stringBundle.GetStringFromName(Linkification.bUseWhitelist ? 'linkification_status_whitelist_add' : 'linkification_status_blacklist_add');
 			sList = sList.replace('xxxxxxx', "'" + sHost + "'");
 		}
 
@@ -525,8 +348,6 @@ window.objLinkify =
 
 	TraverseNodes: function(ndDocument, ndBody, ndRoot, ndNode, bChildrenDone, aTraverseNodes, sTraverseText, objStartTime)
 	{
-		var ndContinue;
-
 		for (var nIterations = 0; (ndNode && (nIterations < 75)); ++nIterations)
 		{
 			if (ndNode.nodeName == '#text')
@@ -584,7 +405,7 @@ window.objLinkify =
 		var ndReturn = null;
 		var nIterations = 0;
 
-		while ((aMatch = objLinkify.sRegExpAll.exec(sTraverseText)) && (nIterations++ < 20))
+		while ((aMatch = Linkification.rx.sRegExpAll.exec(sTraverseText)) && (nIterations++ < 20))
 		{
 			sHREF = objLinkify.GetLinkHREF(aMatch);
 
@@ -606,11 +427,11 @@ window.objLinkify =
 			ndEnd = aTraverseNodes[nIndex];
 			nRangeEnd = nSearch - nTextLength;
 
-			if (objLinkify.IsImage(sHREF) && (!objLinkify.bLinkifyImageURLs)
-			|| (aMatch[1] && !objLinkify.bLinkifyProtocol)
-			|| (aMatch[2] && !objLinkify.bLinkifyKnown)
-			|| ((aMatch[3] || aMatch[4]) && !objLinkify.bLinkifyUnknown)
-			|| (aMatch[5] && !objLinkify.bLinkifyEmail))
+			if (objLinkify.IsImage(sHREF) && (!Linkification.bLinkifyImageURLs)
+			|| (aMatch[1] && !Linkification.bLinkifyProtocol)
+			|| (aMatch[2] && !Linkification.bLinkifyKnown)
+			|| ((aMatch[3] || aMatch[4]) && !Linkification.bLinkifyUnknown)
+			|| (aMatch[5] && !Linkification.bLinkifyEmail))
 			{
 				aTraverseNodes[nIndex].splitText(nSearch - nTextLength);
 				aTraverseNodes[nIndex] = aTraverseNodes[nIndex].nextSibling;
@@ -631,11 +452,11 @@ window.objLinkify =
 			ndAnchor.setAttribute('title', 'Linkification: ' + sHREF);
 			ndAnchor.setAttribute('href', sHREF);
 			ndAnchor.setAttribute('class', 'linkification-ext');
-			sStyle = (objLinkify.bTextColor) ? 'color:' + objLinkify.sTextColor : '';
-			if (objLinkify.bBackgroundColor)
+			sStyle = (Linkification.bTextColor) ? 'color:' + Linkification.sTextColor : '';
+			if (Linkification.bBackgroundColor)
 			{
 				sStyle += (sStyle.length > 0) ? '; ' : '';
-				sStyle += 'background-color:' + objLinkify.sBackgroundColor;
+				sStyle += 'background-color:' + Linkification.sBackgroundColor;
 			}
 
 			if (sStyle.length > 0)
@@ -710,7 +531,7 @@ window.objLinkify =
 		var ndBody = ndDocument.getElementsByTagName('body')[0];
 		var objStartTime = new Date();
 
-		var objResult = this.XPathQuery(this.sXPath, ndDocument);
+		var objResult = this.XPathQuery(Linkification.sXPath, ndDocument);
 
 		ndBody.setAttribute('linkifycurrent', 0);
 		ndBody.setAttribute('linkifymax', objResult.snapshotLength);
@@ -729,7 +550,7 @@ window.objLinkify =
 		var ndParent = ndText.parentNode;
 		var ndNextSibling = ndText.nextSibling;
 
-		for (var aMatch = null, bMatched = false, nIterations = 0, nNodeLinks = 0; (nIterations < 3) && (aMatch = objLinkify.sRegExpAll.exec(sSource)); ++nIterations)
+		for (var aMatch = null, bMatched = false, nIterations = 0, nNodeLinks = 0; (nIterations < 3) && (aMatch = Linkification.rx.sRegExpAll.exec(sSource)); ++nIterations)
 		{
 			if (!bMatched)
 			{
@@ -740,11 +561,11 @@ window.objLinkify =
 			ndParent.insertBefore(ndDocument.createTextNode(sSource.substring(0, aMatch.index)), ndNextSibling);
 			sHREF = objLinkify.GetLinkHREF(aMatch);
 
-			if (objLinkify.IsImage(sHREF) && (!objLinkify.bLinkifyImageURLs)
-			|| (aMatch[1] && !objLinkify.bLinkifyProtocol)
-			|| (aMatch[2] && !objLinkify.bLinkifyKnown)
-			|| ((aMatch[3] || aMatch[4]) && !objLinkify.bLinkifyUnknown)
-			|| (aMatch[5] && !objLinkify.bLinkifyEmail))
+			if (objLinkify.IsImage(sHREF) && (!Linkification.bLinkifyImageURLs)
+			|| (aMatch[1] && !Linkification.bLinkifyProtocol)
+			|| (aMatch[2] && !Linkification.bLinkifyKnown)
+			|| ((aMatch[3] || aMatch[4]) && !Linkification.bLinkifyUnknown)
+			|| (aMatch[5] && !Linkification.bLinkifyEmail))
 			{
 				ndParent.insertBefore(ndDocument.createTextNode(aMatch[0]), ndNextSibling);
 				sSource = sSource.substr(aMatch.index + aMatch[0].length);
@@ -756,11 +577,11 @@ window.objLinkify =
 			ndAnchor.setAttribute('href', sHREF);
 			ndAnchor.setAttribute('class', 'linkification-ext');
 
-			var sStyle = (objLinkify.bTextColor) ? 'color:' + objLinkify.sTextColor : '';
-			if (objLinkify.bBackgroundColor)
+			var sStyle = (Linkification.bTextColor) ? 'color:' + Linkification.sTextColor : '';
+			if (Linkification.bBackgroundColor)
 			{
 				sStyle += (sStyle.length > 0) ? '; ' : '';
-				sStyle += 'background-color:' + objLinkify.sBackgroundColor;
+				sStyle += 'background-color:' + Linkification.sBackgroundColor;
 			}
 
 			if (sStyle.length > 0)
@@ -878,7 +699,7 @@ window.objLinkify =
 
 	GetSelectedLinkHREF: function(sSelectedText)
 	{
-		var aMatch = this.sRegExpSelected.exec(sSelectedText);
+		var aMatch = Linkification.rx.sRegExpSelected.exec(sSelectedText);
 
 		if (aMatch)
 		{
@@ -938,11 +759,11 @@ window.objLinkify =
 	Undo: function(ndDocument)
 	{
 		var ndBody = ndDocument.getElementsByTagName('body')[0];
-		if (ndBody.getAttribute('linkifying') == true)
+		if (ndBody.getAttribute('linkifying') == 'true')
 		{
 			return true;
 		}
-		ndBody.setAttribute('linkifying', true);
+		ndBody.setAttribute('linkifying', 'true');
 
 		var ndParent;
 
@@ -962,7 +783,7 @@ window.objLinkify =
 
 		ndBody.removeAttribute('linkified');
 		ndBody.removeAttribute('linkifytime');
-		ndBody.setAttribute('linkifying', false);
+		ndBody.setAttribute('linkifying', 'false');
 
 		this.SetLinkified();
 
@@ -971,13 +792,14 @@ window.objLinkify =
 
 	GetProtocol: function(sProtocolMatch)
 	{
-		var reTest;
-		for (var ctr = 0; ctr < this.aProtocol.length; ++ctr)
+		var reTest, proto = Linkification.oProtocol, p;
+		for (var ctr = 0; ctr < proto.aProtocol.length; ++ctr)
 		{
-			reTest = RegExp('^' + this.aProtocol[ctr] + '$', 'i');
+			p = proto.aProtocol[ctr];
+			reTest = RegExp('^' + p + '$', 'i');
 			if (reTest.test(sProtocolMatch))
 			{
-				return this.aRecognizeProtocolAs[ctr];
+				return proto.oMapping[p];
 			}
 		}
 
@@ -986,13 +808,14 @@ window.objLinkify =
 
 	GetDomainProtocol: function(sSubdomain)
 	{
-		var reTest;
-		for (var ctr = 0; ctr < this.aSubDomain.length; ++ctr)
+		var reTest, domain = Linkification.oSubDomain, d;
+		for (var ctr = 0; ctr < domain.aSubDomain.length; ++ctr)
 		{
-			reTest = RegExp('^' + this.aSubDomain[ctr] + '$', 'i');
+			d = domain.aSubDomain[ctr];
+			reTest = RegExp('^' + d + '$', 'i');
 			if (reTest.test(sSubdomain))
 			{
-				return this.aRecognizeSubDomainAs[ctr];
+				return domain.oMapping[d];
 			}
 		}
 
@@ -1037,11 +860,11 @@ window.objLinkify =
 		var ndStatus = document.getElementById('linkification-status-hbox');
 		if (this.nLinkified > 0)
 		{
-			ndStatus.setAttribute('tooltiptext', this.objStringBundle.getString('linkification_statusbartooltip') + ' ' + this.nLinkified + ' (' + parseInt(this.nLinkifyTime, 10) + 'ms)');
+			ndStatus.setAttribute('tooltiptext', Linkification.stringBundle.GetStringFromName('linkification_statusbartooltip') + ' ' + this.nLinkified + ' (' + parseInt(this.nLinkifyTime, 10) + 'ms)');
 		}
 		else
 		{
-			ndStatus.setAttribute('tooltiptext', this.objStringBundle.getString('linkification_statusbartooltip') + ' ' + this.nLinkified);
+			ndStatus.setAttribute('tooltiptext', Linkification.stringBundle.GetStringFromName('linkification_statusbartooltip') + ' ' + this.nLinkified);
 		}
 		ndStatus.src = (this.nLinkified > 0) ? 'chrome://linkification/skin/link-on.png' : 'chrome://linkification/skin/link-off.png';
 
@@ -1050,17 +873,16 @@ window.objLinkify =
 
 	ToggleLinkify: function()
 	{
-		this.objLinkifyPrefs.setBoolPref('Linkify_Toggle', !this.bAutoLinkify);
-		this.bAutoLinkify = !this.bAutoLinkify;
+		Linkification.prefs.setBoolPref('Linkify_Toggle', !Linkification.bAutoLinkify);
 
 		return true;
 	},
 
 	ClickLink: function(sHREF, nButton, bCtrlKey)
 	{
-		var bTabDefault = (this.objMozillaPrefs.getPrefType('browser.tabs.loadInBackground') == this.objMozillaPrefs.PREF_BOOL) ? this.objMozillaPrefs.getBoolPref('browser.tabs.loadInBackground') : true;
-		var bOpenWindow = this.bLinksOpenWindows;
-		var bOpenTab = (this.bLinksOpenTabs || (nButton == 1) || bCtrlKey);
+		var bTabDefault = (Services.prefs.getPrefType('browser.tabs.loadInBackground') == Services.prefs.PREF_BOOL) ? Services.prefs.getBoolPref('browser.tabs.loadInBackground') : true;
+		var bOpenWindow = Linkification.bLinksOpenWindows;
+		var bOpenTab = (Linkification.bLinksOpenTabs || (nButton == 1) || bCtrlKey);
 
 		if (sHREF.indexOf(':') > -1)
 		{
@@ -1079,7 +901,7 @@ window.objLinkify =
 		else if (bOpenTab)
 		{
 			var objTab = gBrowser.addTab(sHREF, null, null);
-			if (((nButton != 1) && !bCtrlKey && this.bLinksOpenTabs && !this.bTabsOpenInBG) || (((nButton == 1) || bCtrlKey) && !bTabDefault))
+			if (((nButton != 1) && !bCtrlKey && Linkification.bLinksOpenTabs && !Linkification.bTabsOpenInBG) || (((nButton == 1) || bCtrlKey) && !bTabDefault))
 			{
 				gBrowser.selectedTab = objTab;
 			}
@@ -1106,7 +928,7 @@ window.objLinkify =
 		}
 
 		var sLocation = this.GetSiteListed(sHost);
-		var aSiteList = this.sSitelist.split(',');
+		var aSiteList = Linkification.sSitelist.split(','), sSitelist;
 
 		if (sLocation)
 		{
@@ -1118,7 +940,7 @@ window.objLinkify =
 					aNewList.push(aSiteList[ctr]);
 				}
 			}
-			this.sSitelist = aNewList.join(',');
+			sSitelist = aNewList.join(',');
 		}
 		else
 		{
@@ -1130,10 +952,10 @@ window.objLinkify =
 			{
 				aSiteList[0] = sHost;
 			}
-			this.sSitelist = aSiteList.join(',');
+			sSitelist = aSiteList.join(',');
 		}
 
-		this.objLinkifyPrefs.setCharPref('Linkify_SiteList', this.sSitelist);
+		Linkification.prefs.setCharPref('Linkify_SiteList', sSitelist);
 
 		return true;
 	},
@@ -1183,12 +1005,11 @@ window.objLinkify =
 
 		var sCompleteText = sPreText + objSelection.anchorNode.nodeValue + sPostText;
 
-		for (var aMatch = null; ((aMatch = this.sRegExpAll.exec(sCompleteText)) && (nRightBound > aMatch.index));)
+		for (var aMatch = null; ((aMatch = Linkification.rx.sRegExpAll.exec(sCompleteText)) && (nRightBound > aMatch.index));)
 		{
 			if (nLeftBound <= (aMatch.index + aMatch[0].length))
 			{
-				sHREF = this.GetLinkHREF(aMatch);
-				return this.ClickLink(sHREF, 0);
+				return this.ClickLink(this.GetLinkHREF(aMatch), 0);
 			}
 
 			nLeftBound -= (aMatch.index + aMatch[0].length);
@@ -1217,7 +1038,7 @@ window.objLinkify =
 			if (!ndTraverseNode.previousSibling)
 			{
 				ndTraverseNode = ndTraverseNode.parentNode;
-				if (!this.aInlineHash[ndTraverseNode.nodeName.toLowerCase()])
+				if (!Linkification.aInlineHash[ndTraverseNode.nodeName.toLowerCase()])
 				{
 					ndBlockLevelNode = ndTraverseNode;
 					nOffset = 0;
@@ -1273,7 +1094,7 @@ window.objLinkify =
 			if (!ndTraverseNode.nextSibling)
 			{
 				ndTraverseNode = ndTraverseNode.parentNode;
-				if (!this.aInlineHash[ndTraverseNode.nodeName.toLowerCase()])
+				if (!Linkification.aInlineHash[ndTraverseNode.nodeName.toLowerCase()])
 				{
 					ndBlockLevelNode = ndTraverseNode;
 					nOffset = ndBlockLevelNode.childNodes.length;
@@ -1286,7 +1107,7 @@ window.objLinkify =
 				try
 				{
 					ndTraverseNode.setAttribute('linkification-marker', '');
-					sQuery = '//node()[ancestor-or-self::*[@linkification-marker] and not(self::text() or self::comment() or self::' + this.aInlineElements.join(' or self::') + ')]';
+					sQuery = '//node()[ancestor-or-self::*[@linkification-marker] and not(self::text() or self::comment() or self::' + Linkification.aInlineElements.join(' or self::') + ')]';
 					objResult = this.XPathQuery(sQuery, ndDocument);
 					ndTraverseNode.removeAttribute('linkification-marker');
 
@@ -1388,7 +1209,7 @@ window.objLinkify =
 
 	GetSiteListed: function(sHost)
 	{
-		var aSiteList = this.sSitelist.split(',');
+		var aSiteList = Linkification.sSitelist.split(',');
 
 		if (!sHost)
 		{
@@ -1428,7 +1249,7 @@ window.objLinkify =
 		if (ndNode.setAttribute)
 		{
 			ndNode.setAttribute('linkification-marker', '');
-			var sQuery = '//node()[self::*[@linkification-marker] and (self::' + this.aExcludeElements.join(' or self::') + ')]';
+			var sQuery = '//node()[self::*[@linkification-marker] and (self::' + Linkification.aExcludeElements.join(' or self::') + ')]';
 			var objResult = this.XPathQuery(sQuery, ndDocument);
 			ndNode.removeAttribute('linkification-marker');
 
@@ -1474,8 +1295,7 @@ window.objLinkify =
 	}
 };
 
-XPCOMUtils.defineLazyGetter(objLinkify, "objLinkifyPrefs", function() Services.prefs.getBranch('linkification.settings.'));
-XPCOMUtils.defineLazyGetter(objLinkify, "objStringBundle", function() document.getElementById('linkification-string-bundle'));
+//XPCOMUtils.defineLazyGetter(objLinkify, "objStringBundle", function() document.getElementById('linkification-string-bundle'));
 
 window.addEventListener('load', objLinkify.InitServices, false);
 

@@ -7,10 +7,6 @@
 <overlay id="linkificationOverlay" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 	<script type="application/x-javascript" src="chrome://linkification/content/linkification.js" />
 
-	<stringbundleset id="stringbundleset">
-		<stringbundle id="linkification-string-bundle" src="chrome://linkification/locale/linkification.properties"/>
-	</stringbundleset>
-
 	<keyset id="mainKeyset">
 	  <key id="linkifyhotkey" modifiers="control,shift" key="L" oncommand="objLinkify.UserLinkify()" />
 	  <key id="linkifytogglekey" modifiers="control,shift" key="Y" oncommand="objLinkify.ToggleLinkify()" />
