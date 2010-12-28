@@ -980,24 +980,23 @@ window.objLinkify =
 
 	DoubleClickLink: function(objSelection)
 	{
-		var sPreText = this.WholeTextBefore(objSelection.anchorNode);
-		var sPostText = this.WholeTextAfter(objSelection.anchorNode);
+		var sPreText = this.WholeTextBefore(objSelection.anchorNode),
+			sPostText = this.WholeTextAfter(objSelection.anchorNode),
+			nLeftBound = sPreText.length + objSelection.anchorOffset,
+			nRightBound = nLeftBound + objSelection.toString().length,
+			sCompleteText = sPreText + objSelection.anchorNode.nodeValue + sPostText,
+			aMatch, n;
 
-		var nLeftBound = sPreText.length + objSelection.anchorOffset;
-		var nRightBound = nLeftBound + objSelection.toString().length;
-
-		var sCompleteText = sPreText + objSelection.anchorNode.nodeValue + sPostText;
-
-		for (var aMatch = null; ((aMatch = Linkification.sRegExpAll.exec(sCompleteText)) && (nRightBound > aMatch.index));)
+		for (aMatch = null; ((aMatch = Linkification.sRegExpAll.exec(sCompleteText)) && (nRightBound > aMatch.index));)
 		{
-			if (nLeftBound <= (aMatch.index + aMatch[0].length))
+			n = aMatch.index + aMatch[0].length;
+			if (nLeftBound <= n)
 			{
 				return this.ClickLink(this.GetLinkHREF(aMatch), 0);
 			}
-
-			nLeftBound -= (aMatch.index + aMatch[0].length);
-			nRightBound -= (aMatch.index + aMatch[0].length);
-			sCompleteText = sCompleteText.substr((aMatch.index + aMatch[0].length));
+			nLeftBound -= n;
+			nRightBound -= n;
+			sCompleteText = sCompleteText.substr(n);
 		}
 
 		return true;
