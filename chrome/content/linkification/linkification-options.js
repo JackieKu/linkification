@@ -80,33 +80,33 @@ window.objLinkOptions = {
 
 	LinkOptions_Update: function()
 	{
-		Linkification.prefs.setBoolPref('Linkify_HighlightText', this.ndTextBox.checked);
-		Linkification.prefs.setCharPref('Linkify_TextColor', this.ndTextColor.color);
-		Linkification.prefs.setBoolPref('Linkify_HighlightBG', this.ndBackgroundBox.checked);
-		Linkification.prefs.setCharPref('Linkify_BackgroundColor', this.ndBackgroundColor.color);
-		Linkification.prefs.setBoolPref('Linkify_Toggle', this.ndLinkifyToggle.checked);
-		Linkification.prefs.setBoolPref('Linkify_Thorough', this.ndLinkifyThorough.checked);
-		Linkification.prefs.setBoolPref('Linkify_DoubleClick', this.ndLinkifyDoubleClick.checked);
-		Linkification.prefs.setBoolPref('Linkify_OpenSelected_Toggle', this.ndOpenSelectedToggle.checked);
-		Linkification.prefs.setBoolPref('Linkify_Popup_Toggle', this.ndPopupToggle.checked);
-		Linkification.prefs.setBoolPref('Linkify_StatusBar_Toggle', this.ndStatusBarToggle.checked);
-		Linkification.prefs.setBoolPref('Linkify_OpenInWindow', this.ndOpenInWindow.checked);
-		Linkification.prefs.setBoolPref('Linkify_OpenInTab', this.ndOpenInTab.checked);
-		Linkification.prefs.setBoolPref('Linkify_OpenTabInBG', this.ndOpenInBG.checked);
-		Linkification.prefs.setBoolPref('Linkify_LinkifyImages', this.ndImageToggle.checked);
-		Linkification.prefs.setBoolPref('Linkify_LinkifyProtocol', this.ndProtocolToggle.checked);
-		Linkification.prefs.setBoolPref('Linkify_LinkifyKnown', this.ndKnownToggle.checked);
-		Linkification.prefs.setBoolPref('Linkify_LinkifyUnknown', this.ndUnknownToggle.checked);
-		Linkification.prefs.setBoolPref('Linkify_LinkifyEmail', this.ndEmailToggle.checked);
-		Linkification.prefs.setCharPref('Linkify_TextProtocolList', this.ndLinkifyTextProtocolList.value);
-		Linkification.prefs.setCharPref('Linkify_SubdomainProtocolList', this.ndLinkifySubdomainProtocolList.value);
-		Linkification.prefs.setCharPref('Linkify_InlineElements', this.ndLinkifyInlineElementList.value);
-		Linkification.prefs.setCharPref('Linkify_ExcludeElements', this.ndLinkifyExcludeElementList.value);
-		Linkification.prefs.setBoolPref('Linkify_Blacklist', this.ndLinkifyBlacklist.checked);
-		Linkification.prefs.setBoolPref('Linkify_Whitelist', this.ndLinkifyWhitelist.checked);
-		Linkification.prefs.setCharPref('Linkify_SiteList', this.ndLinkifySiteList.value);
-		Linkification.prefs.setBoolPref('Linkify_CharLimitEnabled', this.ndLinkifyCharLimitEnabled.checked);
-		Linkification.prefs.setIntPref('Linkify_CharLimit', this.ndLinkifyCharLimit.value);
+		Linkification.bTextColor = this.ndTextBox.checked;
+		Linkification.sTextColor = this.ndTextColor.color;
+		Linkification.bBackgroundColor = this.ndBackgroundBox.checked;
+		Linkification.sBackgroundColor = this.ndBackgroundColor.color;
+		Linkification.bAutoLinkify = this.ndLinkifyToggle.checked;
+		Linkification.bThorough = this.ndLinkifyThorough.checked;
+		Linkification.bDoubleClick = this.ndLinkifyDoubleClick.checked;
+		Linkification.bOpenSelected = this.ndOpenSelectedToggle.checked;
+		Linkification.bContextMenu = this.ndPopupToggle.checked;
+		Linkification.bStatusBar = this.ndStatusBarToggle.checked;
+		Linkification.bLinksOpenWindows = this.ndOpenInWindow.checked;
+		Linkification.bLinksOpenTabs = this.ndOpenInTab.checked;
+		Linkification.bTabsOpenInBG = this.ndOpenInBG.checked;
+		Linkification.bLinkifyImageURLs = this.ndImageToggle.checked;
+		Linkification.bLinkifyProtocol = this.ndProtocolToggle.checked;
+		Linkification.bLinkifyKnown = this.ndKnownToggle.checked;
+		Linkification.bLinkifyUnknown = this.ndUnknownToggle.checked;
+		Linkification.bLinkifyEmail = this.ndEmailToggle.checked;
+		Linkification.sProtocols = this.ndLinkifyTextProtocolList.value;
+		Linkification.sSubDomains = this.ndLinkifySubdomainProtocolList.value;
+		Linkification.sInlineElements = this.ndLinkifyInlineElementList.value;
+		Linkification.sExcludeElements = this.ndLinkifyExcludeElementList.value;
+		Linkification.bUseBlacklist = this.ndLinkifyBlacklist.checked;
+		Linkification.bUseWhitelist = this.ndLinkifyWhitelist.checked;
+		Linkification.sSitelist = this.ndLinkifySiteList.value;
+		Linkification.bEnableCharLimit = this.ndLinkifyCharLimitEnabled.checked;
+		Linkification.nCharLimit = this.ndLinkifyCharLimit.value;
 
 		Linkification.init();
 
@@ -177,35 +177,35 @@ window.objLinkOptions = {
 
 	LinkOptions_DefaultProtocol: function()
 	{
-		this.ndLinkifyTextProtocolList.value = Linkification.sDefaultProtocol;
+		this.ndLinkifyTextProtocolList.value = Linkification.sProtocolsDefault;
 
 		return true;
 	},
 
 	LinkOptions_DefaultSubdomain: function()
 	{
-		this.ndLinkifySubdomainProtocolList.value = Linkification.sDefaultSubdomain;
+		this.ndLinkifySubdomainProtocolList.value = Linkification.sSubDomainsDefault;
 
 		return true;
 	},
 
 	LinkOptions_DefaultInline: function()
 	{
-		this.ndLinkifyInlineElementList.value = Linkification.sDefaultInlineElements;
+		this.ndLinkifyInlineElementList.value = Linkification.sInlineElementsDefault;
 
 		return true;
 	},
 
 	LinkOptions_DefaultExclude: function()
 	{
-		this.ndLinkifyExcludeElementList.value = Linkification.sDefaultExcludeElements;
+		this.ndLinkifyExcludeElementList.value = Linkification.sExcludeElementsDefault;
 
 		return true;
 	},
 
 	LinkOptions_DefaultSiteList: function()
 	{
-		this.ndLinkifySiteList.value = Linkification.sDefaultSiteList;
+		this.ndLinkifySiteList.value = Linkification.sSiteListDefault;
 
 		return true;
 	}

@@ -393,7 +393,7 @@ window.objLinkify =
 		var ndReturn = null;
 		var nIterations = 0;
 
-		while ((aMatch = Linkification.rx.sRegExpAll.exec(sTraverseText)) && (nIterations++ < 20))
+		while ((aMatch = Linkification.sRegExpAll.exec(sTraverseText)) && (nIterations++ < 20))
 		{
 			sHREF = objLinkify.GetLinkHREF(aMatch);
 
@@ -538,7 +538,7 @@ window.objLinkify =
 		var ndParent = ndText.parentNode;
 		var ndNextSibling = ndText.nextSibling;
 
-		for (var aMatch = null, bMatched = false, nIterations = 0, nNodeLinks = 0; (nIterations < 3) && (aMatch = Linkification.rx.sRegExpAll.exec(sSource)); ++nIterations)
+		for (var aMatch = null, bMatched = false, nIterations = 0, nNodeLinks = 0; (nIterations < 3) && (aMatch = Linkification.sRegExpAll.exec(sSource)); ++nIterations)
 		{
 			if (!bMatched)
 			{
@@ -687,7 +687,7 @@ window.objLinkify =
 
 	GetSelectedLinkHREF: function(sSelectedText)
 	{
-		var aMatch = Linkification.rx.sRegExpSelected.exec(sSelectedText);
+		var aMatch = Linkification.sRegExpSelected.exec(sSelectedText);
 
 		if (aMatch)
 		{
@@ -861,7 +861,7 @@ window.objLinkify =
 
 	ToggleLinkify: function()
 	{
-		Linkification.prefs.setBoolPref('Linkify_Toggle', !Linkification.bAutoLinkify);
+		Linkification.bAutoLinkify = !Linkification.bAutoLinkify;
 
 		return true;
 	},
@@ -943,7 +943,7 @@ window.objLinkify =
 			sSitelist = aSiteList.join(',');
 		}
 
-		Linkification.prefs.setCharPref('Linkify_SiteList', sSitelist);
+		Linkification.sSitelist = sSitelist;
 
 		return true;
 	},
@@ -993,7 +993,7 @@ window.objLinkify =
 
 		var sCompleteText = sPreText + objSelection.anchorNode.nodeValue + sPostText;
 
-		for (var aMatch = null; ((aMatch = Linkification.rx.sRegExpAll.exec(sCompleteText)) && (nRightBound > aMatch.index));)
+		for (var aMatch = null; ((aMatch = Linkification.sRegExpAll.exec(sCompleteText)) && (nRightBound > aMatch.index));)
 		{
 			if (nLeftBound <= (aMatch.index + aMatch[0].length))
 			{

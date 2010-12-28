@@ -1,7 +1,5 @@
 var EXPORTED_SYMBOLS = ["Linkification"];
 
-//(function() {
-
 const Cc = Components.classes;
 const Ci = Components.interfaces;
 const Cu = Components.utils;
@@ -23,13 +21,23 @@ const sIPv6Address = '(?:[A-Fa-f0-9:]{16,39})';
 const sIPAddress = '(?:' + sIPv4Address + '|' + sIPv6Address + ')';
 
 const sAllSubDomain = sAlphanumeric + '+';
-const sURLPath = sURLPathChars + '*' + sEndChars;
+const sURLPath = '(?:' + sURLPathChars + '*' + sEndChars + '|\\|.+?\\|/)';
 
 const sOtherAuth = '(?:' + sUserNamePasswordChars + '+:' + sUserNamePasswordChars + '+@(' + sIPAddress + '|(?:(?:' + sAllSubDomain + '\\.)+' + sTopLevelDomains + '))(?:\/(?:(?:' + sURLPath + ')?)?)?(?:[#?](?:' + sURLPath + ')?)?)';
 const sOtherOptionalAuth = '(?:(?:' + sUserNamePasswordChars + '+@)?(' + sIPAddress + '|(?:(?:' + sAllSubDomain + '\\.)+' + sTopLevelDomains + '))\/(?:' + sURLPath + '(?:[#?](?:' + sURLPath + ')?)?)?)';
 const sOtherOptionalAuthSelected = '(?:(?:[^*=/<>(){}\\[\\]\\s]+@)?((' + sIPAddress + '|(?:(?:' + sAllSubDomain + '\\.)+' + sTopLevelDomains + ')))(?:/(?:' + sURLPath + ')?)?(?:[#?](?:' + sURLPath + ')?)?)';
 
-var Linkification = {
+var
+p = {
+	prefTypes: {
+		b: {g: "getBoolPref", s: "setBoolPref"},
+		s: {g: "getCharPref", s: "setCharPref"},
+		n: {g: "getIntPref", s: "setIntPref"}
+	},
+	prefsMapping: {},
+	prefValues: {} // cached preferences
+},
+Linkification = {
 	init: function() {
 		XPCOMUtils.defineLazyGetter(this, "aExcludeElements", function() this.sExcludeElements.split(','));
 		XPCOMUtils.defineLazyGetter(this, "aInlineElements", function() this.sInlineElements.split(','));
@@ -100,7 +108,7 @@ var Linkification = {
 			return o;
 		});
 
-		XPCOMUtils.defineLazyGetter(this, "rx", function() {
+		XPCOMUtils.defineLazyGetter(this, "_rx", function() {
 			var o = {};
 			var sProtocol = '(' + this.oProtocol.aProtocol.join('|') + ')';
 			var sSubDomain = '(' + this.oSubDomain.aSubDomain.join('|') + ')';
@@ -133,47 +141,71 @@ var Linkification = {
 		});
 	},
 
-	get bThorough() this.prefs.getBoolPref('Linkify_Thorough'),
-	get bAutoLinkify() this.prefs.getBoolPref('Linkify_Toggle'),
-	get bDoubleClick() this.prefs.getBoolPref('Linkify_DoubleClick'),
-	get bOpenSelected() this.prefs.getBoolPref('Linkify_OpenSelected_Toggle'),
-	get bContextMenu() this.prefs.getBoolPref('Linkify_Popup_Toggle'),
-	get bStatusBar() this.prefs.getBoolPref('Linkify_StatusBar_Toggle'),
-	get bTextColor() this.prefs.getBoolPref('Linkify_HighlightText'),
-	get bBackgroundColor() this.prefs.getBoolPref('Linkify_HighlightBG'),
-	get sTextColor() this.prefs.getCharPref('Linkify_TextColor'),
-	get sBackgroundColor() this.prefs.getCharPref('Linkify_BackgroundColor'),
-	get bLinksOpenWindows() this.prefs.getBoolPref('Linkify_OpenInWindow'),
-	get bLinksOpenTabs() this.prefs.getBoolPref('Linkify_OpenInTab'),
-	get bTabsOpenInBG() this.prefs.getBoolPref('Linkify_OpenTabInBG'),
-	get bLinkifyImageURLs() this.prefs.getBoolPref('Linkify_LinkifyImages'),
-	get bLinkifyProtocol() this.prefs.getBoolPref('Linkify_LinkifyProtocol'),
-	get bLinkifyKnown() this.prefs.getBoolPref('Linkify_LinkifyKnown'),
-	get bLinkifyUnknown() this.prefs.getBoolPref('Linkify_LinkifyUnknown'),
-	get bLinkifyEmail() this.prefs.getBoolPref('Linkify_LinkifyEmail'),
-	get sProtocols() this.prefs.getCharPref('Linkify_TextProtocolList'),
-	get sSubDomains() this.prefs.getCharPref('Linkify_SubdomainProtocolList'),
-	get sInlineElements() this.prefs.getCharPref('Linkify_InlineElements'),
-	get sExcludeElements() this.prefs.getCharPref('Linkify_ExcludeElements'),
-	get bUseBlacklist() this.prefs.getBoolPref('Linkify_Blacklist'),
-	get bUseWhitelist() this.prefs.getBoolPref('Linkify_Whitelist'),
-	get sSitelist() this.prefs.getCharPref('Linkify_SiteList'),
-	get bEnableCharLimit() this.prefs.getBoolPref('Linkify_CharLimitEnabled'),
-	get nCharLimit() this.prefs.getIntPref('Linkify_CharLimit')
+	definePref: function(name) {
+		var type = p.prefTypes[name.charAt(0)];
+
+		p.prefsMapping[name] = name;
+
+		XPCOMUtils.defineLazyGetter(p.prefValues, name, function() Linkification.prefs[type.g](name));
+
+		// append "Default" to name to retrieve default value. 
+		XPCOMUtils.defineLazyGetter(this, name + "Default", function() this.defaultPrefs[type.g](name));
+
+		this.__defineGetter__(name, function() p.prefValues[name]);
+		this.__defineSetter__(name, function(value) {
+			this.prefs[type.s](name, value);
+			// cached value is update by the observer
+			//delete p.prefValues[name];
+			//p.prefValues[name] = value;
+		});
+	},
+
+	get sRegExpAll() this._rx.sRegExpAll,
+	get sRegExpSelected() this._rx.sRegExpSelected
 };
 
 XPCOMUtils.defineLazyGetter(Linkification, "stringBundle", function() Services.strings.createBundle("chrome://linkification/locale/linkification.properties"));
-XPCOMUtils.defineLazyGetter(Linkification, "prefs", function() Services.prefs.getBranch('extensions.linkification.'));
+XPCOMUtils.defineLazyGetter(Linkification, "prefs", function() Services.prefs.getBranch('extensions.linkification.').QueryInterface(Ci.nsIPrefBranch2));
 XPCOMUtils.defineLazyGetter(Linkification, "defaultPrefs", function() Services.prefs.getDefaultBranch('extensions.linkification.'));
-XPCOMUtils.defineLazyGetter(Linkification, "sDefaultTextColor", function() this.defaultPrefs.getCharPref('Linkify_TextColor'));
-XPCOMUtils.defineLazyGetter(Linkification, "sDefaultBackgroundColor", function() this.defaultPrefs.getCharPref('Linkify_BackgroundColor'));
-XPCOMUtils.defineLazyGetter(Linkification, "sDefaultProtocol", function() this.defaultPrefs.getCharPref('Linkify_TextProtocolList'));
-XPCOMUtils.defineLazyGetter(Linkification, "sDefaultSubdomain", function() this.defaultPrefs.getCharPref('Linkify_SubdomainProtocolList'));
-XPCOMUtils.defineLazyGetter(Linkification, "sDefaultSiteList", function() this.defaultPrefs.getCharPref('Linkify_SiteList'));
-XPCOMUtils.defineLazyGetter(Linkification, "sDefaultInlineElements", function() this.defaultPrefs.getCharPref('Linkify_InlineElements'));
-XPCOMUtils.defineLazyGetter(Linkification, "sDefaultExcludeElements", function() this.defaultPrefs.getCharPref('Linkify_ExcludeElements'));
 
+// preferences
+[
+	"bThorough",
+	"bAutoLinkify",
+	"bDoubleClick",
+	"bOpenSelected",
+	"bContextMenu",
+	"bStatusBar",
+	"bTextColor",
+	"bBackgroundColor",
+	"sTextColor",
+	"sBackgroundColor",
+	"bLinksOpenWindows",
+	"bLinksOpenTabs",
+	"bTabsOpenInBG",
+	"bLinkifyImageURLs",
+	"bLinkifyProtocol",
+	"bLinkifyKnown",
+	"bLinkifyUnknown",
+	"bLinkifyEmail",
+	"sProtocols",
+	"sSubDomains",
+	"sInlineElements",
+	"sExcludeElements",
+	"bUseBlacklist",
+	"bUseWhitelist",
+	"sSitelist",
+	"bEnableCharLimit",
+	"nCharLimit"
+].forEach(function(v) { Linkification.definePref(v); });
 
 Linkification.init();
-
-//})();
+Linkification.prefs.addObserver("", {
+	observe: function(aSubject, aTopic, aData) {
+		if (!p.prefsMapping.hasOwnProperty(aData))
+			return;
+		var type = p.prefTypes[aData.charAt(0)];
+		delete p.prefValues[aData];
+		p.prefValues[aData] = Linkification.prefs[type.g](p.prefsMapping[aData]);
+	}
+}, false);
