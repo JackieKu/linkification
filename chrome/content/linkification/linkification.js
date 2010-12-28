@@ -5,7 +5,6 @@ const Ci = Components.interfaces;
 const Cu = Components.utils;
 const Co = Components.Constructor;
 
-Cu.import("resource://gre/modules/XPCOMUtils.jsm");
 Cu.import("resource://gre/modules/Services.jsm");
 Cu.import("resource://linkification/linkification.jsm");
 
@@ -18,15 +17,7 @@ window.objLinkify =
 	InitServices: function()
 	{
  		document.getElementById('contentAreaContextMenu').addEventListener('popupshowing', objLinkify.PopupShowing, false);
-
-		if (Linkification.bStatusBar)
-		{
-			document.getElementById('linkification-status').setAttribute('collapsed', 'false');
-		}
-		else
-		{
-			document.getElementById('linkification-status').setAttribute('collapsed', 'true');
-		}
+		document.getElementById('linkification-status').setAttribute('collapsed', Linkification.bStatusBar ? 'false' : 'true');
 
 		if (typeof(getBrowser) != 'undefined')
 		{
@@ -130,11 +121,11 @@ window.objLinkify =
 		var aBodyTags = ndDocument.getElementsByTagName('body');
 		var ndBody = (aBodyTags.length > 0) ? aBodyTags[0] : false;
 
-		if (!Linkification.bAutoLinkify || !ndBody || (ndBody.getAttribute('linkifying') == true))
+		if (!Linkification.bAutoLinkify || !ndBody || ndBody.getAttribute('linkifying') === 'true')
 		{
 			return false;
 		}
-		ndBody.setAttribute('linkifying', true);
+		ndBody.setAttribute('linkifying', 'true');
 
 		var sHost = objLinkify.GetHost(ndDocument);
 		var sLocation = objLinkify.GetSiteListed(sHost);
@@ -279,11 +270,11 @@ window.objLinkify =
 			aBodyTags = ndDocument.getElementsByTagName('body');
 			ndBody = (aBodyTags.length > 0) ? aBodyTags[0] : false;
 
-			if (!ndBody || (ndBody.getAttribute('linkifying') == true))
+			if (!ndBody || ndBody.getAttribute('linkifying') === 'true')
 			{
 				continue;
 			}
-			ndBody.setAttribute('linkifying', true);
+			ndBody.setAttribute('linkifying', 'true');
 
 			if (this.nLinkified > 0)
 			{
@@ -291,7 +282,7 @@ window.objLinkify =
 			}
 			else
 			{
-				if (this.bThorough)
+				if (Linkification.bThorough)
 				{
 					this.Linkify_Thorough(ndDocument);
 				}
@@ -346,7 +337,7 @@ window.objLinkify =
 					sTraverseText += ndNode.nodeValue;
 				}
 			}
-			else if (aTraverseNodes.length && ndNode.nodeName && !objLinkify.aInlineHash[ndNode.nodeName.toLowerCase()])
+			else if (aTraverseNodes.length && ndNode.nodeName && !Linkification.aInlineHash[ndNode.nodeName.toLowerCase()])
 			{
 				ndBody.setAttribute('linkifymax', (parseInt(ndBody.getAttribute('linkifymax'), 10) + 1));
 				objLinkify.CreateLinks_Thorough(ndDocument, ndBody, aTraverseNodes, sTraverseText, objStartTime);
@@ -489,7 +480,7 @@ window.objLinkify =
 			ndBody.setAttribute('linkifytraversed', 'true');
 		}
 
-		if ((ndBody.getAttribute('linkifytraversed') == 'false') || (parseInt(ndBody.getAttribute('linkifycurrent'), 10) != parseInt(ndBody.getAttribute('linkifymax'), 10)))
+		if (ndBody.getAttribute('linkifytraversed') === 'false' || (parseInt(ndBody.getAttribute('linkifycurrent'), 10) != parseInt(ndBody.getAttribute('linkifymax'), 10)))
 		{
 			return false;
 		}
@@ -501,7 +492,7 @@ window.objLinkify =
 
 		ndBody.setAttribute('linkified', this.GetElementsByAttributes(ndDocument, aAttributes).length);
 		ndBody.setAttribute('linkifytime', (objStopTime.getTime() - objStartTime.getTime()));
-		ndBody.setAttribute('linkifying', false);
+		ndBody.setAttribute('linkifying', 'false');
 		ndBody.removeAttribute('linkifytraversed');
 		ndBody.removeAttribute('linkifycurrent');
 		ndBody.removeAttribute('linkifymax');
@@ -620,7 +611,7 @@ window.objLinkify =
 
 		ndBody.setAttribute('linkified', this.GetElementsByAttributes(ndDocument, aAttributes).length);
 		ndBody.setAttribute('linkifytime', objStopTime.getTime() - objStartTime.getTime());
-		ndBody.setAttribute('linkifying', false);
+		ndBody.setAttribute('linkifying', 'false');
 		ndBody.removeAttribute('linkifycurrent');
 		ndBody.removeAttribute('linkifymax');
 
@@ -747,7 +738,7 @@ window.objLinkify =
 	Undo: function(ndDocument)
 	{
 		var ndBody = ndDocument.getElementsByTagName('body')[0];
-		if (ndBody.getAttribute('linkifying') == 'true')
+		if (ndBody.getAttribute('linkifying') === 'true')
 		{
 			return true;
 		}
@@ -868,9 +859,13 @@ window.objLinkify =
 
 	ClickLink: function(sHREF, nButton, bCtrlKey)
 	{
-		var bTabDefault = (Services.prefs.getPrefType('browser.tabs.loadInBackground') == Services.prefs.PREF_BOOL) ? Services.prefs.getBoolPref('browser.tabs.loadInBackground') : true;
-		var bOpenWindow = Linkification.bLinksOpenWindows;
-		var bOpenTab = (Linkification.bLinksOpenTabs || (nButton == 1) || bCtrlKey);
+		var bTabDefault = true,
+			bOpenWindow = Linkification.bLinksOpenWindows,
+			bOpenTab = (Linkification.bLinksOpenTabs || (nButton == 1) || bCtrlKey);
+
+		try {
+			bTabDefault = Services.prefs.getBoolPref('browser.tabs.loadInBackground');
+		} catch (e) {}
 
 		if (sHREF.indexOf(':') > -1)
 		{
@@ -1039,7 +1034,7 @@ window.objLinkify =
 				try
 				{
 					ndTraverseNode.setAttribute('linkification-marker', '');
-					sQuery = '//node()[ancestor-or-self::*[@linkification-marker] and not(self::text() or self::comment() or self::' + this.aInlineElements.join(' or self::') + ')]';
+					sQuery = '//node()[ancestor-or-self::*[@linkification-marker] and not(self::text() or self::comment() or self::' + Linkification.aInlineElements.join(' or self::') + ')]';
 					objResult = this.XPathQuery(sQuery, ndDocument);
 					ndTraverseNode.removeAttribute('linkification-marker');
 
