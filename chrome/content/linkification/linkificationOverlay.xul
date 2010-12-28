@@ -12,7 +12,7 @@
 	  <key id="linkifytogglekey" modifiers="control,shift" key="Y" oncommand="objLinkify.ToggleLinkify()" />
 	</keyset>
 
-	<popup id="contentAreaContextMenu">
+	<menupopup id="contentAreaContextMenu">
 		<menuitem id="linkification-contextmenu-open" label="&linkification.popup.linkifyopen;" oncommand="objLinkify.OpenSelected()" />
 		<menu id="linkification-contextmenu" label="&linkification.popup.extension;" collapsed="true">
 			<menupopup>
@@ -22,16 +22,19 @@
 				<menuitem label="&linkification-status-options;" oncommand="objLinkify.Options()" />
 			</menupopup>
 		</menu>
-	</popup>
+	</menupopup>
+
+	<popupset id="mainPopupSet">
+		<menupopup id="linkification-status-popup" onpopupshowing="objLinkify.InitStatusMenu()">
+			<menuitem id="linkification-status-linkify" oncommand="objLinkify.UserLinkify()" />
+			<menuitem id="linkification-status-listoption" oncommand="objLinkify.ListSite()" />
+			<menuseparator />
+			<menuitem label="&linkification-status-options;" oncommand="objLinkify.Options()" />
+		</menupopup>
+	</popupset>
 
 	<statusbar id="status-bar">
 		<statusbarpanel id="linkification-status" hidden="false" persist="hidden">
-			<popup id="linkification-status-popup" onpopupshowing="objLinkify.InitStatusMenu()">
-				<menuitem id="linkification-status-linkify" oncommand="objLinkify.UserLinkify()" />
-				<menuitem id="linkification-status-listoption" oncommand="objLinkify.ListSite()" />
-				<menuseparator />
-				<menuitem label="&linkification-status-options;" oncommand="objLinkify.Options()" />
-			</popup>
 			<hbox id="linkification-status-hbox" class="statusbarpanel-menu-iconic" src="chrome://linkification/skin/link-off.png" context="linkification-status-popup" onclick="objLinkify.StatusBarClicked(event)" />
 		</statusbarpanel>
 	</statusbar>
