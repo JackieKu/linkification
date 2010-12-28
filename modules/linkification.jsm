@@ -206,6 +206,6 @@ Linkification.prefs.addObserver("", {
 			return;
 		var type = p.prefTypes[aData.charAt(0)];
 		delete p.prefValues[aData];
-		p.prefValues[aData] = Linkification.prefs[type.g](p.prefsMapping[aData]);
+		p.prefValues[aData] = Linkification.prefs[type.g](aData);
 	}
 }, false);
