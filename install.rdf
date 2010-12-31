@@ -2,7 +2,7 @@
 <RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:em="http://www.mozilla.org/2004/em-rdf#">
 	<Description about="urn:mozilla:install-manifest">
 		<em:id>linkification@jackieku</em:id>
-		<em:name>Linkification</em:name>
+		<em:name>Linkification²</em:name>
 		<em:version>1.4.0</em:version>
 		<em:description>Converts text links into genuine, clickable links.</em:description>
 		<em:creator>y5</em:creator>
@@ -41,43 +41,6 @@
 		<em:contributor>yaryi (Ukrainian locale)</em:contributor>
 		<em:contributor>Rick Cart (Simplified Chinese locale)</em:contributor>
 		<em:contributor>Marcus (Traditional Chinese locale)</em:contributor>
-
-		<em:file>
-			<Description about="urn:mozilla:extension:file:linkification.jar">
-				<em:package>content/linkification/</em:package>
-				<em:skin>skin/classic/linkification/</em:skin>
-				<em:locale>locale/ar/</em:locale>
-				<em:locale>locale/be-BY/</em:locale>
-				<em:locale>locale/ca-AD/</em:locale>
-				<em:locale>locale/cs-CZ/</em:locale>
-				<em:locale>locale/da-DK/</em:locale>
-				<em:locale>locale/de-DE/</em:locale>
-				<em:locale>locale/en-US/</em:locale>
-				<em:locale>locale/es-ES/</em:locale>
-				<em:locale>locale/fa-IR/</em:locale>
-				<em:locale>locale/fi-FI/</em:locale>
-				<em:locale>locale/fr-FR/</em:locale>
-				<em:locale>locale/fy-NL/</em:locale>
-				<em:locale>locale/he-IL/</em:locale>
-				<em:locale>locale/hr-HR/</em:locale>
-				<em:locale>locale/hu-HU/</em:locale>
-				<em:locale>locale/it-IT/</em:locale>
-				<em:locale>locale/ja-JP/</em:locale>
-				<em:locale>locale/ko-KR/</em:locale>
-				<em:locale>locale/nb-NO/</em:locale>
-				<em:locale>locale/nl-NL/</em:locale>
-				<em:locale>locale/pl-PL/</em:locale>
-				<em:locale>locale/pt-BR/</em:locale>
-				<em:locale>locale/ru-RU/</em:locale>
-				<em:locale>locale/sk-SK/</em:locale>
-				<em:locale>locale/sl-SI/</em:locale>
-				<em:locale>locale/sv-SE/</em:locale>
-				<em:locale>locale/tr-TR/</em:locale>
-				<em:locale>locale/uk-UA/</em:locale>
-				<em:locale>locale/zh-CN/</em:locale>
-				<em:locale>locale/zh-TW/</em:locale>
-			</Description>
-		</em:file>
 
 		<!-- Firefox -->
 		<em:targetApplication>

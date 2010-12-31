@@ -35,7 +35,18 @@ p = {
 		n: {g: "getIntPref", s: "setIntPref"}
 	},
 	prefsMapping: {},
-	prefValues: {} // cached preferences
+	prefValues: {}, // cached preferences
+	prefsObserver: {
+		QueryInterface: XPCOMUtils.generateQI([Ci.nsIObserver, Ci.nsISupportsWeakReference]),
+
+		observe: function(aSubject, aTopic, aData) {
+			if (!p.prefsMapping.hasOwnProperty(aData))
+				return;
+			var type = p.prefTypes[aData.charAt(0)];
+			delete p.prefValues[aData];
+			p.prefValues[aData] = Linkification.prefs[type.g](aData);
+		}
+	}
 },
 Linkification = {
 	init: function() {
@@ -200,12 +211,4 @@ XPCOMUtils.defineLazyGetter(Linkification, "defaultPrefs", function() Services.p
 ].forEach(function(v) { Linkification.definePref(v); });
 
 Linkification.init();
-Linkification.prefs.addObserver("", {
-	observe: function(aSubject, aTopic, aData) {
-		if (!p.prefsMapping.hasOwnProperty(aData))
-			return;
-		var type = p.prefTypes[aData.charAt(0)];
-		delete p.prefValues[aData];
-		p.prefValues[aData] = Linkification.prefs[type.g](aData);
-	}
-}, false);
+Linkification.prefs.addObserver("", p.prefsObserver, true);
