@@ -8,6 +8,8 @@ const Co = Components.Constructor;
 Cu.import("resource://gre/modules/Services.jsm");
 Cu.import("resource://linkification/linkification.jsm");
 
+function LOG() dump('[Linkify] ' + Array.prototype.join.call(arguments, ' ') + '\n')
+
 window.objLinkify =
 {
 	sSelectedLink : '',
@@ -370,7 +372,7 @@ window.objLinkify =
 
 		if (ndNode && (ndNode != ndRoot))
 		{
-			setTimeout(objLinkify.TraverseNodes, 20, ndDocument, ndBody, ndRoot, ndNode, bChildrenDone, aTraverseNodes, sTraverseText, objStartTime);
+			ndDocument.window.setTimeout(objLinkify.TraverseNodes, 20, ndDocument, ndBody, ndRoot, ndNode, bChildrenDone, aTraverseNodes, sTraverseText, objStartTime);
 			return true;
 		}
 
@@ -462,7 +464,7 @@ window.objLinkify =
 
 		if (aMatch)
 		{
-			setTimeout(objLinkify.CreateLinks_Thorough, 10, ndDocument, ndBody, aTraverseNodes, sTraverseText, objStartTime);
+			ndDocument.window.setTimeout(objLinkify.CreateLinks_Thorough, 10, ndDocument, ndBody, aTraverseNodes, sTraverseText, objStartTime);
 			return true;
 		}
 
@@ -583,7 +585,7 @@ window.objLinkify =
 
 		if (nIterations == 3)
 		{
-			setTimeout(objLinkify.CreateLinks_Simple, 20, ndDocument, ndAfter, nProgressIndex, objStartTime);
+			ndDocument.window.setTimeout(objLinkify.CreateLinks_Simple, 20, ndDocument, ndAfter, nProgressIndex, objStartTime);
 			return true;
 		}
 
@@ -987,7 +989,9 @@ window.objLinkify =
 			sCompleteText = sPreText + objSelection.anchorNode.nodeValue + sPostText,
 			aMatch, n;
 
-		for (aMatch = null; ((aMatch = Linkification.sRegExpAll.exec(sCompleteText)) && (nRightBound > aMatch.index));)
+		let pass = 0;
+		// XXX hard limit the loop times
+		for (aMatch = null; pass < 20 && ((aMatch = Linkification.sRegExpAll.exec(sCompleteText)) && (nRightBound > aMatch.index)); pass++)
 		{
 			n = aMatch.index + aMatch[0].length;
 			if (nLeftBound <= n)
@@ -1015,7 +1019,8 @@ window.objLinkify =
 		var nOffset = 0;
 		var ndTraverseNode = ndNode;
 		var ndBlockLevelNode = false;
-		while (!ndBlockLevelNode)
+		// XXX hard limit the loop times
+		for (let pass = 0;pass < 20 && !ndBlockLevelNode; pass++)
 		{
 			if (!ndTraverseNode.previousSibling)
 			{
@@ -1048,6 +1053,8 @@ window.objLinkify =
 				}
 			}
 		}
+		if (!ndBlockLevelNode)
+			return '';
 
 		var objRange = document.createRange();
 		objRange.setEnd(ndNode, 0);
@@ -1071,7 +1078,8 @@ window.objLinkify =
 		var nOffset = 0;
 		var ndTraverseNode = ndNode;
 		var ndBlockLevelNode = false;
-		while (!ndBlockLevelNode)
+		// XXX hard limit the loop times
+		for (let pass = 0; pass < 20 && !ndBlockLevelNode; pass++)
 		{
 			if (!ndTraverseNode.nextSibling)
 			{
@@ -1104,6 +1112,8 @@ window.objLinkify =
 				}
 			}
 		}
+		if (!ndBlockLevelNode)
+			return '';
 
 		var objRange = document.createRange();
 		objRange.setEnd(ndBlockLevelNode, nOffset);
@@ -1277,6 +1287,9 @@ window.objLinkify =
 	}
 };
 
-window.addEventListener('load', objLinkify.InitServices, false);
+window.addEventListener('load', function() {
+	window.removeEventListener('load', arguments.callee, false);
+	objLinkify.InitServices();
+}, false);
 
 })();
